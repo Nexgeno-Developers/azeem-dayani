@@ -1,0 +1,119 @@
+* {
+    border-width: border-box;
+    font-family: "Druk Wide Medium" !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-24 {
+    font-size: 24px !important;
+}
+
+.lh-20 {
+    line-height: 20px !important;
+}
+
+.fa {
+    font-family: 'FontAwesome' !important;
+}
+
+.list-group-item {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* header css close */
+
+.film_list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.film_link {
+    display: block;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+.film_link:hover,
+.film_link:focus {
+    color: blue;
+    font-size: 2rem;
+}
+
+.film_images {
+    position: relative;
+}
+
+.film_img {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: auto;
+}
+
+.film_img.active {
+    display: block;
+}
+
+
+
+/* footer css open */
+
+footer {
+    background-color: #218ee3;
+}
+
+.footer_list {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.footer_link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer_social_links_div {
+    background-image: url('../images/footer_music_line2.png');
+    background-size: contain;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.footer_social_media_icons {
+    padding-bottom: 25px !important;
+}
+
+.social_media_links {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social_media_links .fa {
+    font-weight: 100;
+}
+
+/* footer css close */

@@ -1,0 +1,163 @@
+/* Font family: Miedinger */
+
+/* Black Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 900; /* Black */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-BlackItalic.otf') format('opentype');
+}
+
+/* Black */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 900; /* Black */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Black.otf') format('opentype');
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 700; /* Bold */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-BoldItalic.otf') format('opentype');
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Bold.otf') format('opentype');
+}
+
+/* Extra Black Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 800; /* Extra Black */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraBlackItalic.otf') format('opentype');
+}
+
+/* Extra Black */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 800; /* Extra Black */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraBlack.otf') format('opentype');
+}
+
+/* Extra Bold Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 800; /* Extra Bold */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraBoldItalic.otf') format('opentype');
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 800; /* Extra Bold */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraBold.otf') format('opentype');
+}
+
+/* Extra Light Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 200; /* Extra Light */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraLightItalic.otf') format('opentype');
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 200; /* Extra Light */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ExtraLight.otf') format('opentype');
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 400; /* Regular */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Italic.otf') format('opentype');
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 300; /* Light */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-LightItalic.otf') format('opentype');
+}
+
+/* Light */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 300; /* Light */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Light.otf') format('opentype');
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 500; /* Medium */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-MediumItalic.otf') format('opentype');
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 500; /* Medium */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Medium.otf') format('opentype');
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 400; /* Regular */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Regular.otf') format('opentype');
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 100; /* Thin */
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/Miedinger-ThinItalic.otf') format('opentype');
+}
+
+/* Thin */
+@font-face {
+    font-family: 'Miedinger';
+    font-weight: 100; /* Thin */
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Miedinger-Thin.otf') format('opentype');
+}

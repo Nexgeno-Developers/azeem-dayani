@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'miedinger';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/FontsFree-Net-Miedinger-W01-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'tungsten';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/FontsFree-Net-Tungsten-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'photograph';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Photograph Signature.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+}
