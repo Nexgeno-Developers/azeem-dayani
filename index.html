@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" crossorigin="anonymous" /> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-        <link rel="stylesheet" type="text/css" href="css/header_animation.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.all.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <title>Azeem Dayani Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/header_animation.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    <title>Azeem Dayani Footer</title>
 </head>
-<body>
+
+<body class="scroll-container" data-scroll-container>
 
     <header class="header">
-        
-            <input class="menu-trigger" type="checkbox" id="menu_trigger"/>
-            <div class="overlay" id="fullscreen_nav">
+
+        <input class="menu-trigger" type="checkbox" id="menu_trigger" />
+        <div class="overlay" id="fullscreen_nav">
             <ul class="menu-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
@@ -32,9 +38,9 @@
                 <li><a href="works.html">Works</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
             </ul>
-            </div>
-            <label class="hamburger-menu" for="menu_trigger"><span></span><span></span><span></span></label>
-            
+        </div>
+        <label class="hamburger-menu" for="menu_trigger"><span></span><span></span><span></span></label>
+
     </header>
 
 
@@ -46,18 +52,25 @@
                         <a href="index.html">
                             <img class="main_logo" src="images/Homepage/Logo.png">
                         </a>
-                        <h2 class="font_miedinger music_director">MUSIC DIRECTOR & COMPOSER</h2>
-                        <img class="wavylines_white" src="images/Homepage/Music-Lines_2.png">
+                        <div class="heading-anim-main" id="text">
+                            <h2 class="heading-anim font_miedinger music_director">MUSIC DIRECTOR & COMPOSER</h2>
+                        </div>
+                        <!-- <img class="wavylines_white" src="images/Homepage/Music-Lines_2.png"> -->
+                        <div class="text-white" id="bars"></div>
                     </div>
                 </div>
                 <div class="zip_zap_bg_img ">
                     <img class="headphone_text_img" src="images/Homepage/Headphone.png">
-                    <p class="col-md-8 description">
-                        The Hindi Film Industry (Bollywood) has been home to some of the finest music directors and composers. Azeem is the first to introduce the concept of a Music Supervisor to the industry and in doing so has earned the respect of some of the finest patrons of music in India.
+                    <p class="animated-para col-md-8 description">
+                        The Hindi Film Industry (Bollywood) has been home to some of the finest music directors and
+                        composers. Azeem is the first to introduce the concept of a Music Supervisor to the industry and
+                        in doing so has earned the respect of some of the finest patrons of music in India.
                         <br><br>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make a type specimen book.
                     </p>
-                    
+
                 </div>
             </div>
         </section>
@@ -72,7 +85,10 @@
                 <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
                     <div class="d-flex flex-column align-items-end justify-content-between">
                         <h2 class="section-heading">Our Works</h2>
-                        <p class="section_contents text-end">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p class="animated-para section_contents text-end">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</p>
                         <a href="#" class="view-more py-md-4">View More..</a>
                     </div>
                     <div class="image_div">
@@ -83,11 +99,14 @@
                     <img src="images/home/sooryavanshi.png" class="sooryavanshi_img" alt="Achievement Image">
                     <div class="col-md-8 d-flex flex-column align-items-start">
                         <h2 class="section-heading">Achievements</h2>
-                        <p class="section_contents text-start">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p class="animated-para section_contents text-start">Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book.</p>
                         <a href="#" class="view-more mt-md-2">View More..</a>
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="col-md-11 tshirt_img_div text-center">
                 <img src="images/Homepage/T-shirt.png" alt="" class="tshirt_img">
             </div>
@@ -100,8 +119,8 @@
                         <h2 class="section-heading text-dark pb-md-3">Film</h2>
                         <ul class="film_list">
                             <li data-img="img1">
-                                <a href="#" class="film_link hovered">KAPOOR-&-SONS</a>
-                                <img id="img1" src="images/home/kapoor-and-sons.jpg" class="film_img active">
+                                <a href="#" class="film_link">KAPOOR-&-SONS</a>
+                                <img id="img1" src="images/home/kapoor-and-sons.jpg" class="film_img">
                             </li>
                             <li data-img="img2">
                                 <a href="#" class="film_link">BAAR BAAR DEKHO</a>
@@ -170,10 +189,10 @@
                         </ul>
                     </div>
                 </div>
-            </div>        
+            </div>
         </section>
 
-        
+
 
         <section class="non_film_section bg_blue pt-md-5 non_film">
             <div class="playlist_heading_div">
@@ -204,7 +223,7 @@
                                 <a href="#" class="film_link">KYA LOGE TUM</a>
                                 <img id="img22" src="images/home/kya-loge-tum.jpg" class="film_img">
                             </li>
-                            
+
                             <li data-img="img23">
                                 <a href="#" class="film_link">HEERIYE</a>
                                 <img id="img23" src="images/home/heeriye.jpg" class="film_img">
@@ -217,6 +236,7 @@
                 <img src="images/Homepage/T-shirt_2.png" alt="" class="tshirt_img">
             </div>
         </section>
+
 
     </main>
 
@@ -246,41 +266,50 @@
             </div>
         </div>
         <div class="col-md-12 footer_social_links_div">
-            <ul class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
-                <li class="list-item"> 
+            <ul
+                class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
+                <li class="list-item">
                     <a href="" class="social_media_links">
                         <i class="fa fa-facebook"></i>
-                    </a> 
+                    </a>
                 </li>
 
-                <li class="list-item"> 
+                <li class="list-item">
                     <a href="" class="social_media_links">
                         <i class="fa fa-x-twitter"></i>
-                    </a> 
+                    </a>
                 </li>
 
-                <li class="list-item"> 
+                <li class="list-item">
                     <a href="" class="social_media_links">
                         <i class="fa fa-instagram"></i>
-                    </a> 
+                    </a>
                 </li>
 
-                <li class="list-item"> 
+                <li class="list-item">
                     <a href="" class="social_media_links">
                         <i class="fa fa-linkedin-in"></i>
-                    </a> 
+                    </a>
                 </li>
             </ul>
         </div>
     </footer>
 
+    <script type="text/javascript" src="js/libs.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> -->
+    <!-- SplitText Plugin -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script> -->
     <script type="text/javascript" src="js/owl-carousel.js"></script>
     <script type="text/javascript" src="js/bootstrap5.min.js"></script>
+    <script type="module" src="js/script.js"></script>
 
     <script>
-        document.querySelector('.menu-trigger').addEventListener('change', function() {
+        document.querySelector('.menu-trigger').addEventListener('change', function () {
             if (this.checked) {
                 // Disable scrolling
                 document.body.style.overflow = 'hidden';
@@ -293,4 +322,5 @@
 
 
 </body>
+
 </html>
