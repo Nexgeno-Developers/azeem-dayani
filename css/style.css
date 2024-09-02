@@ -96,10 +96,371 @@ html::-webkit-scrollbar {
 }
 
 /* heading animation */
-h2 span {
+.heading-anim span {
     display: inline-block;
 }
 
+/* image reveal animate */
+.reveal-img {
+    visibility: hidden;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* circle */
+
+body {
+    background: #000;
+}
+
+.circle-text {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    position: absolute;
+    top: 76px;
+    text-align: center;
+    color: #fff;
+    width: 150px;
+    margin-left: -110px;
+    font-weight: 400;
+    left: 68px;
+}
+
+.circle-icon {
+    font-size: 40px;
+    color: #fff;
+}
+
+.slidercircle {
+    margin-left: 100px;
+    margin-top: 70px;
+    width: 570px;
+    height: 570px;
+}
+
+.circle-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 180px;
+    margin-top: 180px;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(330deg, rgb(95 95 95 / 40%) 0%, rgb(103 103 103) 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    transition: 1s;
+}
+
+.circle-middle:hover {
+    box-shadow: 0 0 150px 55px #ffde00;
+}
+
+.circle-one {
+    margin-left: 115px;
+    margin-top: 115px;
+    width: 270px;
+    height: 270px;
+    border: 2px solid #6b6b6b;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-two {
+    width: 500px;
+    height: 500px;
+    border: 2px solid #6b6b6b;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-arround-two-1,
+.circle-arround-two-2,
+.circle-arround-two-3,
+.circle-arround-two-4 {
+    cursor: pointer;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: 210px;
+    left: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-arround-two-1 {
+    transform: rotate(45deg) translateX(250px) rotate(-45deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit2 100s linear infinite;
+    transition: 1s;
+    background: #1877f2;
+}
+
+.circle-arround-two-2 {
+    transform: rotate(45deg) translateX(-250px) rotate(-45deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit3 100s linear infinite;
+    transition: 1s;
+    background: #1da1f2;
+}
+
+.circle-arround-two-3 {
+    transform: rotate(45deg) translateY(250px) rotate(-45deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit4 100s linear infinite;
+    transition: 1s;
+    background: #c32aa3;
+}
+
+.circle-arround-two-4 {
+    transform: rotate(45deg) translateY(-250px) rotate(-45deg);
+    -webkit-animation: orbit3 100s linear infinite;
+    -moz-animation: orbit3 100s linear infinite;
+    -o-animation: orbit3 100s linear infinite;
+    animation: orbit5 100s linear infinite;
+    transition: 1s;
+    background: #ff0000;
+}
+
+.circle-arround-two-1 i:hover,
+.circle-arround-two-2 i:hover,
+.circle-arround-two-3 i:hover,
+.circle-arround-two-4 i:hover {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+}
+
+.circle-arround-two-1:hover,
+.circle-arround-two-2:hover,
+.circle-arround-two-3:hover,
+.circle-arround-two-4:hover {
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
+}
+
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes orbit2 {
+    from {
+        -webkit-transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes orbit2 {
+    from {
+        -moz-transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes orbit2 {
+    from {
+        -o-transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit2 {
+    from {
+        transform: rotate(0deg) translateX(250px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes orbit3 {
+    from {
+        -webkit-transform: rotate(0deg) translateX(-250px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes orbit3 {
+    from {
+        -moz-transform: rotate(0deg) translateX(-250px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes orbit3 {
+    from {
+        -o-transform: rotate(0deg) translateX(-250px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit3 {
+    from {
+        transform: rotate(0deg) translateX(-250px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes orbit4 {
+    from {
+        -webkit-transform: rotate(0deg) translateY(250px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateY(250px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes orbit4 {
+    from {
+        -moz-transform: rotate(0deg) translateY(250px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateY(250px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes orbit4 {
+    from {
+        -o-transform: rotate(0deg) translateY(250px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateY(250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit4 {
+    from {
+        transform: rotate(0deg) translateY(250px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateY(250px) rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes orbit5 {
+    from {
+        -webkit-transform: rotate(0deg) translateY(-250px) rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg) translateY(-250px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes orbit5 {
+    from {
+        -moz-transform: rotate(0deg) translateY(-250px) rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg) translateY(-250px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes orbit5 {
+    from {
+        -o-transform: rotate(0deg) translateY(-250px) rotate(0deg);
+    }
+
+    to {
+        -o-transform: rotate(360deg) translateY(-250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit5 {
+    from {
+        transform: rotate(0deg) translateY(-250px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateY(-250px) rotate(-360deg);
+    }
+}
+
+.stopanima {
+    animation-play-state: paused !important;
+}
+
+
+/******************************/
+.creator {
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  font-size: 13px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.creator:hover {
+  color: pink;
+}
+
+.creator i {
+  font-size: 12px;
+}
+  
+
+
+
+/* other */
 .container {
     padding-left: 0vw !important;
     padding-right: 0vw !important;
@@ -450,7 +811,7 @@ h2 span {
     color: white;
     margin-top: 1.04vw;
     /* 20px converted to vw */
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .view-more {

@@ -180,10 +180,11 @@ if (typeof SplitText !== "undefined") {
       duration: 1,
       scrollTrigger: {
         trigger: element,
+        once:true,
         start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
         end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
         scrub: 1, // Smoothly scrubs the animation
-        markers: true, // Enable markers for debugging (optional)
+        markers: false, // Enable markers for debugging (optional)
       },
     });
   });
@@ -233,32 +234,105 @@ splitTexthalf(".heading-anim");
 function animateText(selector) {
   // General ScrollTrigger options
   const scrollTriggerOptions = {
-    trigger: selector,
-    start: "top center", // Adjust based on when you want the animation to start
-    end: "bottom center",
+    start: "top bottom", // Adjust based on when you want the animation to start
+    end: "center center",
     scrub: 3,
     once: true,
     markers: true, // Remove or set to false in production
   };
 
-  gsap.from(selector + " span.char1", {
-    y: 100,
-    opacity: 0,
-    stagger: -0.1,
-    ease: "power2.out",
-    scrollTrigger: scrollTriggerOptions,
-  });
+  // Select all elements matching the selector
+  document.querySelectorAll(selector).forEach((element) => {
+    // Animate chars within each element
+    gsap.from(element.querySelectorAll("span.char1"), {
+      y: 100,
+      opacity: 0,
+      stagger: -0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        ...scrollTriggerOptions,
+        trigger: element // Set specific trigger for each element
+      },
+    });
 
-  gsap.from(selector + " span.char2", {
-    y: 100,
-    opacity: 0,
-    stagger: 0.1,
-    ease: "power2.out",
-    scrollTrigger: scrollTriggerOptions,
+    gsap.from(element.querySelectorAll("span.char2"), {
+      y: 100,
+      opacity: 0,
+      stagger: 0.1,
+      ease: "power2.out",
+      scrollTrigger: {
+        ...scrollTriggerOptions,
+        trigger: element // Set specific trigger for each element
+      },
+    });
   });
 }
 
+// Call the function for elements with the class 'heading-anim'
 animateText(".heading-anim");
+
+// image reveal animate
+
+gsap.utils.toArray(".reveal-img").forEach((container) => {
+  let image = container.querySelector("img");
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top 120%",
+      toggleActions: "play none none reverse"
+    }
+  });
+
+  tl.set(container, { autoAlpha: 1 });
+  tl.from(container, {
+    duration: 3,
+    yPercent: 100,
+    skewX: 0.1,
+    ease: "expo"
+  });
+  tl.from(
+    image,
+    {
+      duration: 3,
+      yPercent: -100,
+      skewX: 0.1,
+      ease: "expo"
+    },
+    0
+  );
+});
+
+var stopCircle = document.getElementsByClassName('anima');
+for (var i = 0; i < stopCircle.length; i++) {
+    if (stopCircle[i].matches(':hover')) {}
+    stopCircle[i].addEventListener("mouseover", function(event) {
+        document.getElementsByClassName('circle-arround-two-1')[0].classList.add("stopanima");
+        document.getElementsByClassName('circle-arround-two-2')[0].classList.add("stopanima");
+        document.getElementsByClassName('circle-arround-two-3')[0].classList.add("stopanima");
+        document.getElementsByClassName('circle-arround-two-4')[0].classList.add("stopanima");
+    });
+    stopCircle[i].addEventListener("mouseout", function(event) {
+        document.getElementsByClassName('circle-arround-two-1')[0].classList.remove("stopanima");
+        document.getElementsByClassName('circle-arround-two-2')[0].classList.remove("stopanima");
+        document.getElementsByClassName('circle-arround-two-3')[0].classList.remove("stopanima");
+        document.getElementsByClassName('circle-arround-two-4')[0].classList.remove("stopanima");
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
