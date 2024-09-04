@@ -167,6 +167,11 @@ body {
     margin-top: 2vw;
 }
 
+.slidercircle img {
+    width: 100%;
+    height: auto;
+}
+
 .slidercircle {
     margin-left: 3vw;
     margin-top: 7vw;
@@ -1064,7 +1069,7 @@ body {
 .view-more {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.3vw;
 }
 
 .sooryavanshi_divs {
@@ -1074,6 +1079,10 @@ body {
 
 .sooryavanshi_img {
     width: 60vw;
+}
+
+.reveal-img .keasri_img {
+    width: 30vw;
 }
 
 .middle_description img {
@@ -1086,7 +1095,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: right top;
-    padding-bottom: 9vw;
+    padding-bottom: 39vw;
     /* 300px converted to vw */
     position: relative;
 }
@@ -1150,7 +1159,7 @@ body {
 }
 
 .film_section {
-    padding-top: 8vw;
+    padding-top: 0vw;
     /* 6rem converted to vw */
     position: relative;
 }
@@ -1168,7 +1177,7 @@ body {
     height: 4vw;
     background-size: 19vw;
     position: absolute;
-    top: -2vw;
+    top: -6vw;
 }
 
 .film_images_main_div {
@@ -1234,6 +1243,11 @@ body {
     /* Start with hidden images */
 }
 
+.non_film_section .film_img {
+    right: 0vw;
+    top: -10vw;
+}
+
 /* .film_img {
     display: none;
     width: 20vw;
@@ -1256,7 +1270,7 @@ body {
     height: 83vw;
     position: absolute;
     /* bottom: -41vw; */
-    z-index: 99;
+    z-index: 2;
     top: -40vw;
 }
 
@@ -1300,11 +1314,16 @@ body {
 
 .non_film_section {
     position: relative;
+    height: 121vh;
 }
 
 .non_film_music {
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 7;
+    top: 1vw;
+    left: 28vw;
+    /* background: aquamarine; */
+    width: 50%;
 }
 
 #home_page .non_film_section:before {
