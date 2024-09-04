@@ -180,7 +180,7 @@ if (typeof SplitText !== "undefined") {
       duration: 1,
       scrollTrigger: {
         trigger: element,
-        once:true,
+        once: true,
         start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
         end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
         scrub: 1, // Smoothly scrubs the animation
@@ -189,8 +189,8 @@ if (typeof SplitText !== "undefined") {
     });
   });
 
-   // Example usage of SplitText
-   document.querySelectorAll(".animated-para").forEach((element) => {
+  // Example usage of SplitText
+  document.querySelectorAll(".animated-para").forEach((element) => {
     const split = new SplitText(element, {
       linesClass: "split-line",
       type: "lines, words, chars",
@@ -212,7 +212,6 @@ if (typeof SplitText !== "undefined") {
       },
     });
   });
-
 } else {
   console.error("SplitText plugin is not available.");
 }
@@ -276,7 +275,7 @@ function animateText(selector) {
       ease: "power2.out",
       scrollTrigger: {
         ...scrollTriggerOptions,
-        trigger: element // Set specific trigger for each element
+        trigger: element, // Set specific trigger for each element
       },
     });
 
@@ -287,7 +286,7 @@ function animateText(selector) {
       ease: "power2.out",
       scrollTrigger: {
         ...scrollTriggerOptions,
-        trigger: element // Set specific trigger for each element
+        trigger: element, // Set specific trigger for each element
       },
     });
   });
@@ -304,8 +303,8 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
     scrollTrigger: {
       trigger: container,
       start: "top 120%",
-      toggleActions: "play none none reverse"
-    }
+      toggleActions: "play none none reverse",
+    },
   });
 
   tl.set(container, { autoAlpha: 1 });
@@ -313,7 +312,7 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
     duration: 3,
     yPercent: 100,
     skewX: 0.1,
-    ease: "expo"
+    ease: "expo",
   });
   tl.from(
     image,
@@ -321,80 +320,132 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
       duration: 3,
       yPercent: -100,
       skewX: 0.1,
-      ease: "expo"
+      ease: "expo",
     },
     0
   );
 });
 
-var stopCircle = document.getElementsByClassName('anima');
+var stopCircle = document.getElementsByClassName("anima");
 for (var i = 0; i < stopCircle.length; i++) {
-    if (stopCircle[i].matches(':hover')) {}
-    stopCircle[i].addEventListener("mouseover", function(event) {
-        document.getElementsByClassName('circle-arround-two-1')[0].classList.add("stopanima");
-        document.getElementsByClassName('circle-arround-two-2')[0].classList.add("stopanima");
-        document.getElementsByClassName('circle-arround-two-3')[0].classList.add("stopanima");
-        document.getElementsByClassName('circle-arround-two-4')[0].classList.add("stopanima");
-    });
-    stopCircle[i].addEventListener("mouseout", function(event) {
-        document.getElementsByClassName('circle-arround-two-1')[0].classList.remove("stopanima");
-        document.getElementsByClassName('circle-arround-two-2')[0].classList.remove("stopanima");
-        document.getElementsByClassName('circle-arround-two-3')[0].classList.remove("stopanima");
-        document.getElementsByClassName('circle-arround-two-4')[0].classList.remove("stopanima");
-    });
+  if (stopCircle[i].matches(":hover")) {
+  }
+  stopCircle[i].addEventListener("mouseover", function (event) {
+    document
+      .getElementsByClassName("circle-arround-two-1")[0]
+      .classList.add("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-2")[0]
+      .classList.add("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-3")[0]
+      .classList.add("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-4")[0]
+      .classList.add("stopanima");
+  });
+  stopCircle[i].addEventListener("mouseout", function (event) {
+    document
+      .getElementsByClassName("circle-arround-two-1")[0]
+      .classList.remove("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-2")[0]
+      .classList.remove("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-3")[0]
+      .classList.remove("stopanima");
+    document
+      .getElementsByClassName("circle-arround-two-4")[0]
+      .classList.remove("stopanima");
+  });
 }
 
-
-
-  // GSAP animation
-  gsap.fromTo(".preloader-main svg", 
-    { strokeDasharray: 4500, strokeDashoffset: 4500, fillOpacity: 0 },
-    { 
-        strokeDashoffset: 0, 
-        fillOpacity: 1,
-        duration: 3,
-        ease: "power1.inOut",
-        onComplete: function() {
-            // Move the SVG back to its original place after animation
-            gsap.to(".preloader-main", { opacity: 0, duration: 1, onComplete: function() {
-                document.querySelector(".preloader-main").style.display = 'none';
-            }});
-        }
-    }
+// GSAP animation
+gsap.fromTo(
+  ".preloader-main svg",
+  { strokeDasharray: 4500, strokeDashoffset: 4500, fillOpacity: 0 },
+  {
+    strokeDashoffset: 0,
+    fillOpacity: 1,
+    duration: 3,
+    ease: "power1.inOut",
+    onComplete: function () {
+      // Move the SVG back to its original place after animation
+      gsap.to(".preloader-main", {
+        opacity: 0,
+        duration: 1,
+        onComplete: function () {
+          document.querySelector(".preloader-main").style.display = "none";
+        },
+      });
+    },
+  }
 );
 
+// Select all .film_list elements
+const filmLists = document.querySelectorAll(".film_list");
 
-
-
-
-
-
-
-
-  // Select all .film_list elements
-  const filmLists = document.querySelectorAll(".film_list");
-
-  // Loop through each .film_list and apply the animation
-  filmLists.forEach(list => {
-    gsap.from(list.querySelectorAll("li a"), {
-      y: "100px",
-      stagger: 0.3,
-      ease: "back.out",
-      duration: 1,
-      scrollTrigger: {
-        trigger: list, // Trigger each list individually
-        once: true,
-        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-        end: "bottom center", // When the bottom of the trigger element reaches the center of the viewport
-        scrub: 1, // Smoothly scrubs the animation
-        markers: false, // Set to true if you want to debug with markers
-      },
-    });
+// Loop through each .film_list and apply the animation
+filmLists.forEach((list) => {
+  gsap.from(list.querySelectorAll("li a"), {
+    y: "100px",
+    stagger: 0.3,
+    ease: "back.out",
+    duration: 1,
+    scrollTrigger: {
+      trigger: list, // Trigger each list individually
+      once: true,
+      start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+      end: "bottom center", // When the bottom of the trigger element reaches the center of the viewport
+      scrub: 1, // Smoothly scrubs the animation
+      markers: false, // Set to true if you want to debug with markers
+    },
   });
+});
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const sections = document.querySelectorAll(".section");
+  
+//   // Create a GSAP timeline for background color transitions
+//   const colorTimeline = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".section",
+//       start: "top top",
+//       end: "bottom bottom",
+//       scrub: 1,
+//       markers: true,
+//       onUpdate: (self) => {
+//         // Iterate over each section and update its background color
+//         sections.forEach((section, index) => {
+//           const nextSection = sections[index + 1] || sections[0];
+//           const sectionColor = section.getAttribute("data-bg");
+//           const nextSectionColor = nextSection.getAttribute("data-bg");
+          
+//           const progress = self.progress;
+//           const blend = progress * (sections.length - 1) - index;
+          
+//           // Interpolate between current and next section colors
+//           const interpolatedColor = gsap.utils.interpolate(
+//             sectionColor,
+//             nextSectionColor,
+//             blend
+//           );
+          
+//           section.style.backgroundColor = interpolatedColor;
+//         });
+//       },
+//     },
+//   });
 
-
-
+//   // Optional: Add some delays or effects for better visual experience
+//   sections.forEach((section) => {
+//     colorTimeline.to(section, {
+//       duration: 1,
+//       autoAlpha: 1,
+//       ease: "power1.out",
+//     });
+//   });
+// });
 
 
 
