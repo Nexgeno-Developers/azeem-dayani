@@ -166,7 +166,7 @@ gsap.registerPlugin(SplitText);
 // Check if SplitText is available
 if (typeof SplitText !== "undefined") {
   // Example usage of SplitText
-  document.querySelectorAll(".animated-para").forEach((element) => {
+  document.querySelectorAll(".animated-heading").forEach((element) => {
     const split = new SplitText(element, {
       linesClass: "split-line",
       type: "lines, words, chars",
@@ -174,7 +174,7 @@ if (typeof SplitText !== "undefined") {
     // GSAP animation with ScrollTrigger
     gsap.from(split.chars, {
       y: 100,
-      stagger: 0.01,
+      stagger: 0.1,
       delay: 0.2,
       ease: "back.out",
       duration: 1,
@@ -188,6 +188,31 @@ if (typeof SplitText !== "undefined") {
       },
     });
   });
+
+   // Example usage of SplitText
+   document.querySelectorAll(".animated-para").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words, chars",
+    });
+    // GSAP animation with ScrollTrigger
+    gsap.from(split.words, {
+      duration: 0.8,
+      opacity: 0,
+      y: 80,
+      ease: "in",
+      stagger: 0.01,
+      scrollTrigger: {
+        trigger: element,
+        once: true,
+        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+        end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
+        scrub: 1, // Smoothly scrubs the animation
+        markers: false, // Enable markers for debugging (optional)
+      },
+    });
+  });
+
 } else {
   console.error("SplitText plugin is not available.");
 }
@@ -321,7 +346,22 @@ for (var i = 0; i < stopCircle.length; i++) {
 
 
 
-
+  // GSAP animation
+  gsap.fromTo(".preloader-main svg", 
+    { strokeDasharray: 4500, strokeDashoffset: 4500, fillOpacity: 0 },
+    { 
+        strokeDashoffset: 0, 
+        fillOpacity: 1,
+        duration: 3,
+        ease: "power1.inOut",
+        onComplete: function() {
+            // Move the SVG back to its original place after animation
+            gsap.to(".preloader-main", { opacity: 0, duration: 1, onComplete: function() {
+                document.querySelector(".preloader-main").style.display = 'none';
+            }});
+        }
+    }
+);
 
 
 
