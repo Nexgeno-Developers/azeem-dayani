@@ -361,26 +361,26 @@ for (var i = 0; i < stopCircle.length; i++) {
 }
 
 // GSAP animation
-gsap.fromTo(
-  ".preloader-main svg",
-  { strokeDasharray: 4500, strokeDashoffset: 4500, fillOpacity: 0 },
-  {
-    strokeDashoffset: 0,
-    fillOpacity: 1,
-    duration: 3,
-    ease: "power1.inOut",
-    onComplete: function () {
-      // Move the SVG back to its original place after animation
-      gsap.to(".preloader-main", {
-        opacity: 0,
-        duration: 1,
-        onComplete: function () {
-          document.querySelector(".preloader-main").style.display = "none";
-        },
-      });
-    },
-  }
-);
+// gsap.fromTo(
+//   ".preloader-main svg",
+//   { strokeDasharray: 4500, strokeDashoffset: 4500, fillOpacity: 0 },
+//   {
+//     strokeDashoffset: 0,
+//     fillOpacity: 1,
+//     duration: 3,
+//     ease: "power1.inOut",
+//     onComplete: function () {
+//       // Move the SVG back to its original place after animation
+//       gsap.to(".preloader-main", {
+//         opacity: 0,
+//         duration: 1,
+//         onComplete: function () {
+//           document.querySelector(".preloader-main").style.display = "none";
+//         },
+//       });
+//     },
+//   }
+// );
 
 // Select all .film_list elements
 const filmLists = document.querySelectorAll(".film_list");
@@ -446,6 +446,53 @@ filmLists.forEach((list) => {
 //     });
 //   });
 // });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.querySelector('.preloader');
+  const content = document.getElementById('home_page');
+  const mainLogo = document.querySelector('.main_logo');
+
+  // Initialize GSAP Timeline
+  const tl = gsap.timeline({ 
+      onComplete: () => {
+          // Hide the loader and show the content after animation
+          loader.style.display = 'none';
+          content.style.display = 'block';
+      }
+  });
+
+  // Add animations to the timeline
+  tl.set('.preloader svg path', {
+      strokeDasharray: 4500,
+      strokeDashoffset: 4500,
+      fillOpacity: 0,
+      stroke: '#ffffff'
+  })
+  .to('.preloader svg', {
+      opacity: 1,
+      duration: 0.5 // Fade-in duration for SVG
+  })
+  .to('.preloader svg path', {
+      strokeDashoffset: 0,
+      fillOpacity: 1,
+      duration: 3,
+      ease: 'cubic.inOut'
+  })
+  .to('.preloader', {
+      opacity: 0,
+      duration: 0.5, // Fade-out duration for preloader
+      delay: 0.5 // Delay to ensure the path animation is complete
+  })
+  .fromTo(mainLogo, {
+      opacity: 0,
+      y: 50 // Start position (below the initial position)
+  }, {
+      opacity: 1,
+      y: 0, // End position (normal position)
+      duration: 1, // Duration of the fade and move-up animation
+      ease: 'power3.out'
+  }, '-=0.5'); // Overlap with preloader fade-out
+});
 
 
 
