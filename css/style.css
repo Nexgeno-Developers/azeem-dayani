@@ -65,7 +65,7 @@ html.lenis body {
 .split-line {
     overflow: hidden;
 }
-
+  
 .main-screen .anim-text {
     position: relative;
     z-index: 2
@@ -1185,6 +1185,7 @@ body {
 }
 
 .film_list li {
+    overflow: hidden;
     position: relative;
     height: 3.7vw;
     /* 3rem converted to vw */

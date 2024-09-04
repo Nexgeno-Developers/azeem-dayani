@@ -263,7 +263,7 @@ function animateText(selector) {
     end: "center center",
     scrub: 3,
     once: true,
-    markers: true, // Remove or set to false in production
+    markers: false, // Remove or set to false in production
   };
 
   // Select all elements matching the selector
@@ -367,6 +367,30 @@ for (var i = 0; i < stopCircle.length; i++) {
 
 
 
+
+
+
+
+  // Select all .film_list elements
+  const filmLists = document.querySelectorAll(".film_list");
+
+  // Loop through each .film_list and apply the animation
+  filmLists.forEach(list => {
+    gsap.from(list.querySelectorAll("li a"), {
+      y: "100px",
+      stagger: 0.3,
+      ease: "back.out",
+      duration: 1,
+      scrollTrigger: {
+        trigger: list, // Trigger each list individually
+        once: true,
+        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+        end: "bottom center", // When the bottom of the trigger element reaches the center of the viewport
+        scrub: 1, // Smoothly scrubs the animation
+        markers: false, // Set to true if you want to debug with markers
+      },
+    });
+  });
 
 
 
