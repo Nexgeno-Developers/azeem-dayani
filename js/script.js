@@ -24,6 +24,7 @@ var locoScroll = new LocomotiveScroll({
   },
 });
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -49,6 +50,7 @@ document.body.style.overflow = "";
 ScrollTrigger.refresh();
 locoScroll.start();
 
+<<<<<<< HEAD
 // for music lines
 for (let i = 0; i < 120; i++) {
   const left = i * 0.3 + 1;
@@ -80,9 +82,110 @@ for (let i = 0; i < 200; i++) {
     "#bars3"
   ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
 }
+=======
+// preloader
 
-// link with image hover effect
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector(".preloader");
+  const header = document.getElementById("header");
+  const content = document.getElementById("home_page");
+  const mainLogo = document.querySelector(".main_logo");
+
+  // Initialize GSAP Timeline
+  const tl = gsap.timeline({
+    onComplete: () => {
+      // Hide the loader and show the content after animation
+      loader.style.display = "none";
+      content.style.display = "block";
+    },
+  });
+
+  // Add animations to the timeline
+  tl.set(".preloader svg path", {
+    strokeDasharray: 4500,
+    strokeDashoffset: 4500,
+    fillOpacity: 0,
+    stroke: "#ffffff",
+  })
+    .to(".preloader svg", {
+      opacity: 1,
+      duration: 0.5, // Fade-in duration for SVG
+    })
+    .to(".preloader svg path", {
+      strokeDashoffset: 0,
+      fillOpacity: 1,
+      duration: 3,
+      ease: "cubic.inOut",
+    })
+    .to(".preloader", {
+      opacity: 0,
+      duration: 0.5, // Fade-out duration for preloader
+      delay: 0.5, // Delay to ensure the path animation is complete
+    })
+    .fromTo(
+      mainLogo,
+      {
+        opacity: 0,
+        y: 50, // Start position (below the initial position)
+      },
+      {
+        opacity: 1,
+        y: 0, // End position (normal position)
+        duration: 1, // Duration of the fade and move-up animation
+        ease: "power3.out",
+      },
+      "-=0.5"
+    ) // Overlap with preloader fade-out
+    .fromTo(
+      header,
+      {
+        opacity: 0,
+        y: -50, // Start position (below the initial position)
+      },
+      {
+        display: "block",
+        opacity: 1,
+        y: 0, // End position (normal position)
+        duration: 1, // Duration of the fade and move-up animation
+        ease: "back.out",
+      },
+      "-=0.5"
+    ); // Overlap with preloader fade-out
+>>>>>>> 35153eaecd6b39952ec01700c45082826c01b0c2
+
+  // for music lines
+  for (let i = 0; i < 120; i++) {
+    const left = i * 2 + 1;
+    const anim = Math.floor(Math.random() * 75 + 500);
+    const height = Math.floor(Math.random() * 25 + 30);
+    // console.log(height);
+
+    document.querySelector(
+      "#bars1"
+    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
+  }
+  for (let i = 0; i < 80; i++) {
+    const left = i * 2 + 1;
+    const anim = Math.floor(Math.random() * 75 + 500);
+    const height = Math.floor(Math.random() * 25 + 30);
+    // console.log(height);
+
+    document.querySelector(
+      "#bars2"
+    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
+  }
+  for (let i = 0; i < 200; i++) {
+    const left = i * 2 + 1;
+    const anim = Math.floor(Math.random() * 75 + 500);
+    const height = Math.floor(Math.random() * 25 + 30);
+    // console.log(height);
+
+    document.querySelector(
+      "#bars3"
+    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
+  }
+
+  // link with image hover effect
   const filmLinks = document.querySelectorAll(".film_link");
   const filmImages = document.querySelectorAll(".film_img");
 
@@ -128,8 +231,218 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("mouseleave", linkHover);
     link.addEventListener("mousemove", moveImg);
   });
-});
 
+  // Check if SplitText is available
+  if (typeof SplitText !== "undefined") {
+    // Example usage of SplitText
+    document.querySelectorAll(".animated-heading").forEach((element) => {
+      const split = new SplitText(element, {
+        linesClass: "split-line",
+        type: "lines, words, chars",
+      });
+      // GSAP animation with ScrollTrigger
+      gsap.from(split.chars, {
+        y: 100,
+        stagger: 0.1,
+        delay: 0.2,
+        ease: "back.out",
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          once: true,
+          start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+          end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
+          scrub: 1, // Smoothly scrubs the animation
+          markers: false, // Enable markers for debugging (optional)
+        },
+      });
+    });
+
+    // Example usage of SplitText
+    document.querySelectorAll(".animated-para").forEach((element) => {
+      const split = new SplitText(element, {
+        linesClass: "split-line",
+        type: "lines, words",
+      });
+      // GSAP animation with ScrollTrigger
+      gsap.from(split.words, {
+        duration: 0.8,
+        opacity: 0,
+        y: 80,
+        ease: "in",
+        stagger: 0.01,
+        scrollTrigger: {
+          trigger: element,
+          once: true,
+          start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+          end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
+          scrub: 1, // Smoothly scrubs the animation
+          markers: false, // Enable markers for debugging (optional)
+        },
+      });
+    });
+  } else {
+    console.error("SplitText plugin is not available.");
+  }
+
+  function splitTexthalf(selector) {
+    var elements = document.querySelectorAll(selector);
+
+    elements.forEach(function (element) {
+      var text = element.textContent;
+      var splittedText = text.split("");
+      var halfValue = Math.ceil(splittedText.length / 2);
+
+      var clutter = "";
+
+      splittedText.forEach(function (char, index) {
+        // Replace spaces with non-breaking spaces to ensure they are visible
+        if (char === " ") {
+          char = "&nbsp;";
+        }
+        if (index < halfValue) {
+          clutter += `<span class="char1">${char}</span>`;
+        } else {
+          clutter += `<span class="char2">${char}</span>`;
+        }
+      });
+
+      element.innerHTML = clutter;
+    });
+  }
+  splitTexthalf(".heading-anim");
+
+  function animateText(selector) {
+    // General ScrollTrigger options
+    const scrollTriggerOptions = {
+      start: "top bottom", // Adjust based on when you want the animation to start
+      end: "center center",
+      scrub: 3,
+      once: true,
+      markers: false, // Remove or set to false in production
+    };
+
+    // Select all elements matching the selector
+    document.querySelectorAll(selector).forEach((element) => {
+      // Animate chars within each element
+      gsap.from(element.querySelectorAll("span.char1"), {
+        y: 100,
+        opacity: 0,
+        stagger: -0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          ...scrollTriggerOptions,
+          trigger: element, // Set specific trigger for each element
+        },
+      });
+
+      gsap.from(element.querySelectorAll("span.char2"), {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          ...scrollTriggerOptions,
+          trigger: element, // Set specific trigger for each element
+        },
+      });
+    });
+  }
+  animateText(".heading-anim");
+
+  // image reveal animate
+  gsap.utils.toArray(".reveal-img").forEach((container) => {
+    let image = container.querySelector("img");
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top 120%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    tl.set(container, { autoAlpha: 1 });
+    tl.from(container, {
+      duration: 3,
+      yPercent: 100,
+      skewX: 0.1,
+      ease: "expo",
+    });
+    tl.from(
+      image,
+      {
+        duration: 3,
+        yPercent: -100,
+        skewX: 0.1,
+        ease: "expo",
+      },
+      0
+    );
+  });
+
+  // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
+  gsap.utils.toArray(".fade-in-effect").forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 0,
+      scaleX: -1, // Start from 50px below its original position
+      duration: 0.6, // Animation duration
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: element, // Each element triggers its own animation
+        start: "top 70%", // Animation starts when the top of the element hits 80% of the viewport height
+        end: "bottom 50%", // Ends when the bottom reaches 50% of the viewport
+        scrub: 1, // Disable scrub for smooth animation
+        once: true,
+        markers: false,
+      },
+    });
+  });
+
+  // Select all .film_list elements
+  const filmLists = document.querySelectorAll(".film_list");
+  filmLists.forEach((list) => {
+    gsap.from(list.querySelectorAll("li a"), {
+      y: "100px",
+      stagger: 0.3,
+      ease: "back.out",
+      duration: 1,
+      scrollTrigger: {
+        trigger: list, // Trigger each list individually
+        once: true,
+        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+        end: "bottom center", // When the bottom of the trigger element reaches the center of the viewport
+        scrub: 1, // Smoothly scrubs the animation
+        markers: false, // Set to true if you want to debug with markers
+      },
+    });
+  });
+});
+  // Wait for the DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    // Access the ::before pseudo-element of #home_page .non_film_section using CSSRulePlugin
+    const beforeRule = CSSRulePlugin.getRule("#home_page .non_film_section::before");
+
+    // Animate the pseudo-element using GSAP and ScrollTrigger
+    gsap.fromTo(beforeRule, 
+      {
+        cssRule: { opacity: 0, x: "-20%" }, // Initial state
+      },
+      {
+        cssRule: { opacity: 1, x: "0%" }, // Final state
+        duration: 0.6,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#home_page .non_film_section", // The element to trigger the animation
+          start: "top bottom", // Start the animation when the top of the element reaches 80% of the viewport
+          end: "bottom 50%",
+          scrub: false, // Disable scrub for smooth animation
+          once: true, // Run animation only once
+          markers:false
+        },
+      }
+    );
+  });
 // // // heading Animation
 // gsap.registerPlugin(ScrollTrigger);
 // // Splits text into words and characters
@@ -180,62 +493,6 @@ document.addEventListener("DOMContentLoaded", function () {
 //   duration: 1,
 // });
 
-// Initialize SplitText
-gsap.registerPlugin(SplitText);
-
-// Check if SplitText is available
-if (typeof SplitText !== "undefined") {
-  // Example usage of SplitText
-  document.querySelectorAll(".animated-heading").forEach((element) => {
-    const split = new SplitText(element, {
-      linesClass: "split-line",
-      type: "lines, words, chars",
-    });
-    // GSAP animation with ScrollTrigger
-    gsap.from(split.chars, {
-      y: 100,
-      stagger: 0.1,
-      delay: 0.2,
-      ease: "back.out",
-      duration: 1,
-      scrollTrigger: {
-        trigger: element,
-        once: true,
-        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-        end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
-        scrub: 1, // Smoothly scrubs the animation
-        markers: false, // Enable markers for debugging (optional)
-      },
-    });
-  });
-
-  // Example usage of SplitText
-  document.querySelectorAll(".animated-para").forEach((element) => {
-    const split = new SplitText(element, {
-      linesClass: "split-line",
-      type: "lines, words",
-    });
-    // GSAP animation with ScrollTrigger
-    gsap.from(split.words, {
-      duration: 0.8,
-      opacity: 0,
-      y: 80,
-      ease: "in",
-      stagger: 0.01,
-      scrollTrigger: {
-        trigger: element,
-        once: true,
-        start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-        end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
-        scrub: 1, // Smoothly scrubs the animation
-        markers: false, // Enable markers for debugging (optional)
-      },
-    });
-  });
-} else {
-  console.error("SplitText plugin is not available.");
-}
-
 // var animatedTextNodes = document.querySelectorAll(".animated-para");
 
 // if (animatedTextNodes.length && !mediaQuery.matches) {
@@ -246,139 +503,6 @@ if (typeof SplitText !== "undefined") {
 //     });
 //   });
 // }
-
-function splitTexthalf(selector) {
-  var elements = document.querySelectorAll(selector);
-
-  elements.forEach(function (element) {
-    var text = element.textContent;
-    var splittedText = text.split("");
-    var halfValue = Math.ceil(splittedText.length / 2);
-
-    var clutter = "";
-
-    splittedText.forEach(function (char, index) {
-      // Replace spaces with non-breaking spaces to ensure they are visible
-      if (char === " ") {
-        char = "&nbsp;";
-      }
-      if (index < halfValue) {
-        clutter += `<span class="char1">${char}</span>`;
-      } else {
-        clutter += `<span class="char2">${char}</span>`;
-      }
-    });
-
-    element.innerHTML = clutter;
-  });
-}
-
-splitTexthalf(".heading-anim");
-
-function animateText(selector) {
-  // General ScrollTrigger options
-  const scrollTriggerOptions = {
-    start: "top bottom", // Adjust based on when you want the animation to start
-    end: "center center",
-    scrub: 3,
-    once: true,
-    markers: false, // Remove or set to false in production
-  };
-
-  // Select all elements matching the selector
-  document.querySelectorAll(selector).forEach((element) => {
-    // Animate chars within each element
-    gsap.from(element.querySelectorAll("span.char1"), {
-      y: 100,
-      opacity: 0,
-      stagger: -0.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        ...scrollTriggerOptions,
-        trigger: element, // Set specific trigger for each element
-      },
-    });
-
-    gsap.from(element.querySelectorAll("span.char2"), {
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        ...scrollTriggerOptions,
-        trigger: element, // Set specific trigger for each element
-      },
-    });
-  });
-}
-
-// Call the function for elements with the class 'heading-anim'
-animateText(".heading-anim");
-
-// image reveal animate
-
-gsap.utils.toArray(".reveal-img").forEach((container) => {
-  let image = container.querySelector("img");
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "top 120%",
-      toggleActions: "play none none reverse",
-    },
-  });
-
-  tl.set(container, { autoAlpha: 1 });
-  tl.from(container, {
-    duration: 3,
-    yPercent: 100,
-    skewX: 0.1,
-    ease: "expo",
-  });
-  tl.from(
-    image,
-    {
-      duration: 3,
-      yPercent: -100,
-      skewX: 0.1,
-      ease: "expo",
-    },
-    0
-  );
-});
-
-var stopCircle = document.getElementsByClassName("anima");
-for (var i = 0; i < stopCircle.length; i++) {
-  if (stopCircle[i].matches(":hover")) {
-  }
-  stopCircle[i].addEventListener("mouseover", function (event) {
-    document
-      .getElementsByClassName("circle-arround-two-1")[0]
-      .classList.add("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-2")[0]
-      .classList.add("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-3")[0]
-      .classList.add("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-4")[0]
-      .classList.add("stopanima");
-  });
-  stopCircle[i].addEventListener("mouseout", function (event) {
-    document
-      .getElementsByClassName("circle-arround-two-1")[0]
-      .classList.remove("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-2")[0]
-      .classList.remove("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-3")[0]
-      .classList.remove("stopanima");
-    document
-      .getElementsByClassName("circle-arround-two-4")[0]
-      .classList.remove("stopanima");
-  });
-}
 
 // GSAP animation
 // gsap.fromTo(
@@ -402,6 +526,7 @@ for (var i = 0; i < stopCircle.length; i++) {
 //   }
 // );
 
+<<<<<<< HEAD
 // Select all .film_list elements
 const filmLists = document.querySelectorAll(".film_list");
 
@@ -423,9 +548,11 @@ filmLists.forEach((list) => {
   });
 });
 
+=======
+>>>>>>> 35153eaecd6b39952ec01700c45082826c01b0c2
 // document.addEventListener("DOMContentLoaded", function () {
 //   const sections = document.querySelectorAll(".section");
-  
+
 //   // Create a GSAP timeline for background color transitions
 //   const colorTimeline = gsap.timeline({
 //     scrollTrigger: {
@@ -440,17 +567,17 @@ filmLists.forEach((list) => {
 //           const nextSection = sections[index + 1] || sections[0];
 //           const sectionColor = section.getAttribute("data-bg");
 //           const nextSectionColor = nextSection.getAttribute("data-bg");
-          
+
 //           const progress = self.progress;
 //           const blend = progress * (sections.length - 1) - index;
-          
+
 //           // Interpolate between current and next section colors
 //           const interpolatedColor = gsap.utils.interpolate(
 //             sectionColor,
 //             nextSectionColor,
 //             blend
 //           );
-          
+
 //           section.style.backgroundColor = interpolatedColor;
 //         });
 //       },
@@ -466,66 +593,6 @@ filmLists.forEach((list) => {
 //     });
 //   });
 // });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.querySelector('.preloader');
-  const header = document.getElementById('header');
-  const content = document.getElementById('home_page');
-  const mainLogo = document.querySelector('.main_logo');
-
-  // Initialize GSAP Timeline
-  const tl = gsap.timeline({ 
-      onComplete: () => {
-          // Hide the loader and show the content after animation
-          loader.style.display = 'none';
-          content.style.display = 'block';
-      }
-  });
-
-  // Add animations to the timeline
-  tl.set('.preloader svg path', {
-      strokeDasharray: 4500,
-      strokeDashoffset: 4500,
-      fillOpacity: 0,
-      stroke: '#ffffff'
-  })
-  .to('.preloader svg', {
-      opacity: 1,
-      duration: 0.5 // Fade-in duration for SVG
-  })
-  .to('.preloader svg path', {
-      strokeDashoffset: 0,
-      fillOpacity: 1,
-      duration: 3,
-      ease: 'cubic.inOut'
-  })
-  .to('.preloader', {
-      opacity: 0,
-      duration: 0.5, // Fade-out duration for preloader
-      delay: 0.5 // Delay to ensure the path animation is complete
-  })
-  .fromTo(mainLogo, {
-      opacity: 0,
-      y: 50 // Start position (below the initial position)
-  }, {
-      opacity: 1,
-      y: 0, // End position (normal position)
-      duration: 1, // Duration of the fade and move-up animation
-      ease: 'power3.out'
-  }, '-=0.5') // Overlap with preloader fade-out
-  .fromTo(header, {
-      opacity: 0,
-      y: -50 // Start position (below the initial position)
-  }, {
-      display: 'block' ,
-      opacity: 1,
-      y: 0, // End position (normal position)
-      duration: 1, // Duration of the fade and move-up animation
-      ease: 'back.out'
-  }, '-=0.5'); // Overlap with preloader fade-out
-});
-
-
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
