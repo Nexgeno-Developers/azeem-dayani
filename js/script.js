@@ -193,7 +193,7 @@ if (typeof SplitText !== "undefined") {
   document.querySelectorAll(".animated-para").forEach((element) => {
     const split = new SplitText(element, {
       linesClass: "split-line",
-      type: "lines, words, chars",
+      type: "lines, words",
     });
     // GSAP animation with ScrollTrigger
     gsap.from(split.words, {
