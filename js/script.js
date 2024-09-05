@@ -57,7 +57,27 @@ for (let i = 0; i < 120; i++) {
   // console.log(height);
 
   document.querySelector(
-    "#bars"
+    "#bars1"
+  ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
+}
+for (let i = 0; i < 80; i++) {
+  const left = i * 2 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
+
+  document.querySelector(
+    "#bars2"
+  ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
+}
+for (let i = 0; i < 200; i++) {
+  const left = i * 2 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
+
+  document.querySelector(
+    "#bars3"
   ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
 }
 

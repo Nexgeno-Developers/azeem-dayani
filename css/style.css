@@ -104,7 +104,27 @@ html::-webkit-scrollbar {
 }
 
 /* music lines */
-#bars {
+#bars1 {
+    position: relative;
+    /* top: 50%; */
+    left: 54vw;
+    height: 14px;
+    width: 180px;
+    /* margin: -30px 0 0 -20px; */
+    transform: scale(2) translateX(-54%);
+    /* border: solid 1px red; */
+}
+#bars2 {
+    position: relative;
+    /* top: 50%; */
+    /* right: 0; */
+    height: 14px;
+    width: 42.7vw;
+    /* margin: -30px 0 0 -20px; */
+    transform: scale(2.8) translateX(100%);
+    /* border: solid 1px red; */
+}
+#bars3 {
     position: relative;
     /* top: 50%; */
     left: 54vw;
@@ -115,14 +135,31 @@ html::-webkit-scrollbar {
     /* border: solid 1px red; */
 }
 
-.bar {
+#bars1 .bar {
     position: absolute;
     bottom: 0px;
     height: 3px;
-    width: 1px;
+    width: 0.01vw;
     background: #fff;
     animation: sound 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
+}
+#bars2 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 3vh;
+    width: 0.016vw;
+    background: #000;
+    animation: sound 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+#bars3 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 0.016vw;
+    background: #fff;
+    animation: sound 0ms -800ms linear infinite alternate;
 }
 
 @keyframes sound {
