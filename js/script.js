@@ -449,6 +449,7 @@ filmLists.forEach((list) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const loader = document.querySelector('.preloader');
+  const header = document.getElementById('header');
   const content = document.getElementById('home_page');
   const mainLogo = document.querySelector('.main_logo');
 
@@ -491,6 +492,16 @@ document.addEventListener('DOMContentLoaded', () => {
       y: 0, // End position (normal position)
       duration: 1, // Duration of the fade and move-up animation
       ease: 'power3.out'
+  }, '-=0.5') // Overlap with preloader fade-out
+  .fromTo(header, {
+      opacity: 0,
+      y: -50 // Start position (below the initial position)
+  }, {
+      display: 'block' ,
+      opacity: 1,
+      y: 0, // End position (normal position)
+      duration: 1, // Duration of the fade and move-up animation
+      ease: 'back.out'
   }, '-=0.5'); // Overlap with preloader fade-out
 });
 
