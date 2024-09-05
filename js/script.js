@@ -52,8 +52,8 @@ locoScroll.start();
 // for music lines
 for (let i = 0; i < 120; i++) {
   const left = i * 2 + 1;
-  const anim = Math.floor(Math.random() * 75 + 400);
-  const height = Math.floor(Math.random() * 25 + 3);
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
   // console.log(height);
 
   document.querySelector(

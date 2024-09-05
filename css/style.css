@@ -37,7 +37,8 @@ html.lenis body {
 .preloader {
     width: 100%;
     height: 100%;
-    background: #000;
+    /* background: radial-gradient(circle,#ffffff3f,#ffffff57,rgb(100,164,62)); */
+    background: rgb(100,164,62);
     position: fixed;
     z-index: 2;
 }
