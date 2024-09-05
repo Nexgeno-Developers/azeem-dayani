@@ -50,39 +50,6 @@ document.body.style.overflow = "";
 ScrollTrigger.refresh();
 locoScroll.start();
 
-<<<<<<< HEAD
-// for music lines
-for (let i = 0; i < 120; i++) {
-  const left = i * 0.3 + 1;
-  const anim = Math.floor(Math.random() * 75 + 500);
-  const height = Math.floor(Math.random() * 25 + 30);
-  // console.log(height);
-
-  document.querySelector(
-    "#bars1"
-  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
-}
-for (let i = 0; i < 120; i++) {
-  const left = i * 0.3 + 1;
-  const anim = Math.floor(Math.random() * 75 + 500);
-  const height = Math.floor(Math.random() * 25 + 30);
-  // console.log(height);
-
-  document.querySelector(
-    "#bars2"
-  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
-}
-for (let i = 0; i < 200; i++) {
-  const left = i * 0.8 + 1;
-  const anim = Math.floor(Math.random() * 75 + 500);
-  const height = Math.floor(Math.random() * 25 + 30);
-  // console.log(height);
-
-  document.querySelector(
-    "#bars3"
-  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
-}
-=======
 // preloader
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -151,39 +118,38 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "-=0.5"
     ); // Overlap with preloader fade-out
->>>>>>> 35153eaecd6b39952ec01700c45082826c01b0c2
 
   // for music lines
-  for (let i = 0; i < 120; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+for (let i = 0; i < 120; i++) {
+  const left = i * 0.3 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars1"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
-  for (let i = 0; i < 80; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+  document.querySelector(
+    "#bars1"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
+for (let i = 0; i < 120; i++) {
+  const left = i * 0.3 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars2"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
-  for (let i = 0; i < 200; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+  document.querySelector(
+    "#bars2"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
+for (let i = 0; i < 200; i++) {
+  const left = i * 0.8 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars3"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
+  document.querySelector(
+    "#bars3"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
 
   // link with image hover effect
   const filmLinks = document.querySelectorAll(".film_link");
@@ -526,30 +492,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //   }
 // );
 
-<<<<<<< HEAD
-// Select all .film_list elements
-const filmLists = document.querySelectorAll(".film_list");
-
-// Loop through each .film_list and apply the animation
-filmLists.forEach((list) => {
-  gsap.from(list.querySelectorAll("li a"), {
-    y: "0px",
-    stagger: 0.3,
-    ease: "back.out",
-    duration: 1,
-    scrollTrigger: {
-      trigger: list, // Trigger each list individually
-      once: true,
-      start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-      end: "bottom center", // When the bottom of the trigger element reaches the center of the viewport
-      scrub: 1, // Smoothly scrubs the animation
-      markers: false, // Set to true if you want to debug with markers
-    },
-  });
-});
-
-=======
->>>>>>> 35153eaecd6b39952ec01700c45082826c01b0c2
 // document.addEventListener("DOMContentLoaded", function () {
 //   const sections = document.querySelectorAll(".section");
 
