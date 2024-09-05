@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden !important;
+}
+
 /* scroll lensis */
 html.lenis,
 html.lenis body {
