@@ -717,7 +717,7 @@ body {
 }
 
 .circle-two .circle-arround-two-3 {
-    transform: rotate(45deg) translate(24vw, 12vw) rotate(-50deg) scale(0.4);
+    transform: rotate(45deg) translate(24vw, 12vw) rotate(-50deg) scale(0.8);
 }
 
 .circle-one .circle-arround-two-2 {
@@ -726,6 +726,11 @@ body {
 
 .circle-one .circle-arround-two-4 {
     transform: rotate(45deg) translate(2vw, 43vw) rotate(-70deg) scale(0.8);
+}
+
+.circle-two .circle-arround-two-3 img {
+    right: 0px;
+    width: 1.6vw;
 }
 
 .stopanima {
