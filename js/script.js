@@ -120,36 +120,36 @@ document.addEventListener("DOMContentLoaded", () => {
     ); // Overlap with preloader fade-out
 
   // for music lines
-  for (let i = 0; i < 120; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+for (let i = 0; i < 120; i++) {
+  const left = i * 0.3 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars1"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
-  for (let i = 0; i < 80; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+  document.querySelector(
+    "#bars1"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
+for (let i = 0; i < 120; i++) {
+  const left = i * 0.3 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars2"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
-  for (let i = 0; i < 200; i++) {
-    const left = i * 2 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+  document.querySelector(
+    "#bars2"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
+for (let i = 0; i < 200; i++) {
+  const left = i * 0.8 + 1;
+  const anim = Math.floor(Math.random() * 75 + 500);
+  const height = Math.floor(Math.random() * 25 + 30);
+  // console.log(height);
 
-    document.querySelector(
-      "#bars3"
-    ).innerHTML += `<div class="bar" style="left:${left}px;animation-duration:${anim}ms;height:${height}px"></div>`;
-  }
+  document.querySelector(
+    "#bars3"
+  ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+}
 
   // link with image hover effect
   const filmLinks = document.querySelectorAll(".film_link");

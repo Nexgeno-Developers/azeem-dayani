@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden !important;
+}
+
 /* scroll lensis */
 html.lenis,
 html.lenis body {
@@ -107,31 +111,32 @@ html::-webkit-scrollbar {
 #bars1 {
     position: relative;
     /* top: 50%; */
-    left: 54vw;
-    height: 14px;
-    width: 180px;
+    left: 30vw;
+    height: 2vw;
+    width: 40%;
     /* margin: -30px 0 0 -20px; */
-    transform: scale(2) translateX(-54%);
+    /* transform: scale(2) translateX(-54%); */
     /* border: solid 1px red; */
 }
 #bars2 {
-    position: relative;
-    /* top: 50%; */
-    /* right: 0; */
-    height: 14px;
-    width: 42.7vw;
+    position: absolute;
+    top: -1vw;
+    right: 0vw;
+    height: 1vw;
+    width: 20%;
     /* margin: -30px 0 0 -20px; */
-    transform: scale(2.8) translateX(100%);
+    /* transform: scale(2.8) translateX(100%); */
     /* border: solid 1px red; */
 }
 #bars3 {
     position: relative;
     /* top: 50%; */
-    left: 54vw;
-    height: 14px;
-    width: 180px;
+    right: 0vw;
+    height: 1vw;
+    top: 5vw;
+    width: 100vw;
     /* margin: -30px 0 0 -20px; */
-    transform: scale(2) translateX(-54%);
+    /* transform: scale(1.5) translateX(0%); */
     /* border: solid 1px red; */
 }
 
@@ -139,7 +144,7 @@ html::-webkit-scrollbar {
     position: absolute;
     bottom: 0px;
     height: 3px;
-    width: 0.01vw;
+    width: 0.15vw;
     background: #fff;
     animation: sound 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
@@ -148,29 +153,54 @@ html::-webkit-scrollbar {
     position: absolute;
     bottom: 0px;
     height: 3vh;
-    width: 0.016vw;
-    background: #000;
-    animation: sound 0ms -800ms linear infinite alternate;
+    width: 0.15vw;
+    background: #333;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
 #bars3 .bar {
     position: absolute;
     bottom: 0px;
     height: 3px;
-    width: 0.016vw;
-    background: #fff;
-    animation: sound 0ms -800ms linear infinite alternate;
+    width: 0.35vw;
+    background: #196aaa;
+    animation: sound3 0ms -800ms linear infinite alternate;
+    border-radius: 50px 50px 0px 0px;
 }
 
 @keyframes sound {
     0% {
         opacity: .35;
-        height: 3px;
+        height: 0.7vw;
     }
 
     100% {
         opacity: 1;
-        height: 28px;
+        height: 4vw;
+    }
+}
+
+@keyframes sound2 {
+    0% {
+        opacity: .35;
+        height: 0.5vw;
+    }
+
+    100% {
+        opacity: 1;
+        height: 4vw;
+    }
+}
+
+@keyframes sound3 {
+    0% {
+        opacity: .35;
+        height: 2vw;
+    }
+
+    100% {
+        opacity: 1;
+        height: 7vw;
     }
 }
 
@@ -278,7 +308,7 @@ body {
 .circle-arround-two-2,
 .circle-arround-two-3,
 .circle-arround-two-4 {
-    cursor: pointer;
+    /* cursor: pointer; */
     position: absolute;
     width: 6vw;
     height: 6vw;
@@ -380,14 +410,14 @@ body {
     animation: rotate-center 0.6s ease-in-out both;
 }
 
-.circle-arround-two-1:hover,
+/* .circle-arround-two-1:hover,
 .circle-arround-two-2:hover,
 .circle-arround-two-3:hover,
 .circle-arround-two-4:hover {
     -webkit-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
     -moz-box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
     box-shadow: 0px 0px 0px 4px rgba(255, 255, 255, 0.25);
-}
+} */
 /*
 @-webkit-keyframes rotate-center {
     0% {
@@ -735,7 +765,7 @@ body {
 } */
 
 .circle-two .circle-arround-two-1 {
-    transform: rotate(45deg) translate(37vw, 15vw) rotate(-45deg);
+    transform: rotate(45deg) translate(40vw, 15vw) rotate(-45deg);
 }
 
 .circle-one .circle-arround-two-1 {
@@ -743,7 +773,7 @@ body {
 }
 
 .circle-two .circle-arround-two-2 {
-    transform: rotate(45deg) translate(29vw, 27vw) rotate(-70deg) scale(0.8);
+    transform: rotate(45deg) translate(32vw, 27vw) rotate(-70deg) scale(0.8);
 }
 
 .circle-two .circle-arround-two-4 {
@@ -755,7 +785,7 @@ body {
 }
 
 .circle-two .circle-arround-two-3 {
-    transform: rotate(45deg) translate(24vw, 12vw) rotate(-50deg) scale(0.8);
+    transform: rotate(45deg) translate(27vw, 14vw) rotate(-10deg) scale(0.6);
 }
 
 .circle-one .circle-arround-two-2 {
@@ -1177,11 +1207,11 @@ body {
 }
 
 .middle_description {
-    background: url('../images/Homepage/Middle-image.jpg');
+    background: url('../images/Homepage/Middle-image3.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: right top;
-    padding-bottom: 39vw;
+    background-position: center right;
+    padding-bottom: 35vw;
     /* 300px converted to vw */
     position: relative;
 }
@@ -1245,7 +1275,7 @@ body {
 }
 
 .film_section {
-    padding-top: 0vw;
+    padding-top: 4vw;
     /* 6rem converted to vw */
     position: relative;
 }
@@ -1256,7 +1286,7 @@ body {
 }
 
 .film_music:before {
-    content: "";
+    /* content: ""; */
     background: url('../images/Homepage/Music-Lines_3.png') no-repeat right top;
     display: block;
     width: 100%;
@@ -1359,7 +1389,19 @@ body {
     top: -40vw;
 }
 
-.non_film_section .circle-one {
+.non_film_section .circle-two .circle-arround-two-1 {
+    transform: rotate(45deg) translate(40vw, 15vw) rotate(-45deg);
+}
+
+.non_film_section .circle-two .circle-arround-two-2 {
+    transform: rotate(45deg) translate(32vw, 27vw) rotate(-70deg) scale(0.8);
+}
+
+.non_film_section .circle-two .circle-arround-two-3 {
+    transform: rotate(45deg) translate(27vw, 14vw) rotate(-10deg) scale(0.6);
+}
+
+/* .non_film_section .circle-one {
     margin-left: 20vw;
     margin-top: 13vw;
     width: 74vw;
@@ -1367,7 +1409,7 @@ body {
     border: 0.1vw solid #ffffff;
     position: absolute;
     border-radius: 50%;
-}
+} */
 
 .non_film_section .film_link {
     color: #fff;
@@ -1400,13 +1442,14 @@ body {
 .non_film_section {
     position: relative;
     height: 121vh;
+    z-index: 8;
 }
 
 .non_film_music {
     position: absolute;
     z-index: 7;
     top: 1vw;
-    left: 28vw;
+    left: 25vw;
     /* background: aquamarine; */
     width: 50%;
 }
@@ -2249,11 +2292,11 @@ footer {
     padding: 1vw 0px;
 }
 
-.footer_social_links_div {
+/* .footer_social_links_div {
     background-image: url('../images/music-lines.png');
     background-size: contain;
     background-position: center;
-}
+} */
 
 .footer_social_media_icons {
     padding-bottom: 1.3vw !important;
