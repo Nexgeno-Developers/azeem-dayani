@@ -281,9 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function animateText(selector) {
     // General ScrollTrigger options
     const scrollTriggerOptions = {
-      start: "top bottom", // Adjust based on when you want the animation to start
-      end: "center center",
-      scrub: 3,
+      start: "top 90%", // Adjust based on when you want the animation to start
+      end: "center 80%",
+      scrub: false,
       once: true,
       markers: false, // Remove or set to false in production
     };
@@ -296,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0,
         stagger: -0.1,
         ease: "power2.out",
+        duration: 0.3,
         scrollTrigger: {
           ...scrollTriggerOptions,
           trigger: element, // Set specific trigger for each element
@@ -307,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: 0,
         stagger: 0.1,
         ease: "power2.out",
+        duration: 0.3,
         scrollTrigger: {
           ...scrollTriggerOptions,
           trigger: element, // Set specific trigger for each element
@@ -315,6 +317,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   animateText(".heading-anim");
+
+    // Function to create the scale-up animation
+    function setupScaleUpAnimation() {
+      gsap.utils.toArray('.scaleup-element').forEach(element => {
+        gsap.fromTo(element, 
+          { scale: 0 },  // Starting state
+          { 
+            scale: 1,     // Ending state
+            scrollTrigger: {
+              trigger: element,
+              start: "top 90%", // Adjust start and end points as needed
+              end: "top 60%",
+              scrub: true, // Scrubs animation with scroll
+              markers:true,
+            }
+          }
+        );
+      });
+    }
+  
+    setupScaleUpAnimation();
 
   // image reveal animate
   gsap.utils.toArray(".reveal-img").forEach((container) => {
