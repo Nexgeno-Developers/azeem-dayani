@@ -327,8 +327,8 @@ document.addEventListener("DOMContentLoaded", () => {
             scale: 1,     // Ending state
             scrollTrigger: {
               trigger: element,
-              start: "top 90%", // Adjust start and end points as needed
-              end: "top 60%",
+              start: "top bottom", // Adjust start and end points as needed
+              end: "bottom 40%",
               scrub: true, // Scrubs animation with scroll
               markers:true,
             }
