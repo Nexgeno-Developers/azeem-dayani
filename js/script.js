@@ -372,7 +372,7 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
         start: "top 70%",    // Start when the container is 80% from the top of the viewport
         end: "center center",      // End when the container is 30% from the top
         scrub: true,         // Sync animation with scroll
-        markers: true,       // Show markers for debugging (remove in production)
+        markers: false,       // Show markers for debugging (remove in production)
       }
     }
   );
@@ -470,6 +470,54 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
       }
     );
   });
+
+// background color transition new
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
+
+  // Loop through each section to create individual scrollTriggers
+  sections.forEach((section, index) => {
+    const nextSection = sections[index + 1];
+    
+    if (nextSection) {
+      // Set up individual background color transitions between adjacent sections
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+          markers: false,
+          onEnter: () => {
+            // Change the background to the current section color on enter
+            gsap.to("body", {
+              backgroundColor: section.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          },
+          onLeave: () => {
+            // Change the background to the next section color on leave
+            gsap.to("body", {
+              backgroundColor: nextSection.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          },
+          onEnterBack: () => {
+            // Reverse the background color change when scrolling back
+            gsap.to("body", {
+              backgroundColor: section.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          }
+        }
+      });
+    }
+  });
+});
+
 // // // heading Animation
 // gsap.registerPlugin(ScrollTrigger);
 // // Splits text into words and characters
@@ -603,31 +651,3 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
-
-//gallery page masonry gallery
- 
- // Initialize Masonry
- $(document).ready(function() {
-  var $gallery = $('.masonry_gallery').masonry({
-      itemSelector: '.masonry_gallery_div',
-      columnWidth: '.masonry_gallery_div',
-      percentPosition: true
-  });
-
-  // Layout Masonry after each image loads
-  $gallery.imagesLoaded().progress(function() {
-      $gallery.masonry('layout');
-  });
-
-  // Initialize Fancybox
-  $('[data-fancybox="masonry_gallery"]').fancybox({
-      loop: true,
-      buttons: [
-          'zoom',
-          'slideShow',
-          'thumbs',
-          'close'
-      ]
-  });
-});
-
