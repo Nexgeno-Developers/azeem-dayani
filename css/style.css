@@ -1276,11 +1276,17 @@ body {
     top: -1.8vw;
 }
 
-.film_section {
+#home_page .film_section {
     padding-top: 4vw;
     /* 6rem converted to vw */
     position: relative;
     padding-bottom: 4.5vw;
+}
+
+.film_section {
+    padding-top: 4vw;
+    /* 6rem converted to vw */
+    position: relative;
 }
 
 .film_music {
@@ -1724,8 +1730,8 @@ body {
 #about_us_page .vision_heading {
     transform: rotate(-90deg);
     position: absolute;
-    top: 17vw;
-    left: 9vw;
+    top: 5vw;
+    left: -2vw;
     font-size: 6vw;
 }
 
@@ -1734,7 +1740,7 @@ body {
 }
 
 .vision_main_image {
-    width: 95%;
+    width: 85%;
 }
 
 
@@ -1750,7 +1756,7 @@ body {
     left: -10vw;
     top: 23.8vw;
     border: 0.05vw solid #ffffff80;
-    height: 79vw;
+    /* height: 79vw; */
     width: 81vw;
     /* 1038px converted to vw */
     border-radius: 100%;
@@ -1805,6 +1811,25 @@ body {
     z-index: 1;
 }
 
+div.masonry_gallery.achievement_page_gallery{
+    column-width: 25vw;
+    column-gap: 2vw;
+    padding: 1vw 0 0vw;
+    width: 100%;
+    /* margin: 0 auto; */
+    position: relative;
+    z-index: 2;
+  }
+  
+  .achievement_page_gallery.masonry_gallery .masonry_gallery_div{
+    width: 100%;
+    margin-bottom: 0vw;
+    overflow: hidden;
+    position: relative;
+    /* display: none; */
+  }
+  
+
 
 .achievements_section:nth-child(1)::before {
     content: "";
@@ -1823,6 +1848,14 @@ body {
     border-radius: 0;
     text-align: left;
     color: #fff;
+}
+
+.achievement_card .card-title {
+    text-align: center;
+}
+
+.achievement_card .card-text {
+    display: none;
 }
 
 .music_coomposer .achievement_card,
@@ -2043,13 +2076,13 @@ footer .top_11 {
 .film_section .category_title:before {
     content: "";
     background: url('../images/Work/Music-Lines_2.png') no-repeat left center;
-    left: 2vw;
+    left: -13vw;
 }
 
 .film_section .category_title:after {
     content: "";
     background: url('../images/Work/Music-Lines_2.png') no-repeat right center;
-    right: 2vw;
+    right: -13vw;
 }
 
 #works_page .non_film_section {
@@ -2058,24 +2091,25 @@ footer .top_11 {
 
 h3.category_title.non_film {
     color: #000;
-    padding: 4vw 0 3vw;
+    padding: 0vw 0 1vw;
 }
 
 .non_film_section .category_title:before {
     content: "";
     background: url('../images/Work/Music-Lines_3.png') no-repeat left center;
-    left: 0vw;
+    left: -10vw;
 }
 
 .non_film_section .category_title:after {
     content: "";
     background: url('../images/Work/Music-Lines_3.png') no-repeat right center;
-    right: 0vw;
+    right: -10vw;
+    width: 30% !important;
 }
 
 .non_film_section .category_title:before,
 .non_film_section .category_title:after {
-    background-size: 16vw !important;
+    background-size: 11vw !important;
     width: 26% !important;
     top: 5vw;
 }
@@ -2120,7 +2154,7 @@ h3.category_title.non_film {
     display: block;
     width: 150%;
     height: 100%;
-    top: 2vw;
+    top: 0vw;
 }
 
 .form_heading {
@@ -2181,7 +2215,7 @@ h3.category_title.non_film {
     color: #fff;
 }
 
-.contat_details {
+.contact_details {
     background: url('../images/Contact Us/Headphone.jpg') no-repeat center center;
     background-size: cover;
     padding: 5vw 3vw;
@@ -2189,23 +2223,23 @@ h3.category_title.non_film {
     z-index: 1;
 }
 
-.contat_details_heading {
+.contact_details_heading {
     font-family: 'tungsten', sans-serif;
     font-size: 5.3vw;
     text-transform: uppercase;
     color: #fff;
 }
 
-.contat_details_heading span {
+.contact_details_heading span {
     text-transform: capitalize;
     font-size: 3vw;
 }
 
-.contat_details .font_img {
+.contact_details .font_img {
     width: 2.2vw;
 }
 
-.contat_details a {
+.contact_details a {
     text-decoration: none;
     color: #fff;
     display: flex;
@@ -2399,7 +2433,7 @@ div.masonry_gallery{
       width: 100%;
   }
 
-  .masonry_gallery:before {
+  .masonry_gallery:not(.card .masonry_gallery):before {
     content: "";
     background: url('../images/Work/Object_3.png') no-repeat;
     display: block;
