@@ -608,9 +608,9 @@ ScrollTrigger.refresh();
  
  // Initialize Masonry
  $(document).ready(function() {
-  var $gallery = $('.gallery').masonry({
-      itemSelector: '.item',
-      columnWidth: '.item',
+  var $gallery = $('.masonry_gallery').masonry({
+      itemSelector: '.masonry_gallery_div',
+      columnWidth: '.masonry_gallery_div',
       percentPosition: true
   });
 
@@ -620,7 +620,7 @@ ScrollTrigger.refresh();
   });
 
   // Initialize Fancybox
-  $('[data-fancybox="gallery"]').fancybox({
+  $('[data-fancybox="masonry_gallery"]').fancybox({
       loop: true,
       buttons: [
           'zoom',
