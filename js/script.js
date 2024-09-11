@@ -597,12 +597,6 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
 //   });
 // });
 
-ScrollTrigger.addEventListener("refresh", function () {
-  return locoScroll.update();
-}); // после того, как все настроено, вызываем refresh() ScrollTrigger и он обновит и LocomotiveScroll,
-// потому что могли быть добавлены отступы и т. д.
-
-ScrollTrigger.refresh();
 
 //gallery page masonry gallery
  
@@ -630,6 +624,14 @@ ScrollTrigger.refresh();
       ]
   });
 });
+
+
+ScrollTrigger.addEventListener("refresh", function () {
+  return locoScroll.update();
+}); // после того, как все настроено, вызываем refresh() ScrollTrigger и он обновит и LocomotiveScroll,
+// потому что могли быть добавлены отступы и т. д.
+
+ScrollTrigger.refresh();
 
 
 
