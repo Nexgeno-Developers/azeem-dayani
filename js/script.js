@@ -603,3 +603,31 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
+
+//gallery page masonry gallery
+ 
+ // Initialize Masonry
+ $(document).ready(function() {
+  var $gallery = $('.gallery').masonry({
+      itemSelector: '.item',
+      columnWidth: '.item',
+      percentPosition: true
+  });
+
+  // Layout Masonry after each image loads
+  $gallery.imagesLoaded().progress(function() {
+      $gallery.masonry('layout');
+  });
+
+  // Initialize Fancybox
+  $('[data-fancybox="gallery"]').fancybox({
+      loop: true,
+      buttons: [
+          'zoom',
+          'slideShow',
+          'thumbs',
+          'close'
+      ]
+  });
+});
+
