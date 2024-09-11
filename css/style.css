@@ -211,9 +211,11 @@ html::-webkit-scrollbar {
 
 /* image reveal animate */
 .reveal-img {
-    visibility: hidden;
+    /* visibility: hidden; */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
+    perspective: 1000px;
+    display: inline-block;
 }
 
 

@@ -281,9 +281,9 @@ for (let i = 0; i < 200; i++) {
   function animateText(selector) {
     // General ScrollTrigger options
     const scrollTriggerOptions = {
-      start: "top bottom", // Adjust based on when you want the animation to start
-      end: "center center",
-      scrub: 3,
+      start: "top 90%", // Adjust based on when you want the animation to start
+      end: "center 80%",
+      scrub: false,
       once: true,
       markers: false, // Remove or set to false in production
     };
@@ -296,6 +296,7 @@ for (let i = 0; i < 200; i++) {
         opacity: 0,
         stagger: -0.1,
         ease: "power2.out",
+        duration: 0.3,
         scrollTrigger: {
           ...scrollTriggerOptions,
           trigger: element, // Set specific trigger for each element
@@ -307,6 +308,7 @@ for (let i = 0; i < 200; i++) {
         opacity: 0,
         stagger: 0.1,
         ease: "power2.out",
+        duration: 0.3,
         scrollTrigger: {
           ...scrollTriggerOptions,
           trigger: element, // Set specific trigger for each element
@@ -316,35 +318,94 @@ for (let i = 0; i < 200; i++) {
   }
   animateText(".heading-anim");
 
-  // image reveal animate
-  gsap.utils.toArray(".reveal-img").forEach((container) => {
-    let image = container.querySelector("img");
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: "top 120%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    // Function to create the scale-up animation
+    function setupScaleUpAnimation() {
+      gsap.utils.toArray('.scaleup-element').forEach(element => {
+        gsap.fromTo(element, 
+          { scale: 0 },  // Starting state
+          { 
+            scale: 1,     // Ending state
+            scrollTrigger: {
+              trigger: element,
+              start: "top bottom", // Adjust start and end points as needed
+              end: "bottom 40%",
+              scrub: true, // Scrubs animation with scroll
+              markers: false,
+            }
+          }
+        );
+      });
+    }
+  
+    setupScaleUpAnimation();
 
-    tl.set(container, { autoAlpha: 1 });
-    tl.from(container, {
-      duration: 3,
-      yPercent: 100,
-      skewX: 0.1,
-      ease: "expo",
-    });
-    tl.from(
-      image,
-      {
-        duration: 3,
-        yPercent: -100,
-        skewX: 0.1,
-        ease: "expo",
-      },
-      0
-    );
+  // Image reveal animation
+gsap.utils.toArray(".reveal-img").forEach((container) => {
+  let image = container.querySelector("img");
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top 120%",  // Start the animation when the container is 120% from the top
+      toggleActions: "play none none reverse",  // Define scroll trigger actions
+    },
   });
+
+  tl.set(container, { autoAlpha: 1 });  // Ensure the container is visible
+
+  // Corrected animation logic
+  tl.fromTo(
+    image,
+    {
+      rotationX: 90,      // Start with the image rotated 90 degrees along the X-axis
+      z: -400,            // Push the image back on the Z-axis for depth
+      scale:0.3,
+    },
+    {
+      rotationX: 0,       // Rotate to 0 degrees, bringing it upright
+      z: 0,               // Move the image back to its original Z position
+      scale:1,
+      duration: 0.4,        // Duration of the animation
+      ease: "ease.in", // Easing for smooth animation
+      scrollTrigger: {
+        trigger: container,  // Trigger the animation based on the container
+        start: "top 70%",    // Start when the container is 80% from the top of the viewport
+        end: "center center",      // End when the container is 30% from the top
+        scrub: true,         // Sync animation with scroll
+        markers: true,       // Show markers for debugging (remove in production)
+      }
+    }
+  );
+});
+
+  // gsap.utils.toArray(".reveal-img").forEach((container) => {
+  //   let image = container.querySelector("img");
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: container,
+  //       start: "top 120%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
+
+  //   tl.set(container, { autoAlpha: 1 });
+  //   tl.from(container, {
+  //     duration: 3,
+  //     yPercent: 100,
+  //     skewX: 0.1,
+  //     ease: "expo",
+  //   });
+  //   tl.from(
+  //     image,
+  //     {
+  //       duration: 3,
+  //       yPercent: -100,
+  //       skewX: 0.1,
+  //       ease: "expo",
+  //     },
+  //     0
+  //   );
+  // });
 
   // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
   gsap.utils.toArray(".fade-in-effect").forEach((element) => {
