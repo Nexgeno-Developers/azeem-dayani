@@ -2259,6 +2259,25 @@ h3.category_title.non_film {
 /* playlist page css close */
 
 
+/* gallery page css open */
+
+.masonry_gallery {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.masonry_gallery_div {
+    width: 30%;
+    margin-bottom: 16px;
+}
+
+.masonry_gallery_div img {
+    width: 100%;
+    display: block;
+}
+
+/* gallery page css close */
+
 
 /* footer css open */
 
