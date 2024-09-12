@@ -475,6 +475,45 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
 
+  // Ensure GSAP is initialized
+  gsap.registerPlugin(ScrollTrigger);
+
+  sections.forEach((section, index) => {
+    const nextSection = sections[index + 1];
+    if (nextSection) {
+      // Use ScrollTrigger to track scroll position between sections
+      ScrollTrigger.create({
+        trigger: section,
+        start: "center center", // Start the effect when the section comes into view
+        endTrigger: nextSection,
+        end: "80% bottom", // End when the next section is fully in view
+        scrub: true,
+        markers: false,
+        onUpdate: (self) => {
+          // Interpolate colors between the current and next section
+          const progress = self.progress; // 0 to 1 between sections
+          const currentColor = section.getAttribute("data-bg");
+          const nextColor = nextSection.getAttribute("data-bg");
+
+          // Use gsap to interpolate the background color smoothly
+          const interpolatedColor = gsap.utils.interpolate(
+            currentColor,
+            nextColor,
+            progress
+          );
+
+          // Apply the interpolated color to the body background
+          document.body.style.backgroundColor = interpolatedColor;
+        },
+      });
+    }
+  });
+});
+
+// background color transition new
+/*document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
+
   // Loop through each section to create individual scrollTriggers
   sections.forEach((section, index) => {
     const nextSection = sections[index + 1];
@@ -517,6 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+*/
 
 // // // heading Animation
 // gsap.registerPlugin(ScrollTrigger);
@@ -600,50 +640,52 @@ document.addEventListener("DOMContentLoaded", function () {
 //     },
 //   }
 // );
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const sections = document.querySelectorAll(".section");
+  // Create a GSAP timeline for background color transitions
+  const colorTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      markers: true,
+      onUpdate: (self) => {
+        // Iterate over each section and update its background color
+        sections.forEach((section, index) => {
+          const nextSection = sections[index + 1] || sections[0];
+          const sectionColor = section.getAttribute("data-bg");
+          const nextSectionColor = nextSection.getAttribute("data-bg");
 
-//   // Create a GSAP timeline for background color transitions
-//   const colorTimeline = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".section",
-//       start: "top top",
-//       end: "bottom bottom",
-//       scrub: 1,
-//       markers: true,
-//       onUpdate: (self) => {
-//         // Iterate over each section and update its background color
-//         sections.forEach((section, index) => {
-//           const nextSection = sections[index + 1] || sections[0];
-//           const sectionColor = section.getAttribute("data-bg");
-//           const nextSectionColor = nextSection.getAttribute("data-bg");
+          const progress = self.progress;
+          const blend = progress * (sections.length - 1) - index;
 
-//           const progress = self.progress;
-//           const blend = progress * (sections.length - 1) - index;
+          // Interpolate between current and next section colors
+          const interpolatedColor = gsap.utils.interpolate(
+            sectionColor,
+            nextSectionColor,
+            blend
+          );
 
-//           // Interpolate between current and next section colors
-//           const interpolatedColor = gsap.utils.interpolate(
-//             sectionColor,
-//             nextSectionColor,
-//             blend
-//           );
+          section.style.backgroundColor = interpolatedColor;
+        });
+      },
+    },
+  });
 
-//           section.style.backgroundColor = interpolatedColor;
-//         });
-//       },
-//     },
-//   });
+  // Optional: Add some delays or effects for better visual experience
+  sections.forEach((section) => {
+    colorTimeline.to(section, {
+      duration: 1,
+      autoAlpha: 1,
+      ease: "power1.out",
+    });
+  });
+});
+*/
 
-//   // Optional: Add some delays or effects for better visual experience
-//   sections.forEach((section) => {
-//     colorTimeline.to(section, {
-//       duration: 1,
-//       autoAlpha: 1,
-//       ease: "power1.out",
-//     });
-//   });
-// });
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
