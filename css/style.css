@@ -847,7 +847,7 @@ body {
 
 .col-md-4 .card-title {
     font-family: 'tungsten', sans-serif !important;
-    font-size: 2.7vw;
+    font-size: 2.5vw;
 }
 
 .col-md-4 .card-body {
@@ -1276,6 +1276,13 @@ body {
     top: -1.8vw;
 }
 
+#home_page .film_section {
+    padding-top: 4vw;
+    /* 6rem converted to vw */
+    position: relative;
+    padding-bottom: 4.5vw;
+}
+
 .film_section {
     padding-top: 4vw;
     /* 6rem converted to vw */
@@ -1458,13 +1465,13 @@ body {
 
 #home_page .non_film_section:before {
     content: "";
-    background: url('../images/Homepage/Headphone_2.png') no-repeat left top;
+    background: url('../images/Homepage/Headphone_new_2.png') no-repeat left top;
     width: 20vw;
     height: 52vw;
     background-size: 18vw;
     position: absolute;
     left: 0;
-    z-index: 0;
+    z-index: 3;
     top: -30vw;
 }
 
@@ -1522,17 +1529,17 @@ body {
 
 .music_director_composer_main_div {
     position: relative;
-    margin-bottom: 3vw;
+    margin-bottom: -4vw;
 }
 
 .music_director_composer_main_div:before {
     content: "";
-    background: url('../images/About Us/Object_3.png') no-repeat center center;
+    background: url('../images/about-us/Object_3.png') no-repeat center center;
     width: 100% !important;
     background-size: 75%;
     position: absolute;
     z-index: 0;
-    height: 55%;
+    height: 75%;
     display: block;
     top: 4vw;
     left: 5vw;
@@ -1540,21 +1547,22 @@ body {
 
 .music_director_composer_main_div:after {
     content: "";
-    background: url('../images/About Us/Image_2.png') no-repeat right bottom;
+    background: url('../images/about-us/Lines.png') no-repeat right bottom;
     width: 100% !important;
     background-size: 100%;
     position: absolute;
     z-index: 0;
-    height: 90%;
+    height: 120%;
     display: block;
-    bottom: 0vw;
+    bottom: -24vw;
 }
 
 .azeem_big_photo {
-    width: 80%;
+    width: 75%;
     float: right;
     position: relative;
     z-index: 1;
+    right: 2vw;
 }
 
 .about_main_div {
@@ -1568,18 +1576,15 @@ body {
     justify-content: space-between;
     left: -1vw;
     position: absolute;
-    top: 20vw;
+    top: 10vw;
 }
 
 .azeem_heading {
-    font-family: 'photograph';
-    color: #fff;
-    font-size: 6vw;
-    text-transform: capitalize;
     position: relative;
-    left: -11vw;
+    right: 20vw;
     z-index: 2;
     top: 0vw;
+    width: 47vw;
 }
 
 .music_director_composer_heading {
@@ -1590,6 +1595,7 @@ body {
 
 .about_content {
     position: relative;
+    top: -3vw;
 }
 
 .about_azeem_dayani_para {
@@ -1602,7 +1608,7 @@ body {
 
 .about_azeem_dayani:after {
     content: "";
-    background: url('../images/About Us/Music-Lines_2.png') no-repeat right;
+    background: url('../images/about-us/Music-Lines_2.png') no-repeat right;
     display: block;
     width: 40%;
     height: 4%;
@@ -1613,8 +1619,22 @@ body {
     bottom: -3.3vw;
 }
 
+.azeem_stadium_img_div {
+    position: relative;
+    bottom: 8vw;
+    z-index: 2;
+}
+
+.azeem_stadium_img {
+    float: right;
+    position: relative;
+    right: 7vw;
+    width: 30vw;
+    /* bottom: 12vw; */
+}
+
 .the_journey_main_div {
-    background: url('../images/About Us/image.png') no-repeat bottom right;
+    background: url('../images/about-us/image.png') no-repeat bottom right;
     width: 100%;
     height: auto;
     background-size: 50%;
@@ -1671,7 +1691,7 @@ body {
 }
 
 .cutting_headphone {
-    width: 25%;
+    width: 15%;
     margin-left: 5vw;
     position: relative;
     z-index: 1;
@@ -1723,8 +1743,8 @@ body {
 #about_us_page .vision_heading {
     transform: rotate(-90deg);
     position: absolute;
-    top: 17vw;
-    left: 9vw;
+    top: -5vw;
+    left: -2vw;
     font-size: 6vw;
 }
 
@@ -1733,7 +1753,7 @@ body {
 }
 
 .vision_main_image {
-    width: 95%;
+    width: 85%;
 }
 
 
@@ -1749,7 +1769,7 @@ body {
     left: -10vw;
     top: 23.8vw;
     border: 0.05vw solid #ffffff80;
-    height: 79vw;
+    /* height: 79vw; */
     width: 81vw;
     /* 1038px converted to vw */
     border-radius: 100%;
@@ -1774,6 +1794,32 @@ body {
 
 /* achievements page css open */
 
+
+.achievements_section {
+    background: linear-gradient(180deg, #218ee3 0%, #218ee3 67%, #ffffff 67%, #ffffff 80%, #59a246 80%, #59a246 100%);
+    padding: 0vw 0 0vw;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.achievement_title {
+    font-family: 'tungsten';
+    font-size: 6.6vw;
+}
+
+.achievement_top_desecription {
+    font-size: 1.4vw;
+    line-height: 1.9vw;
+}
+
+.achievements_section .award_main_div:nth-child(7), 
+.achievements_section .award_main_div:nth-child(8), 
+.achievements_section .award_main_div:nth-child(9) {
+    margin-top: 5vw;
+}
+
+
 .side_text {
     transform: rotate(-90deg);
     position: absolute;
@@ -1790,19 +1836,32 @@ body {
 }
 
 .headphones_icon {
-    width: 15vw;
+    width: 17vw;
     position: absolute;
-    top: 13vw;
+    top: 18vw;
     left: -1vw;
 }
 
-.achievements_section {
-    background: linear-gradient(180deg, #3c8aca 74%, #fff 25%);
-    padding: 6vw 0 0vw;
-    color: white;
+
+div.masonry_gallery.achievement_page_gallery{
+    column-width: 25vw;
+    column-gap: 2vw;
+    padding: 0vw 0 0vw;
+    width: 100%;
+    /* margin: 0 auto; */
     position: relative;
-    z-index: 1;
-}
+    z-index: 2;
+  }
+  
+  .achievement_page_gallery.masonry_gallery .masonry_gallery_div{
+    width: 100%;
+    margin-bottom: 0vw;
+    overflow: hidden;
+    position: relative;
+    /* display: none; */
+    text-align: center;
+  }
+  
 
 
 .achievements_section:nth-child(1)::before {
@@ -1824,13 +1883,30 @@ body {
     color: #fff;
 }
 
+.achievement_card .card-title {
+    text-align: center;
+    color: #fff !important; 
+    font-size: 2.2vw;
+    line-height: 2vw;
+}
+
+.card-title.award_reason {
+    display: block;
+}
+
+.achievement_card .card-text {
+    display: none;
+}
+
 .music_coomposer .achievement_card,
 .music_coomposer .achievement_card .card-text {
     color: #000;
 }
 
 .achievement_card img {
-    border-radius: 1vw;
+    border-radius: 0vw;
+    width: 70% !important;
+    height: auto;
 }
 
 .card-title {
@@ -1962,7 +2038,7 @@ footer .top_11 {
 .works_headphone_heading {
     /* text-align: center; */
     position: relative;
-    width: max-content;
+    /* width: max-content; */
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -1975,16 +2051,36 @@ footer .top_11 {
     color: #fff;
     font-size: 6vw;
     z-index: 0;
-    bottom: 2vw;
+    bottom: 6vw;
 }
 
 .headphone_heading {
     position: relative;
-    width: 25vw;
+    width: 14vw;
+    z-index: 2;
+}
+
+.heading_music_lines {
+    position: absolute;
+    width: 27%;
+    bottom: 2vw;
+}
+
+
+.film_heading .category_title { 
+    font-size: 4.1vw;
+}
+
+img.film_music_lines {
+    width: 35%;
 }
 
 .works_section .section_description {
     font-size: 1.3vw;
+}
+
+.works_section .section_description:nth-of-type(2) {
+    padding-bottom: 2vw;
 }
 
 .film_row,
@@ -2017,7 +2113,7 @@ footer .top_11 {
 .category_title {
     color: #fff;
     font-family: 'miedinger';
-    font-size: 4vw;
+    font-size: 3.8vw;
     padding: 2vw 0 1vw;
     position: relative;
     margin: 0 auto;
@@ -2028,7 +2124,7 @@ footer .top_11 {
     padding: 0.5vw 0 1vw 0;
 }
 
-.category_title:before,
+/* .category_title:before,
 .category_title:after {
     content: "";
     background-size: 25vw !important;
@@ -2037,19 +2133,19 @@ footer .top_11 {
     display: block;
     position: absolute;
     bottom: 2vw;
-}
+} */
 
-.film_section .category_title:before {
+/* .film_section .category_title:before {
     content: "";
     background: url('../images/Work/Music-Lines_2.png') no-repeat left center;
-    left: 2vw;
+    left: -13vw;
 }
 
 .film_section .category_title:after {
     content: "";
     background: url('../images/Work/Music-Lines_2.png') no-repeat right center;
-    right: 2vw;
-}
+    right: -13vw;
+} */
 
 #works_page .non_film_section {
     background: linear-gradient(180deg, #fff 23vw, #59a246 0vw);
@@ -2057,27 +2153,28 @@ footer .top_11 {
 
 h3.category_title.non_film {
     color: #000;
-    padding: 4vw 0 3vw;
+    padding: 0vw;
 }
 
-.non_film_section .category_title:before {
+/* .non_film_section .category_title:before {
     content: "";
     background: url('../images/Work/Music-Lines_3.png') no-repeat left center;
-    left: 0vw;
+    left: -10vw;
 }
 
 .non_film_section .category_title:after {
     content: "";
     background: url('../images/Work/Music-Lines_3.png') no-repeat right center;
-    right: 0vw;
+    right: -10vw;
+    width: 30% !important;
 }
 
 .non_film_section .category_title:before,
 .non_film_section .category_title:after {
-    background-size: 16vw !important;
+    background-size: 11vw !important;
     width: 26% !important;
     top: 5vw;
-}
+} */
 
 .non_film_row .card-title {
     color: #fff !important;
@@ -2098,11 +2195,20 @@ h3.category_title.non_film {
     width: 70%;
 }
 
-.azeem_dayani_contact_us_long_img {
-    background: url('../images/Contact Us/Image.jpg') no-repeat center center;
+/* .azeem_dayani_contact_us_long_img {
+    background: url('../images/contact-us/Image.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     z-index: 1;
+} */
+
+.azeem_dayani_contact_us_long_img_div {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+img.azeem_dayani_contact_us_long_img {
+    width: 100%;
 }
 
 .object_bg_img {
@@ -2110,16 +2216,20 @@ h3.category_title.non_film {
 }
 
 .object_bg_img::before {
-    background: url('../images/Contact Us/Object_3.png') no-repeat top left;
-    background-size: 72vw;
+    background: url('../images/contact-us/Object_3.png') no-repeat top left;
+    background-size: 78vw;
     position: absolute;
     z-index: 0;
     content: "";
-    left: -27vw;
+    right: 0vw;
     display: block;
-    width: 150%;
+    width: 160%;
     height: 100%;
-    top: 2vw;
+    top: 18vw;
+}
+
+.col-md-6.px-0.object_bg_img {
+    overflow: hidden;
 }
 
 .form_heading {
@@ -2180,31 +2290,31 @@ h3.category_title.non_film {
     color: #fff;
 }
 
-.contat_details {
-    background: url('../images/Contact Us/Headphone.jpg') no-repeat center center;
+.contact_details {
+    background: url('../images/contact-us/Headphone.jpg') no-repeat center center;
     background-size: cover;
     padding: 5vw 3vw;
     position: relative;
     z-index: 1;
 }
 
-.contat_details_heading {
+.contact_details_heading {
     font-family: 'tungsten', sans-serif;
     font-size: 5.3vw;
     text-transform: uppercase;
     color: #fff;
 }
 
-.contat_details_heading span {
+.contact_details_heading span {
     text-transform: capitalize;
     font-size: 3vw;
 }
 
-.contat_details .font_img {
+.contact_details .font_img {
     width: 2.2vw;
 }
 
-.contat_details a {
+.contact_details a {
     text-decoration: none;
     color: #fff;
     display: flex;
@@ -2214,6 +2324,27 @@ h3.category_title.non_film {
     font-weight: 500;
     font-family: 'montserrat';
 }
+
+.contact_buffer_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 4vw;
+}
+
+.buffering_text {
+    font: 5.7vw 'tungsten';
+    color: #fff;
+    position: absolute;
+    left: 10vw;
+    top: 5vw;
+}
+
+img.contact_headphone_image {
+    width: 37%;
+}
+
 
 /* contact us page css close */
 
@@ -2263,7 +2394,7 @@ h3.category_title.non_film {
 
 /* gallery page css open */
 
-.masonry_gallery {
+/* .masonry_gallery {
     margin: 0 auto;
     width: 80%;
 }
@@ -2276,6 +2407,163 @@ h3.category_title.non_film {
 .masonry_gallery_div img {
     width: 100%;
     display: block;
+} */
+
+
+.gallery_swiper .swiper-slide img {
+    width: 100%;
+    object-fit: contain;
+}
+  
+  button.btn.gallery_yt_video {
+      width: 20%;
+      opacity: 0.5;
+      position: absolute;
+      z-index: 9;
+      border-radius: 50%;
+      height: 30%;
+      padding: 0px;
+      background: #0088ff8c;
+  }
+  
+  i.fa-regular.fa-circle-play {
+      color: #fff;
+      font-size: 4vw;
+      position: absolute;
+      border-radius: 50%;
+  }
+
+  .gallery.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6000;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+
+  #videoModal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px auto;
+    position: relative;
+    width: 100vw;
+    pointer-events: none;
+}
+
+.modal-body {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.gallery .modal-content {
+    border-radius: 6px !important;
+    padding: 0em !important;
+    background: transparent;
+    border: 0px;
+    width: 100vw;
+}
+
+.modal-header {
+    padding: 10px 10px 10px 10px !important;
+    border: 0;
+    justify-content: space-between;
+}
+
+.modal-title {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.modal-header .close {
+    padding: 5px 10px;
+    border: 0px;
+    background: transparent;
+    color: #fff;
+    margin: -1rem -1rem -1rem auto;
+}
+
+button.close span {
+    font-size: 4em;
+    line-height: 30px;
+}
+
+
+
+
+#gallery_page {
+    background: 
+        linear-gradient(180deg,
+            #5aa236  0%,    /* Start with this color at the top */
+            #5aa236 39%,    /* Continue the same color until 40% */
+            #ffffff 39%,          /* Start transitioning to the next color at 40% */
+            #ffffff 61%,    /* Continue the next color until 59% */
+            #218ee3  61%,    /* Start transitioning to the final color at 59% */
+            #218ee3 100%    /* End with this color at the bottom */
+        );
+}
+
+div.masonry_gallery{
+    column-width: 25vw;
+    column-gap: 2vw;
+    padding: 4vw 0.5vw;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  div.masonry_gallery .masonry_gallery_div{
+    width: 100%;
+    margin-bottom: 2vw;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .masonry_gallery_div img {
+      width: 100%;
+  }
+
+  .masonry_gallery:not(.card .masonry_gallery):before {
+    content: "";
+    background: url('../images/Work/Object_3.png') no-repeat;
+    display: block;
+    width: 100%;
+    height: 70%;
+    background-size: 80vw;
+    position: absolute;
+    background-repeat: space;
+    z-index: 0;
+}
+
+/* Style the carousel item */
+#gallery_carousel .item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery_carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Play button styling */
+.fa-circle-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: white;
+    opacity: 0.8;
 }
 
 /* gallery page css close */
@@ -2310,7 +2598,7 @@ footer {
 }
 
 .footer_links_div {
-    padding: 1vw 0px;
+    padding: 1vw 0;
 }
 
 /* .footer_social_links_div {

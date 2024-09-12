@@ -693,3 +693,31 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
+
+//gallery page masonry gallery
+ 
+ // Initialize Masonry
+ $(document).ready(function() {
+  var $gallery = $('.masonry_gallery').masonry({
+      itemSelector: '.masonry_gallery_div',
+      columnWidth: '.masonry_gallery_div',
+      percentPosition: true
+  });
+
+  // Layout Masonry after each image loads
+  $gallery.imagesLoaded().progress(function() {
+      $gallery.masonry('layout');
+  });
+
+  // Initialize Fancybox
+  $('[data-fancybox="masonry_gallery"]').fancybox({
+      loop: true,
+      buttons: [
+          'zoom',
+          'slideShow',
+          'thumbs',
+          'close'
+      ]
+  });
+});
+
