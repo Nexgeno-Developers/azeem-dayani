@@ -1163,10 +1163,24 @@ body {
 }
 
 .description {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     line-height: 1.5;
     padding: 1.04vw 0vw 1.04vw;
     /* 20px converted to vw */
+}
+
+.middle_description .col-md-4 .animated-heading >div >div {
+    left: 1.7vw;
+    top: 0.7vw;
+}
+
+.middle_description .col-md-4 .animated-heading >div {
+    height: 7vw;
+}
+
+.middle_description .col-md-4 .animated-heading {
+    width: 20vw;
+    height: 7vw;
 }
 
 .section-bg {
@@ -1403,7 +1417,7 @@ body {
 }
 
 .non_film_section .circle-two .circle-arround-two-2 {
-    transform: rotate(45deg) translate(32vw, 27vw) rotate(-70deg) scale(0.8);
+    transform: rotate(71deg) translate(31vw, 27vw) rotate(-73deg) scale(1);
 }
 
 .non_film_section .circle-two .circle-arround-two-3 {
@@ -1427,8 +1441,8 @@ body {
 .playlist_heading_div {
     transform: rotate(-90deg);
     position: absolute;
-    top: -2vw;
-    left: 1vw;
+    bottom: 22vw;
+    left: -1vw;
     z-index: 0;
 }
 
@@ -1458,9 +1472,19 @@ body {
     position: absolute;
     z-index: 7;
     top: 1vw;
-    left: 25vw;
+    left: 0vw;
     /* background: aquamarine; */
-    width: 50%;
+    width: 100%;
+}
+
+.non_film_section .circle-two {
+    bottom: 10vw;
+    right: 8vw;
+}
+
+.non_film_section .circle-one {
+    bottom: 1vw;
+    left: -6vw;
 }
 
 #home_page .non_film_section:before {
@@ -1472,7 +1496,7 @@ body {
     position: absolute;
     left: 0;
     z-index: 3;
-    top: -30vw;
+    top: -55vw;
 }
 
 #home_page .film_section:before {
@@ -1909,9 +1933,9 @@ div.masonry_gallery.achievement_page_gallery{
     height: auto;
 }
 
-.card-title {
+#works_page .film_row .card-title {
     font-family: 'tungsten', sans-serif !important;
-    font-size: 2.7vw;
+    font-size: 2.9vw;
 }
 
 .card-body {
@@ -1920,6 +1944,8 @@ div.masonry_gallery.achievement_page_gallery{
 
 .col-md-4:last-of-type .card-body .card-text,
 .col-md-4:last-of-type .card-title,
+.col-md-4:nth-last-of-type(1) .card-body .card-text,
+.col-md-4:nth-last-of-type(1) .card-title 
 .col-md-4:nth-last-of-type(2) .card-body .card-text,
 .col-md-4:nth-last-of-type(2) .card-title,
 .col-md-4:nth-last-of-type(3) .card-body .card-text,
@@ -2191,8 +2217,22 @@ h3.category_title.non_film {
     background: #5aa236 !important;
 }
 
+.contact_heading_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_heading {
+    font-family: 'miedinger';
+    font-size: 6.5vw;
+    position: absolute;
+}
+
 .contact_us_heading_img {
-    width: 70%;
+    width: 11vw;
+    position: relative;
+    z-index: 3;
 }
 
 /* .azeem_dayani_contact_us_long_img {
@@ -2409,6 +2449,12 @@ img.contact_headphone_image {
     display: block;
 } */
 
+#gallery_page .headphone_heading {
+    position: relative;
+    width: 50vw;
+    z-index: 2;
+}
+
 
 .gallery_swiper .swiper-slide img {
     width: 100%;
@@ -2511,7 +2557,7 @@ button.close span {
 div.masonry_gallery{
     column-width: 25vw;
     column-gap: 2vw;
-    padding: 4vw 0.5vw;
+    padding: 2vw 0.5vw 6vw;
     width: 80%;
     margin: 0 auto;
     position: relative;
@@ -2524,6 +2570,10 @@ div.masonry_gallery{
     overflow: hidden;
     position: relative;
   }
+
+  .masonry_gallery_div.the_gallery_img img {
+        border-radius: 1.2vw;
+    }
   
   .masonry_gallery_div img {
       width: 100%;
