@@ -174,23 +174,27 @@ for (let i = 0; i < 200; i++) {
         gsap.to(img, {
           autoAlpha: 0,
           scale: 0.3,
+          rotation: 0, // Reset rotation to 0 for all images
         });
         img.classList.remove("active"); // Remove 'active' class from all images
       });
-
+  
       const activeImg = document.getElementById(imgId);
       gsap.to(activeImg, {
         autoAlpha: 1,
         scale: 1,
+        rotation: 10, // Rotate the active image by 10 degrees
       });
       activeImg.classList.add("active"); // Add 'active' class to the shown image
     } else if (e.type === "mouseleave") {
       gsap.to(filmImages, {
         autoAlpha: 0,
         scale: 0.3,
+        rotation: 0, // Reset rotation on mouse leave
       });
     }
   }
+  
 
   filmLinks.forEach((link) => {
     link.addEventListener("mouseenter", linkHover);
