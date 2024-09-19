@@ -1163,7 +1163,7 @@ body {
 }
 
 .description {
-    font-size: 1.2vw;
+    font-size: 1vw;
     line-height: 1.5;
     padding: 1.04vw 0vw 1.04vw;
     /* 20px converted to vw */
@@ -1201,7 +1201,7 @@ body {
 .view-more {
     color: white;
     text-decoration: none;
-    font-size: 1.3vw;
+    font-size: 1vw;
 }
 
 .sooryavanshi_divs {
@@ -1767,8 +1767,8 @@ body {
 #about_us_page .vision_heading {
     transform: rotate(-90deg);
     position: absolute;
-    top: -5vw;
-    left: -2vw;
+    top: 2.4vw;
+    left: 1vw;
     font-size: 6vw;
 }
 
@@ -1779,7 +1779,7 @@ body {
 .vision_main_image {
     width: 85%;
 }
-
+ 
 
 .azeem_vision {
     font-size: 1.3vw;
@@ -2630,7 +2630,7 @@ footer {
 }
 
 .footer_logo {
-    width: 30vw;
+    width: 28vw;
 }
 
 .footer_list {
