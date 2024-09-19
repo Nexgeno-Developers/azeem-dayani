@@ -376,7 +376,7 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
         start: "top 70%",    // Start when the container is 80% from the top of the viewport
         end: "center center",      // End when the container is 30% from the top
         scrub: true,         // Sync animation with scroll
-        markers: true,       // Show markers for debugging (remove in production)
+        markers: false,       // Show markers for debugging (remove in production)
       }
     }
   );
@@ -412,6 +412,124 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
   // });
 
   // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
+// Function to get a random position within the container, staying away from the edges
+// function getRandomPositionWithinContainer(container, element) {
+//   const containerRect = container.getBoundingClientRect();
+//   const elementRect = element.getBoundingClientRect();
+
+//   // Define 100px offset from edges
+//   const margin = 100;
+//   const maxOffsetX = containerRect.width - elementRect.width - margin * 2; // Margin on both sides
+//   const maxOffsetY = containerRect.height - elementRect.height - margin * 2; // Margin on both sides
+
+//   // Generate random position within constraints
+//   const offsetX = Math.random() * maxOffsetX + margin;
+//   const offsetY = Math.random() * maxOffsetY + margin;
+
+//   return { x: offsetX, y: offsetY };
+// }
+
+// // Function to create the floating animation with snake pattern, scaling, and fading out
+// function createFloatingAnimation(element, container) {
+//   const containerRect = container.getBoundingClientRect();
+//   const randomDelay = Math.random() * 2; // Random delay between 0 and 2 seconds
+
+//   // Get initial random position within the container
+//   const { x, y } = getRandomPositionWithinContainer(container, element);
+
+//   // Set initial position
+//   gsap.set(element, { x, y });
+
+//   // Floating upwards animation with ScrollTrigger
+//   gsap.to(element, {
+//     duration: 10 + Math.random() * 10, // Duration between 10 and 20 seconds
+//     y: `-=${containerRect.height + 100}`, // Float upwards
+//     ease: "sine.inOut",
+//     repeat: -1, // Infinite loop
+//     yoyo: false, // No bouncing back
+//     delay: randomDelay, // Random delay before starting animation
+//     scrollTrigger: {
+//       trigger: container,
+//       start: "top bottom", // Starts when the container is at the bottom of the viewport
+//       end: "bottom top", // Ends when the container is at the top of the viewport
+//       scrub: true, // Syncs with scrolling
+//       onEnter: () => {
+//         // Trigger the animation when the container enters the viewport
+//         gsap.to(element, {
+//           duration: 10 + Math.random() * 10,
+//           y: `-=${containerRect.height + 100}`,
+//           ease: "sine.inOut",
+//           repeat: -1,
+//           yoyo: false
+//         });
+//       },
+//       onLeave: () => {
+//         // Fade out and remove the icon when it leaves the viewport
+//         gsap.to(element, {
+//           opacity: 0, // Fade out
+//           duration: 2, // Duration of fade out
+//           ease: "power1.in",
+//           onComplete: () => {
+//             element.remove(); // Remove element from DOM
+//           }
+//         });
+//       }
+//     }
+//   });
+
+//   // Scaling and snake-like movement animation
+//   gsap.fromTo(element,
+//     {
+//       scale: 0, // Start scaled down
+//       opacity: 0, // Start invisible
+//     },
+//     {
+//       scale: 1, // Scale up to full size
+//       opacity: 1, // Fade in to full opacity
+//       duration: 2, // Duration of scaling and fading
+//       ease: "power2.out",
+//       repeat: -1, // Infinite loop for the scaling and fade-out effect
+//       yoyo: true, // Bounce back and forth
+//       delay: randomDelay, // Random delay before starting animation
+//       modifiers: {
+//         x: gsap.utils.unitize(value => {
+//           // Snake-like horizontal movement
+//           const offset = Math.sin(parseFloat(value) / 50) * 20; // Horizontal movement range
+//           const newValue = parseFloat(value) + offset;
+          
+//           // Ensure newValue stays within container boundaries
+//           const containerWidth = containerRect.width;
+//           const elementWidth = element.getBoundingClientRect().width;
+//           if (newValue < 0) return 0;
+//           if (newValue + elementWidth > containerWidth) return containerWidth - elementWidth;
+//           return newValue;
+//         }),
+//       },
+//       onComplete: () => {
+//         // Fade out and remove the element after scaling and snake animation
+//         gsap.to(element, {
+//           opacity: 0, // Fade out
+//           duration: 2, // Duration of fade out
+//           ease: "power1.in",
+//           onComplete: () => {
+//             element.remove(); // Remove element from DOM
+//           }
+//         });
+//       }
+//     }
+//   );
+// }
+
+// // Select the container
+// const container = document.querySelector('.floating-icons');
+
+// // Apply floating animation to each element without cloning
+// gsap.utils.toArray(".fade-in-effect").forEach((element) => {
+//   // Apply floating animation with snake pattern and scaling
+//   createFloatingAnimation(element, container);
+// });
+
+  // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
   gsap.utils.toArray(".fade-in-effect").forEach((element) => {
     gsap.from(element, {
       opacity: 0,
@@ -429,6 +547,7 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
       },
     });
   });
+
 
   // Select all .film_list elements
   const filmLists = document.querySelectorAll(".film_list");
@@ -474,6 +593,121 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
       }
     );
   });
+
+// background color transition new
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
+
+  // Ensure GSAP is initialized
+  gsap.registerPlugin(ScrollTrigger);
+
+  sections.forEach((section, index) => {
+    const nextSection = sections[index + 1];
+    if (nextSection) {
+      // Use ScrollTrigger to track scroll position between sections
+      ScrollTrigger.create({
+        trigger: section,
+        start: "center center", // Start the effect when the section comes into view
+        endTrigger: nextSection,
+        end: "80% bottom", // End when the next section is fully in view
+        scrub: true,
+        markers: false,
+        onUpdate: (self) => {
+          // Interpolate colors between the current and next section
+          const progress = self.progress; // 0 to 1 between sections
+          const currentColor = section.getAttribute("data-bg");
+          const nextColor = nextSection.getAttribute("data-bg");
+
+          // Use gsap to interpolate the background color smoothly
+          const interpolatedColor = gsap.utils.interpolate(
+            currentColor,
+            nextColor,
+            progress
+          );
+
+          // Apply the interpolated color to the body background
+          document.body.style.backgroundColor = interpolatedColor;
+        },
+      });
+    }
+  });
+});
+
+//gallery page masonry gallery 
+ // Initialize Masonry
+ $(document).ready(function() {
+  var $gallery = $('.masonry_gallery').masonry({
+      itemSelector: '.masonry_gallery_div',
+      columnWidth: '.masonry_gallery_div',
+      percentPosition: true
+  });
+
+  // Layout Masonry after each image loads
+  $gallery.imagesLoaded().progress(function() {
+      $gallery.masonry('layout');
+  });
+
+  // Initialize Fancybox
+  $('[data-fancybox="masonry_gallery"]').fancybox({
+      loop: true,
+      buttons: [
+          'zoom',
+          'slideShow',
+          'thumbs',
+          'close'
+      ]
+  });
+});
+
+
+// background color transition new
+/*document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
+
+  // Loop through each section to create individual scrollTriggers
+  sections.forEach((section, index) => {
+    const nextSection = sections[index + 1];
+    
+    if (nextSection) {
+      // Set up individual background color transitions between adjacent sections
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+          markers: false,
+          onEnter: () => {
+            // Change the background to the current section color on enter
+            gsap.to("body", {
+              backgroundColor: section.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          },
+          onLeave: () => {
+            // Change the background to the next section color on leave
+            gsap.to("body", {
+              backgroundColor: nextSection.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          },
+          onEnterBack: () => {
+            // Reverse the background color change when scrolling back
+            gsap.to("body", {
+              backgroundColor: section.getAttribute("data-bg"),
+              ease: "ease.in",
+              duration: 0.5
+            });
+          }
+        }
+      });
+    }
+  });
+});
+*/
+
 // // // heading Animation
 // gsap.registerPlugin(ScrollTrigger);
 // // Splits text into words and characters
@@ -556,78 +790,51 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
 //     },
 //   }
 // );
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const sections = document.querySelectorAll(".section");
+  // Create a GSAP timeline for background color transitions
+  const colorTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      markers: true,
+      onUpdate: (self) => {
+        // Iterate over each section and update its background color
+        sections.forEach((section, index) => {
+          const nextSection = sections[index + 1] || sections[0];
+          const sectionColor = section.getAttribute("data-bg");
+          const nextSectionColor = nextSection.getAttribute("data-bg");
 
-//   // Create a GSAP timeline for background color transitions
-//   const colorTimeline = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".section",
-//       start: "top top",
-//       end: "bottom bottom",
-//       scrub: 1,
-//       markers: true,
-//       onUpdate: (self) => {
-//         // Iterate over each section and update its background color
-//         sections.forEach((section, index) => {
-//           const nextSection = sections[index + 1] || sections[0];
-//           const sectionColor = section.getAttribute("data-bg");
-//           const nextSectionColor = nextSection.getAttribute("data-bg");
+          const progress = self.progress;
+          const blend = progress * (sections.length - 1) - index;
 
-//           const progress = self.progress;
-//           const blend = progress * (sections.length - 1) - index;
+          // Interpolate between current and next section colors
+          const interpolatedColor = gsap.utils.interpolate(
+            sectionColor,
+            nextSectionColor,
+            blend
+          );
 
-//           // Interpolate between current and next section colors
-//           const interpolatedColor = gsap.utils.interpolate(
-//             sectionColor,
-//             nextSectionColor,
-//             blend
-//           );
-
-//           section.style.backgroundColor = interpolatedColor;
-//         });
-//       },
-//     },
-//   });
-
-//   // Optional: Add some delays or effects for better visual experience
-//   sections.forEach((section) => {
-//     colorTimeline.to(section, {
-//       duration: 1,
-//       autoAlpha: 1,
-//       ease: "power1.out",
-//     });
-//   });
-// });
-
-
-//gallery page masonry gallery
- 
- // Initialize Masonry
- $(document).ready(function() {
-  var $gallery = $('.masonry_gallery').masonry({
-      itemSelector: '.masonry_gallery_div',
-      columnWidth: '.masonry_gallery_div',
-      percentPosition: true
+          section.style.backgroundColor = interpolatedColor;
+        });
+      },
+    },
   });
 
-  // Layout Masonry after each image loads
-  $gallery.imagesLoaded().progress(function() {
-      $gallery.masonry('layout');
-  });
-
-  // Initialize Fancybox
-  $('[data-fancybox="masonry_gallery"]').fancybox({
-      loop: true,
-      buttons: [
-          'zoom',
-          'slideShow',
-          'thumbs',
-          'close'
-      ]
+  // Optional: Add some delays or effects for better visual experience
+  sections.forEach((section) => {
+    colorTimeline.to(section, {
+      duration: 1,
+      autoAlpha: 1,
+      ease: "power1.out",
+    });
   });
 });
+*/
 
 
 ScrollTrigger.addEventListener("refresh", function () {
@@ -636,7 +843,3 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
-
-
-
-
