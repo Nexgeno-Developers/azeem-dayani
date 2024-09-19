@@ -412,6 +412,124 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
   // });
 
   // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
+// Function to get a random position within the container, staying away from the edges
+// function getRandomPositionWithinContainer(container, element) {
+//   const containerRect = container.getBoundingClientRect();
+//   const elementRect = element.getBoundingClientRect();
+
+//   // Define 100px offset from edges
+//   const margin = 100;
+//   const maxOffsetX = containerRect.width - elementRect.width - margin * 2; // Margin on both sides
+//   const maxOffsetY = containerRect.height - elementRect.height - margin * 2; // Margin on both sides
+
+//   // Generate random position within constraints
+//   const offsetX = Math.random() * maxOffsetX + margin;
+//   const offsetY = Math.random() * maxOffsetY + margin;
+
+//   return { x: offsetX, y: offsetY };
+// }
+
+// // Function to create the floating animation with snake pattern, scaling, and fading out
+// function createFloatingAnimation(element, container) {
+//   const containerRect = container.getBoundingClientRect();
+//   const randomDelay = Math.random() * 2; // Random delay between 0 and 2 seconds
+
+//   // Get initial random position within the container
+//   const { x, y } = getRandomPositionWithinContainer(container, element);
+
+//   // Set initial position
+//   gsap.set(element, { x, y });
+
+//   // Floating upwards animation with ScrollTrigger
+//   gsap.to(element, {
+//     duration: 10 + Math.random() * 10, // Duration between 10 and 20 seconds
+//     y: `-=${containerRect.height + 100}`, // Float upwards
+//     ease: "sine.inOut",
+//     repeat: -1, // Infinite loop
+//     yoyo: false, // No bouncing back
+//     delay: randomDelay, // Random delay before starting animation
+//     scrollTrigger: {
+//       trigger: container,
+//       start: "top bottom", // Starts when the container is at the bottom of the viewport
+//       end: "bottom top", // Ends when the container is at the top of the viewport
+//       scrub: true, // Syncs with scrolling
+//       onEnter: () => {
+//         // Trigger the animation when the container enters the viewport
+//         gsap.to(element, {
+//           duration: 10 + Math.random() * 10,
+//           y: `-=${containerRect.height + 100}`,
+//           ease: "sine.inOut",
+//           repeat: -1,
+//           yoyo: false
+//         });
+//       },
+//       onLeave: () => {
+//         // Fade out and remove the icon when it leaves the viewport
+//         gsap.to(element, {
+//           opacity: 0, // Fade out
+//           duration: 2, // Duration of fade out
+//           ease: "power1.in",
+//           onComplete: () => {
+//             element.remove(); // Remove element from DOM
+//           }
+//         });
+//       }
+//     }
+//   });
+
+//   // Scaling and snake-like movement animation
+//   gsap.fromTo(element,
+//     {
+//       scale: 0, // Start scaled down
+//       opacity: 0, // Start invisible
+//     },
+//     {
+//       scale: 1, // Scale up to full size
+//       opacity: 1, // Fade in to full opacity
+//       duration: 2, // Duration of scaling and fading
+//       ease: "power2.out",
+//       repeat: -1, // Infinite loop for the scaling and fade-out effect
+//       yoyo: true, // Bounce back and forth
+//       delay: randomDelay, // Random delay before starting animation
+//       modifiers: {
+//         x: gsap.utils.unitize(value => {
+//           // Snake-like horizontal movement
+//           const offset = Math.sin(parseFloat(value) / 50) * 20; // Horizontal movement range
+//           const newValue = parseFloat(value) + offset;
+          
+//           // Ensure newValue stays within container boundaries
+//           const containerWidth = containerRect.width;
+//           const elementWidth = element.getBoundingClientRect().width;
+//           if (newValue < 0) return 0;
+//           if (newValue + elementWidth > containerWidth) return containerWidth - elementWidth;
+//           return newValue;
+//         }),
+//       },
+//       onComplete: () => {
+//         // Fade out and remove the element after scaling and snake animation
+//         gsap.to(element, {
+//           opacity: 0, // Fade out
+//           duration: 2, // Duration of fade out
+//           ease: "power1.in",
+//           onComplete: () => {
+//             element.remove(); // Remove element from DOM
+//           }
+//         });
+//       }
+//     }
+//   );
+// }
+
+// // Select the container
+// const container = document.querySelector('.floating-icons');
+
+// // Apply floating animation to each element without cloning
+// gsap.utils.toArray(".fade-in-effect").forEach((element) => {
+//   // Apply floating animation with snake pattern and scaling
+//   createFloatingAnimation(element, container);
+// });
+
+  // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
   gsap.utils.toArray(".fade-in-effect").forEach((element) => {
     gsap.from(element, {
       opacity: 0,
@@ -429,6 +547,7 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
       },
     });
   });
+
 
   // Select all .film_list elements
   const filmLists = document.querySelectorAll(".film_list");
