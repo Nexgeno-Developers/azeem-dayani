@@ -232,10 +232,10 @@ for (let i = 0; i < 200; i++) {
     document.querySelectorAll(".animated-para").forEach((element) => {
       const split = new SplitText(element, {
         linesClass: "split-line",
-        type: "lines, words",
+        type: "lines",
       });
       // GSAP animation with ScrollTrigger
-      gsap.from(split.words, {
+      gsap.from(split.lines, {
         duration: 0.8,
         opacity: 0,
         y: 80,
