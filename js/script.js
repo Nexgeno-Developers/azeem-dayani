@@ -595,7 +595,7 @@ function animateIcons(container) {
         trigger: container,
         start: "top center",
         end: "bottom top",
-        markers: true, // Display ScrollTrigger markers
+        markers: false, // Display ScrollTrigger markers
       }
     });
 
