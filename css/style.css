@@ -38,6 +38,12 @@ html.lenis body {
 /* .header{
     display: none;
 } */
+ header>a {
+    text-decoration: none;
+ }
+ header .footer_logo_text {
+    font-size: 2vw;
+ }
 .img_logo {
     width: 16vw;
 }
@@ -1325,18 +1331,20 @@ body {
     position: relative;
 }
 
-.film_music {
+/* .film_music {
     background: url('../images/Homepage/Object_2.png') no-repeat right center;
     background-size: 90vw;
-}
+} */
 
 .film_music_zig_zag_img_div {
     position: relative;
+    left: 10vw;
 }
 
 .film_music_zig_zag_img {
     position: absolute;
-    width: 80vw;
+    width: 90vw;
+    top: 11vw;
 }
 
 .film_music:before {
@@ -1644,6 +1652,14 @@ body {
     z-index: 1;
 }
 
+.about_main_div .footer_logo_text {
+    font-size: 4vw;
+    width: 50vw;
+    position: relative;
+    bottom: 4vw;
+    right: 15vw;
+}
+
 .about {
     display: flex;
     flex-direction: column;
@@ -1861,6 +1877,7 @@ body {
     width: 71.4vw;
     /* 1038px converted to vw */
     border-radius: 100%;
+    display: none;
 }
 
 /* about us page css close */
@@ -2100,6 +2117,10 @@ div.masonry_gallery.achievement_page_gallery{
 footer .top_11 {
     position: relative;
     top: 11vw;
+}
+
+.footer a {
+    text-decoration: none;
 }
 
 
