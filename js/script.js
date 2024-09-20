@@ -547,24 +547,111 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
 //   createFloatingAnimation(element, container);
 // });
 
-  // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
-  gsap.utils.toArray(".fade-in-effect").forEach((element) => {
-    gsap.from(element, {
-      opacity: 0,
-      y: 0,
-      scaleX: -1, // Start from 50px below its original position
-      duration: 0.6, // Animation duration
-      ease: "power3.out",
+//musical notes icon animate 
+// Array of image paths for musical note icons
+const musicNoteIcons = [
+  "images/Homepage/Music_1.png",
+  "images/Homepage/Music_2.png",
+  "images/Homepage/Music_3.png",
+  "images/Homepage/Music_4.png",
+  "images/Homepage/Music_5.png",
+  "images/Homepage/Music_6.png",
+  "images/Homepage/Music_7.png",
+];
+
+const container = document.getElementById('icon-container');
+
+// Function to dynamically create 50 music note icons
+function createIcons() {
+  for (let i = 0; i < 100; i++) {
+    const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
+    const icon = document.createElement('img');
+    icon.src = musicNoteIcons[iconIndex];
+    icon.classList.add('music-icon'); // Add class for styling/animation
+    icon.style.position = 'absolute'; // Ensure icons can move freely
+    icon.style.opacity = 0; // Start hidden
+    icon.style.width = "1.6vw"; // Set width
+
+    // Set random horizontal position
+    icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
+    // Start icons off-screen at the bottom
+    icon.style.bottom = `-50px`; // Start from slightly below the bottom of the container
+
+    container.appendChild(icon);
+  }
+}
+
+// Function to animate a small batch of icons at intervals
+// Function to animate a small batch of icons at intervals
+function animateIcons() {
+  const icons = document.querySelectorAll('.music-icon');
+  const batchSize = Math.floor(Math.random() * 6) + 8; // Randomly choose 8-6 icons
+  const batchIcons = Array.from(icons).slice(0, batchSize);
+
+  batchIcons.forEach((icon, index) => {
+    const randomDuration = Math.random() * 1 + 3; // Random duration between 3s and 4s
+    const randomX = Math.random() * 800 - 400; // Random zigzag movement
+    const fadeOutStart = Math.random() * 100 + 300; // Ensure fade out starts higher up
+
+    const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: element, // Each element triggers its own animation
-        start: "top 70%", // Animation starts when the top of the element hits 80% of the viewport height
-        end: "bottom 50%", // Ends when the bottom reaches 50% of the viewport
-        scrub: 1, // Disable scrub for smooth animation
-        once: true,
-        markers: false,
+        trigger: container,
+        start: "top center",
+        end: "bottom top",
+        markers: false, // Display ScrollTrigger markers
+        // scrub: true, // Animation follows scroll
+        // toggleActions: "play reverse play reverse"
+      }
+    });
+
+    // Animate the icon from below to its final position
+    timeline.to(icon, {
+      y: `-${window.innerHeight + fadeOutStart}px`, // Move upward to the top, beyond the view
+      x: randomX, // Zigzag movement
+      opacity: 1, // Fade in to full opacity
+      duration: randomDuration, // Animation duration
+      ease: "power1.inOut", // Smooth easing effect
+      onComplete: () => {
+        gsap.to(icon, {
+          opacity: 0, // Fade out
+          duration: 0.1, // Fade out duration
+          ease: "back.out", // Smooth fade-out effect
+        });
       },
+      repeat: -1, // Infinite loop
+      repeatDelay: Math.random() * 2, // Random delay between repetitions
+      stagger: {
+        each: 0.3, // 300ms delay between each icon animation start
+      }
     });
   });
+}
+
+
+// Create the icons and animate them
+createIcons();
+animateIcons();
+
+
+
+  // GSAP and ScrollTrigger animation for elements with the class 'fade-in-effect'
+  // gsap.utils.toArray(".fade-in-effect").forEach((element) => {
+  //   gsap.from(element, {
+  //     opacity: 0,
+  //     y: 0,
+  //     scaleX: -1, // Start from 50px below its original position
+  //     duration: 0.6, // Animation duration
+  //     ease: "power3.out",
+  //     scrollTrigger: {
+  //       trigger: element, // Each element triggers its own animation
+  //       start: "top 70%", // Animation starts when the top of the element hits 80% of the viewport height
+  //       end: "bottom 50%", // Ends when the bottom reaches 50% of the viewport
+  //       scrub: 1, // Disable scrub for smooth animation
+  //       once: true,
+  //       markers: false,
+  //     },
+  //   });
+  // });
 
 
   // Select all .film_list elements
