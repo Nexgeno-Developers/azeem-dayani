@@ -350,9 +350,9 @@ for (let i = 0; i < 200; i++) {
         ease: "power2.inOut",
         scrollTrigger: {
           trigger: img.closest(".zip_zap_bg_img_container"), // Adjusting trigger based on the container of the image
-          start: "top bottom", // Starts when the image container reaches the center of the viewport
+          start: "top 70%", // Starts when the image container reaches the center of the viewport
           end: "center top",
-          scrub: 1,
+          scrub: 2,
           once: false,        // Animation runs only once
           markers: false
         }

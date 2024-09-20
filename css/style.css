@@ -1261,7 +1261,7 @@ body {
     padding-bottom: 35vw;
     position: relative;
 }
- section {
+ section, footer {
     margin-top: -0.1vw;
  }
 
