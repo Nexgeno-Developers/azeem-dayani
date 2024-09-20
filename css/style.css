@@ -2675,8 +2675,8 @@ footer {
     background-color: #218ee3;
 }
 
-.footer.pt_5 {
-    padding-top: 5vw;
+.footer.pt_6 {
+    padding-top: 6vw;
 }
 
 .footer_logo {
@@ -2704,7 +2704,7 @@ footer {
 }
 
 .footer_links_div {
-    padding: 1vw 0;
+    padding: 2vw 0 0;
 }
 
 /* .footer_social_links_div {
