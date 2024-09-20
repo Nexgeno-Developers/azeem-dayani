@@ -559,10 +559,8 @@ const musicNoteIcons = [
   "images/Homepage/Music_7.png",
 ];
 
-const container = document.getElementById('icon-container');
-
-// Function to dynamically create 50 music note icons
-function createIcons() {
+// Function to dynamically create icons in each container
+function createIcons(container) {
   for (let i = 0; i < 100; i++) {
     const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
     const icon = document.createElement('img');
@@ -581,17 +579,16 @@ function createIcons() {
   }
 }
 
-// Function to animate a small batch of icons at intervals
-// Function to animate a small batch of icons at intervals
-function animateIcons() {
-  const icons = document.querySelectorAll('.music-icon');
-  const batchSize = Math.floor(Math.random() * 6) + 8; // Randomly choose 8-6 icons
+// Function to animate icons in a container
+function animateIcons(container) {
+  const icons = container.querySelectorAll('.music-icon');
+  const batchSize = Math.floor(Math.random() * 16) + 8; // Randomly choose 8-16 icons
   const batchIcons = Array.from(icons).slice(0, batchSize);
 
-  batchIcons.forEach((icon, index) => {
+  batchIcons.forEach((icon) => {
     const randomDuration = Math.random() * 1 + 3; // Random duration between 3s and 4s
     const randomX = Math.random() * 800 - 400; // Random zigzag movement
-    const fadeOutStart = Math.random() * 100 + 300; // Ensure fade out starts higher up
+    const fadeOutStart = Math.random() * 100 + 300; // Random value between 90 and 100 for fade out
 
     const timeline = gsap.timeline({
       scrollTrigger: {
@@ -599,14 +596,12 @@ function animateIcons() {
         start: "top center",
         end: "bottom top",
         markers: false, // Display ScrollTrigger markers
-        // scrub: true, // Animation follows scroll
-        // toggleActions: "play reverse play reverse"
       }
     });
 
     // Animate the icon from below to its final position
     timeline.to(icon, {
-      y: `-${window.innerHeight + fadeOutStart}px`, // Move upward to the top, beyond the view
+      y: `-${window.innerHeight + 50}px`, // Move upward to the top, beyond the view
       x: randomX, // Zigzag movement
       opacity: 1, // Fade in to full opacity
       duration: randomDuration, // Animation duration
@@ -627,10 +622,98 @@ function animateIcons() {
   });
 }
 
+// Get all containers with the class .icon-container
+const containers = document.querySelectorAll('.icon-container');
 
-// Create the icons and animate them
-createIcons();
-animateIcons();
+// Create and animate icons in each container
+containers.forEach(container => {
+  createIcons(container);
+  animateIcons(container);
+});
+
+
+// Array of image paths for musical note icons
+// const musicNoteIcons = [
+//   "images/Homepage/Music_1.png",
+//   "images/Homepage/Music_2.png",
+//   "images/Homepage/Music_3.png",
+//   "images/Homepage/Music_4.png",
+//   "images/Homepage/Music_5.png",
+//   "images/Homepage/Music_6.png",
+//   "images/Homepage/Music_7.png",
+// ];
+
+// const container = document.getElementsByClassName('icon-container');
+
+// // Function to dynamically create 50 music note icons
+// function createIcons() {
+//   for (let i = 0; i < 100; i++) {
+//     const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
+//     const icon = document.createElement('img');
+//     icon.src = musicNoteIcons[iconIndex];
+//     icon.classList.add('music-icon'); // Add class for styling/animation
+//     icon.style.position = 'absolute'; // Ensure icons can move freely
+//     icon.style.opacity = 0; // Start hidden
+//     icon.style.width = "1.6vw"; // Set width
+
+//     // Set random horizontal position
+//     icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
+//     // Start icons off-screen at the bottom
+//     icon.style.bottom = `-50px`; // Start from slightly below the bottom of the container
+
+//     container.appendChild(icon);
+//   }
+// }
+
+// // Function to animate a small batch of icons at intervals
+// // Function to animate a small batch of icons at intervals
+// function animateIcons() {
+//   const icons = document.querySelectorAll('.music-icon');
+//   const batchSize = Math.floor(Math.random() * 6) + 8; // Randomly choose 8-6 icons
+//   const batchIcons = Array.from(icons).slice(0, batchSize);
+
+//   batchIcons.forEach((icon, index) => {
+//     const randomDuration = Math.random() * 1 + 3; // Random duration between 3s and 4s
+//     const randomX = Math.random() * 800 - 400; // Random zigzag movement
+//     const fadeOutStart = Math.random() * 100 + 300; // Ensure fade out starts higher up
+
+//     const timeline = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: container,
+//         start: "top center",
+//         end: "bottom top",
+//         markers: false, // Display ScrollTrigger markers
+//         // scrub: true, // Animation follows scroll
+//         // toggleActions: "play reverse play reverse"
+//       }
+//     });
+
+//     // Animate the icon from below to its final position
+//     timeline.to(icon, {
+//       y: `-${window.innerHeight + fadeOutStart}px`, // Move upward to the top, beyond the view
+//       x: randomX, // Zigzag movement
+//       opacity: 1, // Fade in to full opacity
+//       duration: randomDuration, // Animation duration
+//       ease: "power1.inOut", // Smooth easing effect
+//       onComplete: () => {
+//         gsap.to(icon, {
+//           opacity: 0, // Fade out
+//           duration: 0.1, // Fade out duration
+//           ease: "back.out", // Smooth fade-out effect
+//         });
+//       },
+//       repeat: -1, // Infinite loop
+//       repeatDelay: Math.random() * 2, // Random delay between repetitions
+//       stagger: {
+//         each: 0.3, // 300ms delay between each icon animation start
+//       }
+//     });
+//   });
+// }
+
+// // Create the icons and animate them
+// createIcons();
+// animateIcons();
 
 
 
