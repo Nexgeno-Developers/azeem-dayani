@@ -1236,6 +1236,9 @@ body {
     padding-bottom: 35vw;
     position: relative;
 }
+ section {
+    margin-top: -0.1vw;
+ }
 
 .middle_description>.row {
     position: relative;
