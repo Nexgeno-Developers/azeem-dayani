@@ -35,9 +35,17 @@ html.lenis body {
 .negative-mt {
     margin-top: -1px
 }
-.header{
+/* .header{
     display: none;
+} */
+.img_logo {
+    width: 16vw;
 }
+
+main>section:nth-child(1) {
+    padding-top: 8vw !important;
+}
+
 .preloader {
     width: 100%;
     height: 100%;
@@ -937,7 +945,7 @@ body {
 }
 
 .header_logo {
-    width: 13vw;
+    width: 16vw;
 }
 
 .logo_text {
@@ -1069,7 +1077,7 @@ body {
     position: absolute;
     top: 1.56vw;
     /* 30px converted to vw */
-    right: 1.56vw;
+    right: 2.56vw;
     /* 30px converted to vw */
     display: flex;
     flex-direction: column;
@@ -1570,7 +1578,7 @@ body {
 /* about us page css open */
 
 .about_azeem_dayani {
-    padding: 7vw 0 2vw;
+    padding-bottom: 2vw;
     position: relative;
 }
 
@@ -1917,7 +1925,7 @@ div.masonry_gallery.achievement_page_gallery{
 
 .achievements_section:nth-child(1)::before {
     content: "";
-    background: url('../images/Achievements/Object_3.png') no-repeat center center;
+    background: url('../images/Achievements/Object_3.png') no-repeat center 70%;
     width: 100%;
     height: 68vw;
     background-size: 80vw;
