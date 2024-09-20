@@ -780,7 +780,7 @@ body {
 }
 
 .circle-one .circle-arround-two-1 {
-    transform: rotate(45deg) translate(32vw, 18vw) rotate(-38deg) scale(0.3);
+    transform: rotate(45deg) translate(32vw, 18vw) rotate(-51deg) scale(0.45);
 }
 
 .circle-two .circle-arround-two-2 {
@@ -1166,7 +1166,7 @@ body {
 }
 
 .zip_zap_bg_img {
-    background: url('../images/Homepage/Object_3.png') no-repeat center top;
+    /* background: url('../images/Homepage/Object_3.png') no-repeat center top; */
     background-size: 75vw;
     /* 80% converted to vw */
     margin-top: 7.29vw;
@@ -1174,6 +1174,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.zip_zap_bg_og_img {
+    position: absolute;
+    width: 75vw;
 }
 
 .description {
@@ -1323,6 +1328,15 @@ body {
 .film_music {
     background: url('../images/Homepage/Object_2.png') no-repeat right center;
     background-size: 90vw;
+}
+
+.film_music_zig_zag_img_div {
+    position: relative;
+}
+
+.film_music_zig_zag_img {
+    position: absolute;
+    width: 80vw;
 }
 
 .film_music:before {
@@ -2667,6 +2681,12 @@ footer {
 
 .footer_logo {
     width: 28vw;
+}
+
+.footer_logo_text {
+    font-family: 'miedinger';
+    color: #fff;
+    font-size: 3vw;
 }
 
 .footer_list {
