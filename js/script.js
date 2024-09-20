@@ -343,6 +343,24 @@ for (let i = 0; i < 200; i++) {
   
     setupScaleUpAnimation();
 
+    gsap.utils.toArray(".zip_zap_bg_img_container img.zig-zag-img").forEach((img) => {
+      gsap.to(img, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Reveals the image from top to bottom
+        duration: 0.1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: img.closest(".zip_zap_bg_img_container"), // Adjusting trigger based on the container of the image
+          start: "top bottom", // Starts when the image container reaches the center of the viewport
+          end: "center top",
+          scrub: 1,
+          once: false,        // Animation runs only once
+          markers: false
+        }
+      });
+    });
+    
+
+
   // Image reveal animation
 gsap.utils.toArray(".reveal-img").forEach((container) => {
   let image = container.querySelector("img");
@@ -576,62 +594,79 @@ gsap.utils.toArray(".reveal-img").forEach((container) => {
     // Animate the pseudo-element using GSAP and ScrollTrigger
     gsap.fromTo(beforeRule, 
       {
-        cssRule: { opacity: 0, x: "-20%" }, // Initial state
+        cssRule: { opacity: 0, scale: 0 }, // Initial state
       },
       {
-        cssRule: { opacity: 1, x: "0%" }, // Final state
+        cssRule: { opacity: 1, scale: 1 }, // Final state
         duration: 0.6,
         ease: "power3.out",
         scrollTrigger: {
           trigger: "#home_page .non_film_section", // The element to trigger the animation
-          start: "top bottom", // Start the animation when the top of the element reaches 80% of the viewport
-          end: "bottom 50%",
-          scrub: false, // Disable scrub for smooth animation
-          once: true, // Run animation only once
+          start: "-80% bottom", // Start the animation when the top of the element reaches 80% of the viewport
+          end: "center 15%",
+          scrub: true, // Disable scrub for smooth animation
+          once: false, // Run animation only once
           markers:false
         },
       }
+    // gsap.fromTo(beforeRule, 
+    //   {
+    //     cssRule: { opacity: 0, x: "-20%" }, // Initial state
+    //   },
+    //   {
+    //     cssRule: { opacity: 1, x: "0%" }, // Final state
+    //     duration: 0.6,
+    //     ease: "power3.out",
+    //     scrollTrigger: {
+    //       trigger: "#home_page .non_film_section", // The element to trigger the animation
+    //       start: "top bottom", // Start the animation when the top of the element reaches 80% of the viewport
+    //       end: "bottom 50%",
+    //       scrub: false, // Disable scrub for smooth animation
+    //       once: true, // Run animation only once
+    //       markers:false
+    //     },
+    //   }
     );
   });
 
 // background color transition new
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll(".section");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const sections = document.querySelectorAll(".section");
 
-  // Ensure GSAP is initialized
-  gsap.registerPlugin(ScrollTrigger);
+//   // Ensure GSAP is initialized
+//   gsap.registerPlugin(ScrollTrigger);
 
-  sections.forEach((section, index) => {
-    const nextSection = sections[index + 1];
-    if (nextSection) {
-      // Use ScrollTrigger to track scroll position between sections
-      ScrollTrigger.create({
-        trigger: section,
-        start: "center center", // Start the effect when the section comes into view
-        endTrigger: nextSection,
-        end: "80% bottom", // End when the next section is fully in view
-        scrub: true,
-        markers: false,
-        onUpdate: (self) => {
-          // Interpolate colors between the current and next section
-          const progress = self.progress; // 0 to 1 between sections
-          const currentColor = section.getAttribute("data-bg");
-          const nextColor = nextSection.getAttribute("data-bg");
+//   sections.forEach((section, index) => {
+//     const nextSection = sections[index + 1];
+//     if (nextSection) {
+//       // Use ScrollTrigger to track scroll position between sections
+//       ScrollTrigger.create({
+//         trigger: section,
+//         start: "center center", // Start the effect when the section comes into view
+//         endTrigger: nextSection,
+//         end: "80% bottom", // End when the next section is fully in view
+//         scrub: true,
+//         markers: false,
+//         onUpdate: (self) => {
+//           // Interpolate colors between the current and next section
+//           const progress = self.progress; // 0 to 1 between sections
+//           const currentColor = section.getAttribute("data-bg");
+//           const nextColor = nextSection.getAttribute("data-bg");
 
-          // Use gsap to interpolate the background color smoothly
-          const interpolatedColor = gsap.utils.interpolate(
-            currentColor,
-            nextColor,
-            progress
-          );
+//           // Use gsap to interpolate the background color smoothly
+//           const interpolatedColor = gsap.utils.interpolate(
+//             currentColor,
+//             nextColor,
+//             progress
+//           );
 
-          // Apply the interpolated color to the body background
-          document.body.style.backgroundColor = interpolatedColor;
-        },
-      });
-    }
-  });
-});
+//           // Apply the interpolated color to the body background
+//           document.body.style.backgroundColor = interpolatedColor;
+//         },
+//       });
+//     }
+//   });
+// });
 
 //gallery page masonry gallery 
  // Initialize Masonry

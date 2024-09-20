@@ -219,6 +219,11 @@ html::-webkit-scrollbar {
     }
 }
 
+/* zig-zag image */
+.zip_zap_bg_img_container img.zig-zag-img {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Initially hides the image */
+  }
+
 /* heading animation */
 .heading-anim span {
     display: inline-block;
