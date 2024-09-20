@@ -771,7 +771,7 @@ body {
 }
 
 .circle-one .circle-arround-two-1 {
-    transform: rotate(45deg) translate(32vw, 18vw) rotate(-45deg) scale(0.6);
+    transform: rotate(45deg) translate(32vw, 18vw) rotate(-38deg) scale(0.3);
 }
 
 .circle-two .circle-arround-two-2 {
@@ -938,6 +938,11 @@ body {
 
 .header_logo {
     width: 13vw;
+}
+
+.logo_text {
+    font-size: 5vw;
+    padding-bottom: 2vw;
 }
 
 .menu-trigger {
@@ -1165,7 +1170,7 @@ body {
 .description {
     font-size: 1vw;
     line-height: 1.5;
-    padding: 1.04vw 0vw 1.04vw;
+    padding: 0vw 0vw 1.04vw;
     /* 20px converted to vw */
 }
 
@@ -1223,12 +1228,12 @@ body {
 }
 
 .middle_description {
-    background: url('../images/Homepage/Middle-image3.jpg');
+    background-color: #5aa236 !important;
+    background: url('../images/Homepage/Middle-image.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center right;
+    background-position: 40% bottom;
     padding-bottom: 35vw;
-    /* 300px converted to vw */
     position: relative;
 }
 
@@ -1424,6 +1429,25 @@ body {
     transform: rotate(45deg) translate(27vw, 14vw) rotate(-10deg) scale(0.6);
 }
 
+.non_film_section .circle-one .circle-arround-two-2 {
+    transform: rotate(-7deg) translate(-5vw, 34vw) rotate(4deg) scale(0.5);
+}
+
+.non_film_section .circle-one .circle-arround-two-4 {
+    transform: rotate(31deg) translate(1vw, 29vw) rotate(-36deg) scale(0.8);
+}
+
+.non_film_section .circle-one .circle-arround-two-3 {
+    transform: rotate(17deg) translate(-4vw, 35vw) rotate(-35deg) scale(0.4);
+}
+
+.non_film_section .circle-two .circle-arround-two-4 {
+    transform: rotate(3deg) translate(30vw, 39vw) rotate(-3deg) scale(0.5);
+}
+
+.non_film_section .circle-one .circle-arround-two-1 {
+    transform: rotate(39deg) translate(32.4vw, 18vw) rotate(-26deg) scale(0.25);
+}
 /* .non_film_section .circle-one {
     margin-left: 20vw;
     margin-top: 13vw;
@@ -1464,7 +1488,7 @@ body {
 
 .non_film_section {
     position: relative;
-    height: 121vh;
+    height: 105vh;
     z-index: 8;
 }
 
@@ -1640,7 +1664,7 @@ body {
     position: absolute;
     right: 0vw;
     z-index: 1;
-    bottom: -3.3vw;
+    bottom: -3.8vw;
 }
 
 .azeem_stadium_img_div {
@@ -1715,8 +1739,8 @@ body {
 }
 
 .cutting_headphone {
-    width: 15%;
-    margin-left: 5vw;
+    width: 20%;
+    margin-left: 8vw;
     position: relative;
     z-index: 1;
 }
@@ -2572,7 +2596,7 @@ div.masonry_gallery{
   }
 
   .masonry_gallery_div.the_gallery_img img {
-        border-radius: 1.2vw;
+        border-radius: 0;
     }
   
   .masonry_gallery_div img {
