@@ -1785,6 +1785,13 @@ body {
     position: absolute;
 }
 
+.the_journey_main_div .circle-one {
+    margin-left: 17vw;
+    margin-top: 5vw;
+    width: 77vw;
+    height: 76vw;
+}
+
 .the_journey_div {
     position: relative;
     z-index: 1;
@@ -1840,7 +1847,8 @@ body {
     transform: rotate(46deg) translate(-6vw, 45vw) rotate(-40deg) scale(0.5);
 }
 
-.vision_main_section .circle-two .circle-arround-two-3 {
+.vision_main_section .circle-two .circle-arround-two-3,
+.the_journey_main_div .circle-two .circle-arround-two-3{
     transform: rotate(19deg) translate(37vw, 21vw) rotate(-9deg) scale(0.5);
 }
 
@@ -2707,15 +2715,16 @@ div.masonry_gallery{
 }
 
 /* Style the carousel item */
-#gallery_carousel .item {
+#gallery_videos .item {
     position: relative;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2vw;
 }
 
-#gallery_carousel img {
+#gallery_videos img {
     width: 100%;
     border-radius: 10px;
 }
