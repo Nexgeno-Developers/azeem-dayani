@@ -99,7 +99,7 @@ main>section:nth-child(1) {
 } */
 
 .split-line {
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .main-screen .anim-text {
