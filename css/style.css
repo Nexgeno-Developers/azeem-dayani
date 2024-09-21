@@ -188,7 +188,7 @@ html::-webkit-scrollbar {
     bottom: 0px;
     height: 3px;
     width: 0.35vw;
-    background: #196aaa;
+    background: #40566880;
     animation: sound3 0ms -800ms linear infinite alternate;
     border-radius: 50px 50px 0px 0px;
 }
@@ -1660,8 +1660,14 @@ body {
     margin-bottom: -4vw;
 }
 
+.music_director_composer_main_div .zip_zap_bg_og_img {
+    width: 76vw !important;
+    right: 5vw;
+    top: 4vw;
+}
+
 .music_director_composer_main_div:before {
-    content: "";
+    /* content: ""; */
     background: url('../images/about-us/Object_3.png') no-repeat center center;
     width: 100% !important;
     background-size: 75%;
