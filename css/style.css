@@ -2529,12 +2529,19 @@ img.azeem_dayani_contact_us_long_img {
     background-size: 78vw;
     position: absolute;
     z-index: 0;
-    content: "";
+    /* content: ""; */
     right: 0vw;
     display: block;
     width: 160%;
     height: 100%;
     top: 18vw;
+}
+
+.object_bg_img .zip_zap_bg_og_img {
+    position: absolute;
+    width: 75vw;
+    right: 2vw;
+    top: 9vw;
 }
 
 .col-md-6.px-0.object_bg_img {
