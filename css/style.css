@@ -100,7 +100,6 @@ main>section:nth-child(1) {
 
 .split-line {
     overflow: hidden;
-    display: contents !important;
 }
 
 .main-screen .anim-text {
@@ -1986,6 +1985,10 @@ body {
     line-height: 1.9vw;
 }
 
+.animated-heading-achievements, .animated-para-achievements {
+    overflow: hidden;
+}
+
 .achievements_section .award_main_div:nth-child(7), 
 .achievements_section .award_main_div:nth-child(8), 
 .achievements_section .award_main_div:nth-child(9) {
@@ -2037,14 +2040,12 @@ div.masonry_gallery.achievement_page_gallery{
   
 
 
-.achievements_section:nth-child(1)::before {
-    content: "";
-    background: url('../images/Achievements/Object_3.png') no-repeat center 70%;
-    width: 100%;
-    height: 68vw;
-    background-size: 80vw;
+.achievements_section .zig-zag-img {    
+    width: 80vw; 
     position: absolute;
     z-index: 0;
+    left: 10vw;
+    top: 20vw;
 }
 
 
