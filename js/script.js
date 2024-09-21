@@ -971,6 +971,8 @@ $(document).ready(function () {
   }
 });
 
+
+
 // background color transition new
 /*document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
@@ -1270,6 +1272,80 @@ function setupGallerySectionAnimation() {
 setupGallerySectionAnimation();
 
 
+//achievemnets first section
+// Function to animate all sections in sequence
+function setupAchievementsSectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-achievements-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    }
+  });
+
+  // Step 1: Animate the image with clip-path
+
+  tl.fromTo(
+    ".achievements_main_name",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+
+  // Step 3: Animate .animated-heading-about with SplitText effect
+  // document.querySelectorAll(".animated-heading-about").forEach((element) => {
+  //   const split = new SplitText(element, {
+  //     linesClass: "split-line",
+  //     type: "lines, words, chars",
+  //   });
+  //   tl.from(split.chars, {
+  //     y: 100,
+  //     stagger: 0.05,
+  //     opacity: 0,
+  //     ease: "power3.out",
+  //     duration: 1,
+  //   });
+  // });
+
+  // Step 4: Animate .animated-para-about with SplitText effect
+  document.querySelectorAll(".animated-para-achievements").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words",
+    });
+    tl.from(split.words, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.out",
+      duration: 0.8,
+    });
+  });
+}
+// Call the function to initialize the animation
+setupAchievementsSectionAnimation();
+
+//achievements float-up
+const tl5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".float-up", // Element that triggers the animation
+    start: "top bottom", // Start when the top of the row hits the bottom of the viewport
+    end: "bottom 80%", // End when the center of the row hits the center of the viewport
+    scrub: 2, // Smooth scrubbing, takes 1 second to catch up to the scroll position
+    once:true,
+    markers: true // Enable markers for debugging (remove in production)
+  }
+});
+gsap.utils.toArray(".award_main_div").forEach((div, index) => {
+  tl5.fromTo(div, 
+    { opacity: 0, y: "100%" }, // Start state
+    { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, // End state with stagger
+    "<+=0.5" // Staggering effect
+  );
+});
+
+
+//works page
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
