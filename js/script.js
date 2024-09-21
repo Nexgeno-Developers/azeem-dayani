@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         display: "block",
         opacity: 1,
         y: 0, // End position (normal position)
-        duration: 1, // Duration of the fade and move-up animation
+        duration: 0.5, // Duration of the fade and move-up animation
         ease: "back.out",
       },
       "-=0.5"
@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
           end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
           scrub: 1, // Smoothly scrubs the animation
-          markers: false, // Enable markers for debugging (optional)
+          markers: true, // Enable markers for debugging (optional)
         },
       });
     });
