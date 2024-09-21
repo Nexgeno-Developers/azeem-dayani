@@ -1345,7 +1345,7 @@ gsap.utils.toArray(".award_main_div").forEach((div, index) => {
 });
 
 
-
+//works page
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
