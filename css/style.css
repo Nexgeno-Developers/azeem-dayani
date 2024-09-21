@@ -154,7 +154,12 @@ html::-webkit-scrollbar {
     /* transform: scale(1.5) translateX(0%); */
     /* border: solid 1px red; */
 }
-
+#bars4 {
+    position: absolute;
+    right: 0vw;
+    height: 1vw;
+    width: 38%;
+}
 #bars1 .bar {
     position: absolute;
     bottom: 0px;
@@ -182,7 +187,15 @@ html::-webkit-scrollbar {
     animation: sound3 0ms -800ms linear infinite alternate;
     border-radius: 50px 50px 0px 0px;
 }
-
+#bars4 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #ffffff;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(80%);
+}
 @keyframes sound {
     0% {
         opacity: .35;
@@ -208,6 +221,17 @@ html::-webkit-scrollbar {
 }
 
 @keyframes sound3 {
+    0% {
+        opacity: .35;
+        height: 2vw;
+    }
+
+    100% {
+        opacity: 1;
+        height: 7vw;
+    }
+}
+@keyframes sound4 {
     0% {
         opacity: .35;
         height: 2vw;
