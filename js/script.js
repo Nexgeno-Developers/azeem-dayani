@@ -57,67 +57,81 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
   const content = document.getElementById("home_page");
   const mainLogo = document.querySelector(".main_logo");
-
-  // Initialize GSAP Timeline
-  const tl = gsap.timeline({
-    onComplete: () => {
-      // Hide the loader and show the content after animation
-      loader.style.display = "none";
-      content.style.display = "block";
-    },
-  });
-
-  // Add animations to the timeline
-  tl.set(".preloader svg path", {
-    strokeDasharray: 4500,
-    strokeDashoffset: 4500,
-    fillOpacity: 0,
-    stroke: "#ffffff",
-  })
-    .to(".preloader svg", {
-      opacity: 1,
-      duration: 0.5, // Fade-in duration for SVG
-    })
-    .to(".preloader svg path", {
-      strokeDashoffset: 0,
-      fillOpacity: 1,
-      duration: 3,
-      ease: "cubic.inOut",
-    })
-    .to(".preloader", {
-      opacity: 0,
-      duration: 0.5, // Fade-out duration for preloader
-      delay: 0.5, // Delay to ensure the path animation is complete
-    })
-    .fromTo(
-      mainLogo,
-      {
-        opacity: 0,
-        y: 50, // Start position (below the initial position)
+  
+  // Check if the loader exists
+  if (loader) {
+    // Initialize GSAP Timeline
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Hide the loader and show the content after animation
+        if (content) {
+          content.style.display = "block";
+        }
+        loader.style.display = "none";
       },
-      {
+    });
+  
+    // Add animations to the timeline
+    tl.set(".preloader svg path", {
+      strokeDasharray: 4500,
+      strokeDashoffset: 4500,
+      fillOpacity: 0,
+      stroke: "#ffffff",
+    })
+      .to(".preloader svg", {
         opacity: 1,
-        y: 0, // End position (normal position)
-        duration: 1, // Duration of the fade and move-up animation
-        ease: "power3.out",
-      },
-      "-=0.5"
-    ) // Overlap with preloader fade-out
-    .fromTo(
-      header,
-      {
+        duration: 0.5, // Fade-in duration for SVG
+      })
+      .to(".preloader svg path", {
+        strokeDashoffset: 0,
+        fillOpacity: 1,
+        duration: 3,
+        ease: "cubic.inOut",
+      })
+      .to(loader, {
         opacity: 0,
-        y: -50, // Start position (below the initial position)
-      },
-      {
-        display: "block",
-        opacity: 1,
-        y: 0, // End position (normal position)
-        duration: 1, // Duration of the fade and move-up animation
-        ease: "back.out",
-      },
-      "-=0.5"
-    ); // Overlap with preloader fade-out
+        duration: 0.5, // Fade-out duration for preloader
+        delay: 0.5, // Delay to ensure the path animation is complete
+      });
+  
+    // Check and animate mainLogo if it exists
+    if (mainLogo) {
+      tl.fromTo(
+        mainLogo,
+        {
+          opacity: 0,
+          y: 50, // Start position (below the initial position)
+        },
+        {
+          opacity: 1,
+          y: 0, // End position (normal position)
+          duration: 1, // Duration of the fade and move-up animation
+          ease: "power3.out",
+        },
+        "-=0.5" // Overlap with preloader fade-out
+      ); // Overlap with preloader fade-out
+    }
+  
+    // Check and animate header if it exists
+    if (header) {
+      tl.fromTo(
+        header,
+        {
+          opacity: 0,
+          y: -50, // Start position (above the initial position)
+        },
+        {
+          display: "block",
+          opacity: 1,
+          y: 0, // End position (normal position)
+          duration: 1, // Duration of the fade and move-up animation
+          ease: "back.out",
+        },
+        "-=0.5" // Overlap with preloader fade-out
+      ); // Overlap with preloader fade-out
+    }
+  }
+  
 
   // for music lines
   for (let i = 0; i < 120; i++) {
@@ -1071,6 +1085,104 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 */
+
+//about section
+// Function to animate all sections in sequence
+function setupAboutSectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-about-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    }
+  });
+
+  // Step 1: Animate the image with clip-path
+  tl.fromTo(
+    ".reveal-img-toptobottom",
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
+    },
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+      duration: 2,
+      ease: "power2.inOut"
+    }
+  );
+
+  // Step 2: Animate .about_main_name (from right to left)
+  tl.fromTo(
+    ".about_main_name",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+
+  // Step 3: Animate .animated-heading-about with SplitText effect
+  document.querySelectorAll(".animated-heading-about").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words, chars",
+    });
+    tl.from(split.chars, {
+      y: 100,
+      stagger: 0.05,
+      opacity: 0,
+      ease: "power3.out",
+      duration: 1,
+    });
+  });
+
+  // Step 4: Animate .animated-para-about with SplitText effect
+  document.querySelectorAll(".animated-para-about").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words",
+    });
+    tl.from(split.words, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.out",
+      duration: 0.8,
+    });
+  });
+}
+
+// Call the function to initialize the animation
+setupAboutSectionAnimation();
+
+//image reveal 2
+// Function to animate clip-path for multiple images
+function setupClipPathAnimation() {
+  gsap.utils.toArray(".reveal-img-diagonal").forEach((img) => {
+    gsap.fromTo(
+      img,
+      {
+        clipPath: "polygon(72% 0%, 100% 0%, 100% 100%, 100% 0%)", // Initial state (invisible, clipped to top)
+      },
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // Final state (revealed from top to bottom)
+        duration: 1,
+        ease: "ease.inOut",
+        scrollTrigger: {
+          trigger: img.parentElement, // Trigger based on the parent container of the image
+          start: "top center", // Starts when the container reaches the center of the viewport
+          once: true, // Animation runs only once
+          markers: false, // Set markers to debug start and end points
+        },
+      }
+    );
+  });
+}
+
+// Call the function
+setupClipPathAnimation();
+
+
+
+
+
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
