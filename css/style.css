@@ -165,6 +165,36 @@ html::-webkit-scrollbar {
     height: 1vw;
     width: 38%;
 }
+#bars5 {
+    position: absolute;
+    right: 0vw;
+    height: 1vw;
+    width: 38%;
+}
+#bars6 {
+    position: absolute;
+    left: 0vw;
+    height: 1vw;
+    width: 38%;
+}
+#bars7 {
+    position: absolute;
+    right: 0vw;
+    height: 1vw;
+    width: 38%;
+}
+#bars8 {
+    position: absolute;
+    left: 0vw;
+    height: 1vw;
+    width: 38%;
+}
+#bars9 {
+    position: absolute;
+    right: 0vw;
+    height: 1vw;
+    width: 38%;
+}
 #bars1 .bar {
     position: absolute;
     bottom: 0px;
@@ -200,6 +230,51 @@ html::-webkit-scrollbar {
     background: #ffffff;
     animation: sound4 0ms -800ms linear infinite alternate;
     transform: translateY(80%);
+}
+#bars5 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #ffffff;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+#bars6 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #ffffff;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+#bars7 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #ffffff;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+#bars8 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #000;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+#bars9 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #000;
+    animation: sound4 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
 }
 @keyframes sound {
     0% {
@@ -2331,6 +2406,9 @@ img.film_music_lines {
 .works_section .col-md-4 .card-body {
     height: 7.3vw;
     padding: 0.5vw 0 1vw 0;
+}
+.works_section .text-overflow {
+        overflow: hidden;   
 }
 
 /* .category_title:before,
