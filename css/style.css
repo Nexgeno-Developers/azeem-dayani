@@ -20,6 +20,12 @@ html.lenis body {
     overflow: hidden;
 }
 
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: transparent !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
 .lenis.lenis-smooth iframe {
     pointer-events: none;
 }
@@ -1963,7 +1969,7 @@ body {
 
 
 .achievements_section {
-    background: linear-gradient(180deg, #218ee3 0%, #218ee3 68%, #ffffff 68%, #ffffff 80%, #59a246 80%, #59a246 100%);
+    background: linear-gradient(180deg, #218ee3 0vw, #218ee3 88vw, #ffffff 88vw, #ffffff 104vw, #59a246 104vw, #59a246 100%);
     padding: 0vw 0 0vw;
     color: white;
     position: relative;
@@ -2050,7 +2056,7 @@ div.masonry_gallery.achievement_page_gallery{
     color: #fff;
 }
 
-.achievement_card .card-title {
+.award_name {
     text-align: center;
     color: #fff !important; 
     font-size: 2.2vw;
@@ -2076,6 +2082,25 @@ div.masonry_gallery.achievement_page_gallery{
     height: auto;
 }
 
+.video_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video_div button.btn.gallery_yt_video {
+    width: 5vw;
+    height: 5vw;
+    content: "";
+    background: url('../images/Achievements/play_button.png') center center;
+    display: block;
+    object-fit: cover;
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: absolute;
+}
+
 #works_page .film_row .card-title {
     font-family: 'tungsten', sans-serif !important;
     font-size: 2.9vw;
@@ -2093,7 +2118,7 @@ div.masonry_gallery.achievement_page_gallery{
 .col-md-4:nth-last-of-type(2) .card-title,
 .col-md-4:nth-last-of-type(3) .card-body .card-text,
 .col-md-4:nth-last-of-type(3) .card-title {
-    color: #000;
+    color: #fff;
     /* Set text color to white */
 }
 
@@ -2254,6 +2279,10 @@ img.film_music_lines {
 
 .works_section .section_description:nth-of-type(2) {
     padding-bottom: 2vw;
+}
+
+.works_section.non_film_section {
+    height: auto;
 }
 
 .film_row,
@@ -2609,14 +2638,16 @@ img.contact_headphone_image {
 }
   
   button.btn.gallery_yt_video {
-      width: 20%;
-      opacity: 0.5;
-      position: absolute;
-      z-index: 9;
-      border-radius: 50%;
-      height: 30%;
-      padding: 0px;
-      background: #0088ff8c;
+    width: 5vw;
+    height: 5vw;
+    content: "";
+    background: url('../images/Achievements/play_button.png') center center;
+    display: block;
+    object-fit: cover;
+    background-size: 5vw;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: absolute;
   }
   
   i.fa-regular.fa-circle-play {
@@ -2751,6 +2782,15 @@ div.masonry_gallery{
 #gallery_videos img {
     width: 100%;
     border-radius: 10px;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.youtube_bg_img {
+    width: 80% !important;
+    border-radius: 10px;
+    height: 60vh;
+    object-fit: cover;
 }
 
 /* Play button styling */
