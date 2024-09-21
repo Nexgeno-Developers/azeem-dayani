@@ -90,19 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .to(loader, {
         opacity: 0,
-<<<<<<< HEAD
-        y: -50, // Start position (below the initial position)
-      },
-      {
-        display: "block",
-        opacity: 1,
-        y: 0, // End position (normal position)
-        duration: 0.5, // Duration of the fade and move-up animation
-        ease: "back.out",
-      },
-      "-=0.5"
-    ); // Overlap with preloader fade-out
-=======
         duration: 0.5, // Fade-out duration for preloader
         delay: 0.5, // Delay to ensure the path animation is complete
       });
@@ -145,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
->>>>>>> 47cff18f8fe20466a6017b08ab9822089f11995a
 
   // for music lines
 // Function to create bars for music lines
@@ -280,7 +266,7 @@ setupMainNameAnimation();
           start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
           end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
           scrub: 1, // Smoothly scrubs the animation
-          markers: true, // Enable markers for debugging (optional)
+          markers: false, // Enable markers for debugging (optional)
         },
       });
     });
@@ -1254,8 +1240,34 @@ function setupClipPathAnimation() {
 // Call the function
 setupClipPathAnimation();
 
+//fade-in animation
+function setupGallerySectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-gallery-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    }
+  });
 
+  // Step 1: Animate the image with clip-path
+  tl.fromTo(
+    ".img-scale",
+    {
+      scale: 0, // Initial state (invisible, clipped to top)
+    },
+    {
+      scale: 1, // Final state (revealed from top to bottom)
+      duration: 1,
+      ease: "power2.inOut"
+    }
+  );
 
+}
+
+// Call the function to initialize the animation
+setupGallerySectionAnimation();
 
 
 
