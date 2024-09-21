@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
   const content = document.getElementById("home_page");
   const mainLogo = document.querySelector(".main_logo");
-  
+
   // Check if the loader exists
   if (loader) {
     // Initialize GSAP Timeline
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.style.display = "none";
       },
     });
-  
+
     // Add animations to the timeline
     tl.set(".preloader svg path", {
       strokeDasharray: 4500,
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.5, // Fade-out duration for preloader
         delay: 0.5, // Delay to ensure the path animation is complete
       });
-  
+
     // Check and animate mainLogo if it exists
     if (mainLogo) {
       tl.fromTo(
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "-=0.5" // Overlap with preloader fade-out
       ); // Overlap with preloader fade-out
     }
-  
+
     // Check and animate header if it exists
     if (header) {
       tl.fromTo(
@@ -131,36 +131,40 @@ document.addEventListener("DOMContentLoaded", () => {
       ); // Overlap with preloader fade-out
     }
   }
-  
 
   // for music lines
-// Function to create bars for music lines
-function createMusicBars() {
-  // Function to create bars for a given container
-  function createBars(containerId, count, spacing) {
-    const container = document.querySelector(containerId);
-    if (container) { // Check if the container exists
-      for (let i = 0; i < count; i++) {
-        const left = i * spacing + 1;
-        const anim = Math.floor(Math.random() * 75 + 500);
-        const height = Math.floor(Math.random() * 25 + 30);
+  // Function to create bars for music lines
+  function createMusicBars() {
+    // Function to create bars for a given container
+    function createBars(containerId, count, spacing) {
+      const container = document.querySelector(containerId);
+      if (container) {
+        // Check if the container exists
+        for (let i = 0; i < count; i++) {
+          const left = i * spacing + 1;
+          const anim = Math.floor(Math.random() * 75 + 500);
+          const height = Math.floor(Math.random() * 25 + 30);
 
-        container.innerHTML += `<div class="bar" style="left:${left}vw; animation-duration:${anim}ms; height:${height}vw"></div>`;
+          container.innerHTML += `<div class="bar" style="left:${left}vw; animation-duration:${anim}ms; height:${height}vw"></div>`;
+        }
+      } else {
+        // console.log(`${containerId} does not exist.`);
       }
-    } else {
-      // console.log(`${containerId} does not exist.`);
     }
+
+    // Create bars for each container
+    createBars("#bars1", 120, 0.3);
+    createBars("#bars2", 120, 0.3);
+    createBars("#bars3", 200, 0.8);
+    createBars("#bars4", 120, 0.3);
+    createBars("#bars5", 120, 0.3);
+    createBars("#bars6", 120, 0.3);
+    createBars("#bars7", 120, 0.3);
+    createBars("#bars8", 120, 0.3);
+    createBars("#bars9", 120, 0.3);
   }
 
-  // Create bars for each container
-  createBars("#bars1", 120, 0.3);
-  createBars("#bars2", 120, 0.3);
-  createBars("#bars3", 200, 0.8);
-  createBars("#bars4", 120, 0.3);
-}
-
-createMusicBars();
-
+  createMusicBars();
 
   // link with image hover effect
   const filmLinks = document.querySelectorAll(".film_link");
@@ -178,38 +182,34 @@ createMusicBars();
     });
   }
 
+  // Function to create the animation for all elements with the class 'main_name'
+  function setupMainNameAnimation() {
+    const mainNameElements = document.querySelectorAll(".main_name"); // Select all elements with the class
 
-// Function to create the animation for all elements with the class 'main_name'
-function setupMainNameAnimation() {
-  const mainNameElements = document.querySelectorAll(".main_name"); // Select all elements with the class
+    // Check if there are any elements
+    if (mainNameElements.length) {
+      mainNameElements.forEach((mainNameElement) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mainNameElement, // Use the element itself as the trigger
+            start: "top bottom", // Start when the top of the element is at the bottom of the viewport
+            end: "bottom top", // End when the bottom of the element reaches the top of the viewport
+            markers: false, // Set markers to debug start and end points
+            //scrub: 1, // Uncomment to scrub the animation with scroll
+          },
+        });
 
-  // Check if there are any elements
-  if (mainNameElements.length) {
-    mainNameElements.forEach((mainNameElement) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: mainNameElement, // Use the element itself as the trigger
-          start: "top bottom", // Start when the top of the element is at the bottom of the viewport
-          end: "bottom top", // End when the bottom of the element reaches the top of the viewport
-          markers: false, // Set markers to debug start and end points
-          //scrub: 1, // Uncomment to scrub the animation with scroll
-        },
+        tl.fromTo(
+          mainNameElement,
+          { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+          { x: "0%", opacity: 1, duration: 1, ease: "back2.out" } // Ending state (onscreen and fully visible)
+        );
       });
-
-      tl.fromTo(
-        mainNameElement,
-        { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
-        { x: "0%", opacity: 1, duration: 1, ease: "back2.out" } // Ending state (onscreen and fully visible)
-      );
-    });
+    }
   }
-}
 
-// Call the function
-setupMainNameAnimation();
-
-
-
+  // Call the function
+  setupMainNameAnimation();
 
   function linkHover(e) {
     const imgId = this.parentElement.getAttribute("data-img");
@@ -290,7 +290,7 @@ setupMainNameAnimation();
           start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
           end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
           scrub: 1, // Smoothly scrubs the animation
-          markers: true, // Enable markers for debugging (optional)
+          markers: false, // Enable markers for debugging (optional)
         },
       });
     });
@@ -298,33 +298,31 @@ setupMainNameAnimation();
     console.error("SplitText plugin is not available.");
   }
 
-
-// Function to animate clip-path for multiple images
-function setupClipPathAnimation() {
-  gsap.utils.toArray(".reveal-img-top").forEach((img) => {
-    gsap.fromTo(
-      img,
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
-      },
-      {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
-        duration: 4,
-        ease: "ease.inOut",
-        scrollTrigger: {
-          trigger: img.parentElement, // Trigger based on the parent container of the image
-          start: "top center", // Starts when the container reaches the center of the viewport
-          once: true, // Animation runs only once
-          markers: false, // Set markers to debug start and end points
+  // Function to animate clip-path for multiple images
+  function setupClipPathAnimation() {
+    gsap.utils.toArray(".reveal-img-top").forEach((img) => {
+      gsap.fromTo(
+        img,
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
         },
-      }
-    );
-  });
-}
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+          duration: 4,
+          ease: "ease.inOut",
+          scrollTrigger: {
+            trigger: img.parentElement, // Trigger based on the parent container of the image
+            start: "top center", // Starts when the container reaches the center of the viewport
+            once: true, // Animation runs only once
+            markers: false, // Set markers to debug start and end points
+          },
+        }
+      );
+    });
+  }
 
-// Call the function
-setupClipPathAnimation();
-
+  // Call the function
+  setupClipPathAnimation();
 
   function splitTexthalf(selector) {
     var elements = document.querySelectorAll(selector);
@@ -415,35 +413,33 @@ setupClipPathAnimation();
 
   setupScaleUpAnimation();
 
+  // Function to create the scale-up animation
+  function setupLeftscaleUpAnimation() {
+    gsap.utils.toArray(".left-scaleup-element").forEach((element) => {
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%", // Adjust start and end points as needed
+          end: "bottom center",
+          scrub: 2, // Scrubs animation with scroll
+          markers: false,
+        },
+      });
 
-// Function to create the scale-up animation
-function setupLeftscaleUpAnimation() {
-  gsap.utils.toArray(".left-scaleup-element").forEach((element) => {
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: element,
-        start: "top 80%", // Adjust start and end points as needed
-        end: "bottom center",
-        scrub: 2, // Scrubs animation with scroll
-        markers: false,
-      },
+      tl2.fromTo(
+        element,
+        { x: "-50%", scale: 0 }, // Starting state
+        {
+          x: 0, // Ending state for x
+          scale: 1, // Ending state for scale
+          duration: 0.6, // Duration for both animations
+          ease: "power3.out",
+        }
+      );
     });
+  }
 
-    tl2.fromTo(
-      element,
-      { x: "-50%", scale: 0 }, // Starting state
-      {
-        x: 0, // Ending state for x
-        scale: 1, // Ending state for scale
-        duration: 0.6, // Duration for both animations
-        ease: "power3.out"
-      }
-    );
-  });
-}
-
-setupLeftscaleUpAnimation();
-
+  setupLeftscaleUpAnimation();
 
   gsap.utils
     .toArray(".zip_zap_bg_img_container img.zig-zag-img")
@@ -888,23 +884,23 @@ setupLeftscaleUpAnimation();
   //       markers: false,
   //     },
   //   }
-    // gsap.fromTo(beforeRule,
-    //   {
-    //     cssRule: { opacity: 0, x: "-20%" }, // Initial state
-    //   },
-    //   {
-    //     cssRule: { opacity: 1, x: "0%" }, // Final state
-    //     duration: 0.6,
-    //     ease: "power3.out",
-    //     scrollTrigger: {
-    //       trigger: "#home_page .non_film_section", // The element to trigger the animation
-    //       start: "top bottom", // Start the animation when the top of the element reaches 80% of the viewport
-    //       end: "bottom 50%",
-    //       scrub: false, // Disable scrub for smooth animation
-    //       once: true, // Run animation only once
-    //       markers:false
-    //     },
-    //   }
+  // gsap.fromTo(beforeRule,
+  //   {
+  //     cssRule: { opacity: 0, x: "-20%" }, // Initial state
+  //   },
+  //   {
+  //     cssRule: { opacity: 1, x: "0%" }, // Final state
+  //     duration: 0.6,
+  //     ease: "power3.out",
+  //     scrollTrigger: {
+  //       trigger: "#home_page .non_film_section", // The element to trigger the animation
+  //       start: "top bottom", // Start the animation when the top of the element reaches 80% of the viewport
+  //       end: "bottom 50%",
+  //       scrub: false, // Disable scrub for smooth animation
+  //       once: true, // Run animation only once
+  //       markers:false
+  //     },
+  //   }
   // );
 });
 
@@ -970,8 +966,6 @@ $(document).ready(function () {
     });
   }
 });
-
-
 
 // background color transition new
 /*document.addEventListener("DOMContentLoaded", function () {
@@ -1158,7 +1152,7 @@ function setupAboutSectionAnimation() {
       start: "top center", // Start animation when this section reaches the center of the viewport
       once: true, // Animation runs only once
       markers: false, // Set to true for debugging
-    }
+    },
   });
 
   // Step 1: Animate the image with clip-path
@@ -1170,7 +1164,7 @@ function setupAboutSectionAnimation() {
     {
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
       duration: 2,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     }
   );
 
@@ -1250,7 +1244,7 @@ function setupGallerySectionAnimation() {
       start: "top center", // Start animation when this section reaches the center of the viewport
       once: true, // Animation runs only once
       markers: false, // Set to true for debugging
-    }
+    },
   });
 
   // Step 1: Animate the image with clip-path
@@ -1262,15 +1256,13 @@ function setupGallerySectionAnimation() {
     {
       scale: 1, // Final state (revealed from top to bottom)
       duration: 1,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     }
   );
-
 }
 
 // Call the function to initialize the animation
 setupGallerySectionAnimation();
-
 
 //achievemnets first section
 // Function to animate all sections in sequence
@@ -1281,7 +1273,7 @@ function setupAchievementsSectionAnimation() {
       start: "top center", // Start animation when this section reaches the center of the viewport
       once: true, // Animation runs only once
       markers: false, // Set to true for debugging
-    }
+    },
   });
 
   // Step 1: Animate the image with clip-path
@@ -1308,7 +1300,77 @@ function setupAchievementsSectionAnimation() {
   // });
 
   // Step 4: Animate .animated-para-about with SplitText effect
-  document.querySelectorAll(".animated-para-achievements").forEach((element) => {
+  document
+    .querySelectorAll(".animated-para-achievements")
+    .forEach((element) => {
+      const split = new SplitText(element, {
+        linesClass: "split-line",
+        type: "lines, words",
+      });
+      tl.from(split.words, {
+        y: 80,
+        opacity: 0,
+        stagger: 0.03,
+        ease: "power2.out",
+        duration: 0.8,
+      });
+    });
+}
+// Call the function to initialize the animation
+setupAchievementsSectionAnimation();
+
+//achievements float-up
+const tl5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".float-up", // Element that triggers the animation
+    start: "top bottom", // Start when the top of the row hits the bottom of the viewport
+    end: "bottom 80%", // End when the center of the row hits the center of the viewport
+    scrub: 2, // Smooth scrubbing, takes 1 second to catch up to the scroll position
+    once: true,
+    markers: false, // Enable markers for debugging (remove in production)
+  },
+});
+gsap.utils.toArray(".award_main_div").forEach((div, index) => {
+  tl5.fromTo(
+    div,
+    { opacity: 0, y: "100%" }, // Start state
+    { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, // End state with stagger
+    "<+=0.5" // Staggering effect
+  );
+});
+
+//works page
+//fade-in animation
+function setupWorkSectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-work-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    },
+  });
+  // Step 1: Animate .about_main_name (from right to left)
+  tl.fromTo(
+    ".work_main_name",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+  // Step 2: Animate the image with clip-path
+  tl.fromTo(
+    ".img-scale-work",
+    {
+      scale: 0, // Initial state (invisible, clipped to top)
+    },
+    {
+      scale: 1, // Final state (revealed from top to bottom)
+      duration: 1.5,
+      ease: "power2.inOut",
+    }
+  );
+
+  // Step 3: Animate .animated-para-about with SplitText effect
+  document.querySelectorAll(".animated-para-work").forEach((element) => {
     const split = new SplitText(element, {
       linesClass: "split-line",
       type: "lines, words",
@@ -1322,30 +1384,95 @@ function setupAchievementsSectionAnimation() {
     });
   });
 }
-// Call the function to initialize the animation
-setupAchievementsSectionAnimation();
 
-//achievements float-up
-const tl5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".float-up", // Element that triggers the animation
-    start: "top bottom", // Start when the top of the row hits the bottom of the viewport
-    end: "bottom 80%", // End when the center of the row hits the center of the viewport
-    scrub: 2, // Smooth scrubbing, takes 1 second to catch up to the scroll position
-    once:true,
-    markers: true // Enable markers for debugging (remove in production)
-  }
-});
-gsap.utils.toArray(".award_main_div").forEach((div, index) => {
-  tl5.fromTo(div, 
-    { opacity: 0, y: "100%" }, // Start state
-    { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, // End state with stagger
-    "<+=0.5" // Staggering effect
+// Call the function to initialize the animation
+setupWorkSectionAnimation();
+
+//work cards
+
+// Select all card elements
+const cards = gsap.utils.toArray(".card");
+
+cards.forEach((card) => {
+  const image = card.querySelector("img");
+  const title = card.querySelector(".card-title");
+
+  // Create a timeline for each card
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: card,
+      start: "top bottom", // Animation starts when card enters bottom of the viewport
+      end: "top 20%", // Ends when card reaches the center of the viewport
+      scrub: 2, // Smooth scrolling animation
+      markers: true, // Enable markers for debugging (remove in production)
+    },
+  });
+
+  // Scale image from 0 to 1
+  tl.fromTo(image, { scale: 0 }, { scale: 1, duration: 0.6 });
+
+  // Translate card title from 30vh to 0vh
+  tl.fromTo(
+    title,
+    { y: "30vh", opacity: 0 },
+    { y: "0vh", opacity: 1, duration: 1, ease: "power2.out" },
+    "-=0.2" // Overlap the animations
   );
 });
 
+//Contact us page first section
+// Function to animate all sections in sequence
+function setupContactSectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-contact-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    },
+  });
+  // Step 1: Animate .about_main_name (from right to left)
+  tl.fromTo(
+    ".contact_main_name",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+  // Step 2: Animate .animated-heading-about with SplitText effect
+  tl.fromTo(
+    ".scale-img-contact",
+      {
+        scale: 0, // Initial state (invisible, clipped to top)
+      },
+      {
+        scale: 1, // Final state (revealed from top to bottom)
+        duration: 1.5,
+        ease: "power2.inOut",
+      }
+    );
+  // Step 3: Animate the image with clip-path
+  tl.fromTo(
+    ".reveal-img-toptobottom-contact",
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
+    },
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+      duration: 2,
+      ease: "power2.inOut",
+    }
+  );
 
-//works page
+  // Step 4: Animate .about_main_name (from right to left)
+  tl.fromTo(
+    ".contact_form_animate",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+
+}
+
+// Call the function to initialize the animation
+setupContactSectionAnimation();
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
