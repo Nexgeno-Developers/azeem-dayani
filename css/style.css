@@ -168,31 +168,32 @@ html::-webkit-scrollbar {
 }
 #bars5 {
     position: absolute;
-    right: 0vw;
+    right: 30vw;
     height: 1vw;
     width: 38%;
+    bottom: 3vw;
 }
 #bars6 {
     position: absolute;
-    left: 0vw;
+    left: -10vw;
     height: 1vw;
     width: 38%;
 }
 #bars7 {
     position: absolute;
-    right: 0vw;
+    right: -10vw;
     height: 1vw;
     width: 38%;
 }
 #bars8 {
     position: absolute;
-    left: 0vw;
+    left: -17vw;
     height: 1vw;
-    width: 38%;
+    width: 0vw;
 }
 #bars9 {
     position: absolute;
-    right: 0vw;
+    right: -19vw;
     height: 1vw;
     width: 38%;
 }
@@ -2528,12 +2529,19 @@ img.azeem_dayani_contact_us_long_img {
     background-size: 78vw;
     position: absolute;
     z-index: 0;
-    content: "";
+    /* content: ""; */
     right: 0vw;
     display: block;
     width: 160%;
     height: 100%;
     top: 18vw;
+}
+
+.object_bg_img .zip_zap_bg_og_img {
+    position: absolute;
+    width: 75vw;
+    right: 2vw;
+    top: 9vw;
 }
 
 .col-md-6.px-0.object_bg_img {
