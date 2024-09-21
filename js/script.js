@@ -343,6 +343,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupScaleUpAnimation();
 
+
+// Function to create the scale-up animation
+function setupLeftscaleUpAnimation() {
+  gsap.utils.toArray(".left-scaleup-element").forEach((element) => {
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Adjust start and end points as needed
+        end: "bottom center",
+        scrub: 2, // Scrubs animation with scroll
+        markers: false,
+      },
+    });
+
+    tl2.fromTo(
+      element,
+      { x: "-50%", scale: 0 }, // Starting state
+      {
+        x: 0, // Ending state for x
+        scale: 1, // Ending state for scale
+        duration: 0.6, // Duration for both animations
+        ease: "power3.out"
+      }
+    );
+  });
+}
+
+setupLeftscaleUpAnimation();
+
+
   gsap.utils
     .toArray(".zip_zap_bg_img_container img.zig-zag-img")
     .forEach((img) => {
