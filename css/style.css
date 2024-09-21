@@ -308,6 +308,7 @@ body {
     border: 0.1vw solid #ffffff;
     position: absolute;
     border-radius: 50%;
+    z-index: 0;
 }
 
 .circle-two {
@@ -316,6 +317,7 @@ body {
     border: 0.1vw solid #ffffff;
     position: absolute;
     border-radius: 50%;
+    z-index: 0;
 }
 
 .circle-one .circle-arround-two-1,
@@ -1426,7 +1428,7 @@ body {
 }
 
 .non_film_section .film_img {
-    right: 0vw;
+    right: 10vw;
     top: -10vw;
 }
 
@@ -1550,14 +1552,24 @@ body {
     left: -6vw;
 }
 
-#home_page .non_film_section:before {
-    content: "";
+#home_page .non_film_section::before {
+    /* content: ""; */
     background: url('../images/Homepage/Headphone_new_2.png') no-repeat left top;
     width: 20vw;
     height: 52vw;
     background-size: 18vw;
     position: absolute;
     left: 0;
+    z-index: 3;
+    top: -55vw;
+    display: none;
+}
+
+#home_page .non_film_section .side_headphone {
+    width: 18vw;
+    height: 52vw;
+    position: absolute;
+    left: 0vw;
     z-index: 3;
     top: -55vw;
 }
@@ -1738,7 +1750,7 @@ body {
 }
 
 .the_journey_main_div:before {
-    content: "";
+    /* content: ""; */
     position: absolute;
     /* background-color: skyblue; */
     z-index: 0;
@@ -1752,7 +1764,7 @@ body {
 }
 
 .the_journey_main_div:after {
-    content: "";
+    /* content: ""; */
     position: absolute;
     /* background-color: skyblue; */
     z-index: 0;
@@ -1763,6 +1775,14 @@ body {
     width: 71.4vw;
     /* 1038px converted to vw */
     border-radius: 100%;
+}
+
+.the_journey_main_div .slidercircle {
+    margin-left: -11vw;
+    margin-top: -3vw;
+    width: 83vw;
+    height: 83vw;
+    position: absolute;
 }
 
 .the_journey_div {
@@ -1794,7 +1814,7 @@ body {
 
 .vision_main_section {
     background: linear-gradient(180deg, #fff 56%, #218ee3 25%);
-    padding: 8vw 0 0vw;
+    padding: 8vw 0 20vw;
     position: relative;
     z-index: 1;
 }
@@ -1809,6 +1829,23 @@ body {
     top: -4vw;
     z-index: -1;
     width: 100%;
+}
+
+.vision_main_section .slidercircle { 
+    margin-top: 12vw !important;
+    left: -9vw;
+}
+
+.vision_main_section .circle-one .circle-arround-two-3 {
+    transform: rotate(46deg) translate(-6vw, 45vw) rotate(-40deg) scale(0.5);
+}
+
+.vision_main_section .circle-two .circle-arround-two-3 {
+    transform: rotate(19deg) translate(37vw, 21vw) rotate(-9deg) scale(0.5);
+}
+
+.vision_main_section .circle-two .circle-arround-two-2 {
+    transform: rotate(45deg) translate(32vw, 27vw) rotate(-50deg) scale(1.1);
 }
 
 .small_heading {
@@ -1838,7 +1875,7 @@ body {
 #about_us_page .vision_heading {
     transform: rotate(-90deg);
     position: absolute;
-    top: 2.4vw;
+    top: 5.1vw;
     left: 1vw;
     font-size: 6vw;
 }
@@ -1849,6 +1886,8 @@ body {
 
 .vision_main_image {
     width: 85%;
+    position: relative;
+    z-index: 2;
 }
  
 
@@ -1892,7 +1931,7 @@ body {
 
 
 .achievements_section {
-    background: linear-gradient(180deg, #218ee3 0%, #218ee3 67%, #ffffff 67%, #ffffff 80%, #59a246 80%, #59a246 100%);
+    background: linear-gradient(180deg, #218ee3 0%, #218ee3 68%, #ffffff 68%, #ffffff 80%, #59a246 80%, #59a246 100%);
     padding: 0vw 0 0vw;
     color: white;
     position: relative;
@@ -2119,9 +2158,9 @@ div.masonry_gallery.achievement_page_gallery{
     font-size: 11vw;
 }
 
-footer .top_11 {
+footer .top_space {
     position: relative;
-    top: 11vw;
+    top: 3vw;
 }
 
 .footer a {
