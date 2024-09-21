@@ -168,31 +168,32 @@ html::-webkit-scrollbar {
 }
 #bars5 {
     position: absolute;
-    right: 0vw;
+    right: 30vw;
     height: 1vw;
     width: 38%;
+    bottom: 3vw;
 }
 #bars6 {
     position: absolute;
-    left: 0vw;
+    left: -10vw;
     height: 1vw;
     width: 38%;
 }
 #bars7 {
     position: absolute;
-    right: 0vw;
+    right: -10vw;
     height: 1vw;
     width: 38%;
 }
 #bars8 {
     position: absolute;
-    left: 0vw;
+    left: -17vw;
     height: 1vw;
-    width: 38%;
+    width: 0vw;
 }
 #bars9 {
     position: absolute;
-    right: 0vw;
+    right: -19vw;
     height: 1vw;
     width: 38%;
 }
