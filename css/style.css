@@ -2257,6 +2257,10 @@ img.film_music_lines {
     padding-bottom: 2vw;
 }
 
+.works_section.non_film_section {
+    height: auto;
+}
+
 .film_row,
 .non_film_row {
     padding: 1vw 6vw;
