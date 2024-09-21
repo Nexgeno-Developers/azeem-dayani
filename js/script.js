@@ -290,7 +290,7 @@ setupMainNameAnimation();
           start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
           end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
           scrub: 1, // Smoothly scrubs the animation
-          markers: true, // Enable markers for debugging (optional)
+          markers: false, // Enable markers for debugging (optional)
         },
       });
     });
@@ -1240,8 +1240,23 @@ function setupClipPathAnimation() {
 // Call the function
 setupClipPathAnimation();
 
-
-
+//fade-in animation
+gsap.utils.toArray('.fade-in').forEach((element) => {
+  gsap.fromTo(element, 
+    { opacity: 0.6, y: 20 }, // Start state
+    { 
+      opacity: 1, 
+      y: 0, 
+      duration: 1, 
+      ease: "power2.out", 
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%", // Start the animation when the element is 80% from the top
+        once: true, // Run the animation only once
+      }
+    }
+  );
+});
 
 
 
