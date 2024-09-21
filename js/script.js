@@ -1404,7 +1404,7 @@ cards.forEach((card) => {
       start: "top bottom", // Animation starts when card enters bottom of the viewport
       end: "top 20%", // Ends when card reaches the center of the viewport
       scrub: 2, // Smooth scrolling animation
-      markers: true, // Enable markers for debugging (remove in production)
+      markers: false, // Enable markers for debugging (remove in production)
     },
   });
 
