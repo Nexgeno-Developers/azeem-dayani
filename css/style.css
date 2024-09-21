@@ -1141,10 +1141,10 @@ body {
     background-color: #5ea138;
 }
 
-.main_logo {
-    width: 45vw;
+/* .main_logo { */
+    /* width: 45vw; */
     /* 60% converted to vw */
-}
+/* } */
 
 .header_logo_div {
     height: 51vw;
