@@ -100,6 +100,7 @@ main>section:nth-child(1) {
 
 .split-line {
     overflow: hidden; 
+    display: contents !important;
 }
 
 .main-screen .anim-text {
@@ -1824,7 +1825,7 @@ body {
 }
 
 .about_azeem_dayani:after {
-    content: "";
+    /* content: ""; */
     background: url('../images/about-us/Music-Lines_2.png') no-repeat right;
     display: block;
     width: 40%;
@@ -1939,13 +1940,19 @@ body {
 .vision_main_section:before {
     background: url('../images/Homepage/Object_2.png') no-repeat top center;
     position: absolute !important;
-    content: "";
+    /* content: ""; */
     display: block;
     height: 100%;
     background-size: 90vw;
     top: -4vw;
     z-index: -1;
     width: 100%;
+}
+
+.vision_main_section .film_music_zig_zag_img_div {
+    position: absolute;
+    width: 90vw;
+    top: -11vw;
 }
 
 .vision_main_section .slidercircle { 
