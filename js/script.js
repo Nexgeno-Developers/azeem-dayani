@@ -57,56 +57,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
   const content = document.getElementById("home_page");
   const mainLogo = document.querySelector(".main_logo");
-
-  // Initialize GSAP Timeline
-  const tl = gsap.timeline({
-    onComplete: () => {
-      // Hide the loader and show the content after animation
-      loader.style.display = "none";
-      content.style.display = "block";
-    },
-  });
-
-  // Add animations to the timeline
-  tl.set(".preloader svg path", {
-    strokeDasharray: 4500,
-    strokeDashoffset: 4500,
-    fillOpacity: 0,
-    stroke: "#ffffff",
-  })
-    .to(".preloader svg", {
-      opacity: 1,
-      duration: 0.5, // Fade-in duration for SVG
-    })
-    .to(".preloader svg path", {
-      strokeDashoffset: 0,
-      fillOpacity: 1,
-      duration: 3,
-      ease: "cubic.inOut",
-    })
-    .to(".preloader", {
-      opacity: 0,
-      duration: 0.5, // Fade-out duration for preloader
-      delay: 0.5, // Delay to ensure the path animation is complete
-    })
-    .fromTo(
-      mainLogo,
-      {
-        opacity: 0,
-        y: 50, // Start position (below the initial position)
+  
+  // Check if the loader exists
+  if (loader) {
+    // Initialize GSAP Timeline
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Hide the loader and show the content after animation
+        if (content) {
+          content.style.display = "block";
+        }
+        loader.style.display = "none";
       },
-      {
+    });
+  
+    // Add animations to the timeline
+    tl.set(".preloader svg path", {
+      strokeDasharray: 4500,
+      strokeDashoffset: 4500,
+      fillOpacity: 0,
+      stroke: "#ffffff",
+    })
+      .to(".preloader svg", {
         opacity: 1,
-        y: 0, // End position (normal position)
-        duration: 1, // Duration of the fade and move-up animation
-        ease: "power3.out",
-      },
-      "-=0.5"
-    ) // Overlap with preloader fade-out
-    .fromTo(
-      header,
-      {
+        duration: 0.5, // Fade-in duration for SVG
+      })
+      .to(".preloader svg path", {
+        strokeDashoffset: 0,
+        fillOpacity: 1,
+        duration: 3,
+        ease: "cubic.inOut",
+      })
+      .to(loader, {
         opacity: 0,
+<<<<<<< HEAD
         y: -50, // Start position (below the initial position)
       },
       {
@@ -118,38 +102,79 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "-=0.5"
     ); // Overlap with preloader fade-out
+=======
+        duration: 0.5, // Fade-out duration for preloader
+        delay: 0.5, // Delay to ensure the path animation is complete
+      });
+  
+    // Check and animate mainLogo if it exists
+    if (mainLogo) {
+      tl.fromTo(
+        mainLogo,
+        {
+          opacity: 0,
+          y: 50, // Start position (below the initial position)
+        },
+        {
+          opacity: 1,
+          y: 0, // End position (normal position)
+          duration: 1, // Duration of the fade and move-up animation
+          ease: "power3.out",
+        },
+        "-=0.5" // Overlap with preloader fade-out
+      ); // Overlap with preloader fade-out
+    }
+  
+    // Check and animate header if it exists
+    if (header) {
+      tl.fromTo(
+        header,
+        {
+          opacity: 0,
+          y: -50, // Start position (above the initial position)
+        },
+        {
+          display: "block",
+          opacity: 1,
+          y: 0, // End position (normal position)
+          duration: 1, // Duration of the fade and move-up animation
+          ease: "back.out",
+        },
+        "-=0.5" // Overlap with preloader fade-out
+      ); // Overlap with preloader fade-out
+    }
+  }
+  
+>>>>>>> 47cff18f8fe20466a6017b08ab9822089f11995a
 
   // for music lines
-  for (let i = 0; i < 120; i++) {
-    const left = i * 0.3 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+// Function to create bars for music lines
+function createMusicBars() {
+  // Function to create bars for a given container
+  function createBars(containerId, count, spacing) {
+    const container = document.querySelector(containerId);
+    if (container) { // Check if the container exists
+      for (let i = 0; i < count; i++) {
+        const left = i * spacing + 1;
+        const anim = Math.floor(Math.random() * 75 + 500);
+        const height = Math.floor(Math.random() * 25 + 30);
 
-    document.querySelector(
-      "#bars1"
-    ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
+        container.innerHTML += `<div class="bar" style="left:${left}vw; animation-duration:${anim}ms; height:${height}vw"></div>`;
+      }
+    } else {
+      // console.log(`${containerId} does not exist.`);
+    }
   }
-  for (let i = 0; i < 120; i++) {
-    const left = i * 0.3 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
 
-    document.querySelector(
-      "#bars2"
-    ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
-  }
-  for (let i = 0; i < 200; i++) {
-    const left = i * 0.8 + 1;
-    const anim = Math.floor(Math.random() * 75 + 500);
-    const height = Math.floor(Math.random() * 25 + 30);
-    // console.log(height);
+  // Create bars for each container
+  createBars("#bars1", 120, 0.3);
+  createBars("#bars2", 120, 0.3);
+  createBars("#bars3", 200, 0.8);
+  createBars("#bars4", 120, 0.3);
+}
 
-    document.querySelector(
-      "#bars3"
-    ).innerHTML += `<div class="bar" style="left:${left}vw;animation-duration:${anim}ms;height:${height}vw"></div>`;
-  }
+createMusicBars();
+
 
   // link with image hover effect
   const filmLinks = document.querySelectorAll(".film_link");
@@ -166,6 +191,39 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "expo.ease",
     });
   }
+
+
+// Function to create the animation for all elements with the class 'main_name'
+function setupMainNameAnimation() {
+  const mainNameElements = document.querySelectorAll(".main_name"); // Select all elements with the class
+
+  // Check if there are any elements
+  if (mainNameElements.length) {
+    mainNameElements.forEach((mainNameElement) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: mainNameElement, // Use the element itself as the trigger
+          start: "top bottom", // Start when the top of the element is at the bottom of the viewport
+          end: "bottom top", // End when the bottom of the element reaches the top of the viewport
+          markers: false, // Set markers to debug start and end points
+          //scrub: 1, // Uncomment to scrub the animation with scroll
+        },
+      });
+
+      tl.fromTo(
+        mainNameElement,
+        { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+        { x: "0%", opacity: 1, duration: 1, ease: "back2.out" } // Ending state (onscreen and fully visible)
+      );
+    });
+  }
+}
+
+// Call the function
+setupMainNameAnimation();
+
+
+
 
   function linkHover(e) {
     const imgId = this.parentElement.getAttribute("data-img");
@@ -246,13 +304,41 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
           end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
           scrub: 1, // Smoothly scrubs the animation
-          markers: false, // Enable markers for debugging (optional)
+          markers: true, // Enable markers for debugging (optional)
         },
       });
     });
   } else {
     console.error("SplitText plugin is not available.");
   }
+
+
+// Function to animate clip-path for multiple images
+function setupClipPathAnimation() {
+  gsap.utils.toArray(".reveal-img-top").forEach((img) => {
+    gsap.fromTo(
+      img,
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
+      },
+      {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+        duration: 4,
+        ease: "ease.inOut",
+        scrollTrigger: {
+          trigger: img.parentElement, // Trigger based on the parent container of the image
+          start: "top center", // Starts when the container reaches the center of the viewport
+          once: true, // Animation runs only once
+          markers: false, // Set markers to debug start and end points
+        },
+      }
+    );
+  });
+}
+
+// Call the function
+setupClipPathAnimation();
+
 
   function splitTexthalf(selector) {
     var elements = document.querySelectorAll(selector);
@@ -793,29 +879,29 @@ setupLeftscaleUpAnimation();
   });
 
   // Access the ::before pseudo-element of #home_page .non_film_section using CSSRulePlugin
-  const beforeRule = CSSRulePlugin.getRule(
-    "#home_page .non_film_section::before"
-  );
+  // const beforeRule = CSSRulePlugin.getRule(
+  //   "#home_page .non_film_section::before"
+  // );
 
-  // Animate the pseudo-element using GSAP and ScrollTrigger
-  gsap.fromTo(
-    beforeRule,
-    {
-      cssRule: { opacity: 0, scale: 0 }, // Initial state
-    },
-    {
-      cssRule: { opacity: 1, scale: 1 }, // Final state
-      duration: 0.6,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: "#home_page .non_film_section", // The element to trigger the animation
-        start: "-80% bottom", // Start the animation when the top of the element reaches 80% of the viewport
-        end: "center 15%",
-        scrub: true, // Disable scrub for smooth animation
-        once: false, // Run animation only once
-        markers: false,
-      },
-    }
+  // // Animate the pseudo-element using GSAP and ScrollTrigger
+  // gsap.fromTo(
+  //   beforeRule,
+  //   {
+  //     cssRule: { opacity: 0, scale: 0 }, // Initial state
+  //   },
+  //   {
+  //     cssRule: { opacity: 1, scale: 1 }, // Final state
+  //     duration: 0.6,
+  //     ease: "power3.out",
+  //     scrollTrigger: {
+  //       trigger: "#home_page .non_film_section", // The element to trigger the animation
+  //       start: "-80% bottom", // Start the animation when the top of the element reaches 80% of the viewport
+  //       end: "center 15%",
+  //       scrub: true, // Disable scrub for smooth animation
+  //       once: false, // Run animation only once
+  //       markers: false,
+  //     },
+  //   }
     // gsap.fromTo(beforeRule,
     //   {
     //     cssRule: { opacity: 0, x: "-20%" }, // Initial state
@@ -833,7 +919,7 @@ setupLeftscaleUpAnimation();
     //       markers:false
     //     },
     //   }
-  );
+  // );
 });
 
 // background color transition new
@@ -878,22 +964,25 @@ setupLeftscaleUpAnimation();
 //gallery page masonry gallery
 // Initialize Masonry
 $(document).ready(function () {
-  var $gallery = $(".masonry_gallery").masonry({
-    itemSelector: ".masonry_gallery_div",
-    columnWidth: ".masonry_gallery_div",
-    percentPosition: true,
-  });
+  // Check if the .masonry_gallery element exists
+  if ($(".masonry_gallery").length) {
+    var $gallery = $(".masonry_gallery").masonry({
+      itemSelector: ".masonry_gallery_div",
+      columnWidth: ".masonry_gallery_div",
+      percentPosition: true,
+    });
 
-  // Layout Masonry after each image loads
-  $gallery.imagesLoaded().progress(function () {
-    $gallery.masonry("layout");
-  });
+    // Layout Masonry after each image loads
+    $gallery.imagesLoaded().progress(function () {
+      $gallery.masonry("layout");
+    });
 
-  // Initialize Fancybox
-  $('[data-fancybox="masonry_gallery"]').fancybox({
-    loop: true,
-    buttons: ["zoom", "slideShow", "thumbs", "close"],
-  });
+    // Initialize Fancybox
+    $('[data-fancybox="masonry_gallery"]').fancybox({
+      loop: true,
+      buttons: ["zoom", "slideShow", "thumbs", "close"],
+    });
+  }
 });
 
 // background color transition new
@@ -1071,6 +1160,104 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 */
+
+//about section
+// Function to animate all sections in sequence
+function setupAboutSectionAnimation() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".animate-about-first-section", // Use this class as the trigger
+      start: "top center", // Start animation when this section reaches the center of the viewport
+      once: true, // Animation runs only once
+      markers: false, // Set to true for debugging
+    }
+  });
+
+  // Step 1: Animate the image with clip-path
+  tl.fromTo(
+    ".reveal-img-toptobottom",
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
+    },
+    {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+      duration: 2,
+      ease: "power2.inOut"
+    }
+  );
+
+  // Step 2: Animate .about_main_name (from right to left)
+  tl.fromTo(
+    ".about_main_name",
+    { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
+    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+  );
+
+  // Step 3: Animate .animated-heading-about with SplitText effect
+  document.querySelectorAll(".animated-heading-about").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words, chars",
+    });
+    tl.from(split.chars, {
+      y: 100,
+      stagger: 0.05,
+      opacity: 0,
+      ease: "power3.out",
+      duration: 1,
+    });
+  });
+
+  // Step 4: Animate .animated-para-about with SplitText effect
+  document.querySelectorAll(".animated-para-about").forEach((element) => {
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words",
+    });
+    tl.from(split.words, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.out",
+      duration: 0.8,
+    });
+  });
+}
+
+// Call the function to initialize the animation
+setupAboutSectionAnimation();
+
+//image reveal 2
+// Function to animate clip-path for multiple images
+function setupClipPathAnimation() {
+  gsap.utils.toArray(".reveal-img-diagonal").forEach((img) => {
+    gsap.fromTo(
+      img,
+      {
+        clipPath: "polygon(72% 0%, 100% 0%, 100% 100%, 100% 0%)", // Initial state (invisible, clipped to top)
+      },
+      {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", // Final state (revealed from top to bottom)
+        duration: 1,
+        ease: "ease.inOut",
+        scrollTrigger: {
+          trigger: img.parentElement, // Trigger based on the parent container of the image
+          start: "top center", // Starts when the container reaches the center of the viewport
+          once: true, // Animation runs only once
+          markers: false, // Set markers to debug start and end points
+        },
+      }
+    );
+  });
+}
+
+// Call the function
+setupClipPathAnimation();
+
+
+
+
+
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
