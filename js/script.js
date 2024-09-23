@@ -248,50 +248,62 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if SplitText is available
   if (typeof SplitText !== "undefined") {
     // Example usage of SplitText
-    document.querySelectorAll(".animated-heading").forEach((element) => {
-      const split = new SplitText(element, {
-        linesClass: "split-line",
-        type: "lines, words, chars",
-      });
-      // GSAP animation with ScrollTrigger
-      gsap.from(split.chars, {
-        y: 100,
-        stagger: 0.1,
-        delay: 0.2,
-        ease: "back.out",
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          once: true,
-          start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-          end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
-          scrub: 1, // Smoothly scrubs the animation
-          markers: false, // Enable markers for debugging (optional)
-        },
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".animated-heading").forEach((element) => {
+        const split = new SplitText(element, {
+          linesClass: "split-line",
+          type: "lines, words, chars",
+        });
+        // GSAP animation with ScrollTrigger
+        gsap.from(split.chars, {
+          y: 100,
+          stagger: 0.1,
+          delay: 0.2,
+          ease: "back.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: element,
+            once: true,
+            start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+            end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
+            scrub: 1, // Smoothly scrubs the animation
+            markers: false, // Enable markers for debugging (optional)
+            onComplete: () => {
+              // Clean up to prevent spacing issues after animation (if needed)
+              split.revert();
+            },
+          },
+        });
       });
     });
 
     // Example usage of SplitText
-    document.querySelectorAll(".animated-para").forEach((element) => {
-      const split = new SplitText(element, {
-        linesClass: "split-line",
-        type: "lines, words",
-      });
-      // GSAP animation with ScrollTrigger
-      gsap.from(split.words, {
-        duration: 0.8,
-        opacity: 0,
-        y: 80,
-        ease: "in",
-        stagger: 0.01,
-        scrollTrigger: {
-          trigger: element,
-          once: true,
-          start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
-          end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
-          scrub: 1, // Smoothly scrubs the animation
-          markers: false, // Enable markers for debugging (optional)
-        },
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".animated-para").forEach((element) => {
+        const split = new SplitText(element, {
+          linesClass: "split-line",
+          type: "lines, words",
+        });
+        // GSAP animation with ScrollTrigger
+        gsap.from(split.words, {
+          duration: 0.8,
+          opacity: 0,
+          y: 80,
+          ease: "in",
+          stagger: 0.01,
+          scrollTrigger: {
+            trigger: element,
+            once: true,
+            start: "top bottom", // When the top of the trigger element reaches the bottom of the viewport
+            end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
+            scrub: 1, // Smoothly scrubs the animation
+            markers: false, // Enable markers for debugging (optional)
+          },
+          onComplete: () => {
+            // Clean up to prevent spacing issues after animation (if needed)
+            split.revert();
+          },
+        });
       });
     });
   } else {
@@ -1176,32 +1188,44 @@ function setupAboutSectionAnimation() {
   );
 
   // Step 3: Animate .animated-heading-about with SplitText effect
-  document.querySelectorAll(".animated-heading-about").forEach((element) => {
-    const split = new SplitText(element, {
-      linesClass: "split-line",
-      type: "lines, words, chars",
-    });
-    tl.from(split.chars, {
-      y: 100,
-      stagger: 0.05,
-      opacity: 0,
-      ease: "power3.out",
-      duration: 1,
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".animated-heading-about").forEach((element) => {
+      const split = new SplitText(element, {
+        linesClass: "split-line",
+        type: "lines, words, chars",
+      });
+      tl.from(split.chars, {
+        y: 100,
+        stagger: 0.05,
+        opacity: 0,
+        ease: "power3.out",
+        duration: 1,
+        onComplete: () => {
+          // Clean up to prevent spacing issues after animation (if needed)
+          split.revert();
+        },
+      });
     });
   });
 
   // Step 4: Animate .animated-para-about with SplitText effect
-  document.querySelectorAll(".animated-para-about").forEach((element) => {
-    const split = new SplitText(element, {
-      linesClass: "split-line",
-      type: "lines, words",
-    });
-    tl.from(split.words, {
-      y: 80,
-      opacity: 0,
-      stagger: 0.03,
-      ease: "power2.out",
-      duration: 0.8,
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".animated-para-about").forEach((element) => {
+      const split = new SplitText(element, {
+        linesClass: "split-line",
+        type: "lines, words",
+      });
+      tl.from(split.words, {
+        y: 80,
+        opacity: 0,
+        stagger: 0.03,
+        ease: "power2.out",
+        duration: 0.8,
+        onComplete: () => {
+          // Clean up to prevent spacing issues after animation (if needed)
+          split.revert();
+        },
+      });
     });
   });
 }
