@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     overflow-x: hidden !important;
 }
 
@@ -20,7 +21,11 @@ html.lenis body {
     overflow: hidden;
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
     color: transparent !important;
     background-color: transparent !important;
     border-color: transparent !important;
@@ -41,15 +46,18 @@ html.lenis body {
 .negative-mt {
     margin-top: -1px
 }
+
 /* .header{
     display: none;
 } */
- header>a {
+header>a {
     text-decoration: none;
- }
- header .footer_logo_text {
+}
+
+header .footer_logo_text {
     font-size: 2vw;
- }
+}
+
 .img_logo {
     width: 16vw;
 }
@@ -62,7 +70,7 @@ main>section:nth-child(1) {
     width: 100%;
     height: 100%;
     /* background: radial-gradient(circle,#ffffff3f,#ffffff57,rgb(100,164,62)); */
-    background: rgb(100,164,62);
+    background: rgb(100, 164, 62);
     position: fixed;
     z-index: 2;
 }
@@ -75,6 +83,7 @@ main>section:nth-child(1) {
     left: 50vw;
     transform: translate(-50%, -50%);
 }
+
 /* 
 .preloader:hover svg {
     stroke: #ffffff;
@@ -99,7 +108,7 @@ main>section:nth-child(1) {
 } */
 
 .split-line {
-    overflow: hidden; 
+    overflow: hidden;
     display: contents !important;
 }
 
@@ -120,8 +129,11 @@ body {
 p {
     font-family: 'montserrat';
     color: #fff;
-    font-size: 1.1vw;
+    font-size: 1vw;
+    line-height: 1.6em;
+    margin-bottom: 1.5rem !important;
 }
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar {
@@ -139,6 +151,7 @@ html::-webkit-scrollbar {
     /* transform: scale(2) translateX(-54%); */
     /* border: solid 1px red; */
 }
+
 #bars2 {
     position: absolute;
     top: -1vw;
@@ -149,6 +162,7 @@ html::-webkit-scrollbar {
     /* transform: scale(2.8) translateX(100%); */
     /* border: solid 1px red; */
 }
+
 #bars3 {
     position: relative;
     /* top: 50%; */
@@ -160,43 +174,50 @@ html::-webkit-scrollbar {
     /* transform: scale(1.5) translateX(0%); */
     /* border: solid 1px red; */
 }
+
 #bars4 {
     position: absolute;
     right: 0vw;
     height: 1vw;
     width: 38%;
 }
+
 #bars5 {
     position: absolute;
-    right: 30vw;
-    height: 1vw;
+    right: 24vw;
+    height: 0.5vw;
     width: 38%;
     bottom: 3vw;
 }
+
 #bars6 {
     position: absolute;
-    left: -10vw;
-    height: 1vw;
+    left: 10vw;
+    height: 0.5vw;
     width: 38%;
 }
+
 #bars7 {
     position: absolute;
-    right: -10vw;
-    height: 1vw;
+    right: -9vw;
+    height: 0.5vw;
     width: 38%;
 }
+
 #bars8 {
     position: absolute;
-    left: -17vw;
-    height: 1vw;
+    left: 2vw;
+    height: 0.5vw;
     width: 0vw;
 }
+
 #bars9 {
     position: absolute;
-    right: -19vw;
-    height: 1vw;
+    right: -17vw;
+    height: 0.5vw;
     width: 38%;
 }
+
 #bars1 .bar {
     position: absolute;
     bottom: 0px;
@@ -206,6 +227,7 @@ html::-webkit-scrollbar {
     animation: sound 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars2 .bar {
     position: absolute;
     bottom: 0px;
@@ -215,6 +237,7 @@ html::-webkit-scrollbar {
     animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars3 .bar {
     position: absolute;
     bottom: 0px;
@@ -224,6 +247,7 @@ html::-webkit-scrollbar {
     animation: sound3 0ms -800ms linear infinite alternate;
     border-radius: 50px 50px 0px 0px;
 }
+
 #bars4 .bar {
     position: absolute;
     bottom: 0px;
@@ -233,51 +257,57 @@ html::-webkit-scrollbar {
     animation: sound4 0ms -800ms linear infinite alternate;
     transform: translateY(80%);
 }
+
 #bars5 .bar {
     position: absolute;
     bottom: 0px;
     height: 0vh;
     width: 0.15vw;
     background: #ffffff;
-    animation: sound4 0ms -800ms linear infinite alternate;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars6 .bar {
     position: absolute;
     bottom: 0px;
     height: 0vh;
     width: 0.15vw;
     background: #ffffff;
-    animation: sound4 0ms -800ms linear infinite alternate;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars7 .bar {
     position: absolute;
     bottom: 0px;
     height: 0vh;
     width: 0.15vw;
     background: #ffffff;
-    animation: sound4 0ms -800ms linear infinite alternate;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars8 .bar {
     position: absolute;
     bottom: 0px;
     height: 0vh;
     width: 0.15vw;
     background: #000;
-    animation: sound4 0ms -800ms linear infinite alternate;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars9 .bar {
     position: absolute;
     bottom: 0px;
     height: 0vh;
     width: 0.15vw;
     background: #000;
-    animation: sound4 0ms -800ms linear infinite alternate;
+    animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 @keyframes sound {
     0% {
         opacity: .35;
@@ -313,6 +343,7 @@ html::-webkit-scrollbar {
         height: 7vw;
     }
 }
+
 @keyframes sound4 {
     0% {
         opacity: .35;
@@ -327,8 +358,9 @@ html::-webkit-scrollbar {
 
 /* zig-zag image */
 .zip_zap_bg_img_container img.zig-zag-img {
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Initially hides the image */
-  }
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    /* Initially hides the image */
+}
 
 /* heading animation */
 .heading-anim span {
@@ -975,7 +1007,8 @@ body {
 
 .col-md-4 .card-title {
     font-family: 'tungsten', sans-serif !important;
-    font-size: 2.5vw;
+    font-size: 2vw;
+    line-height: 2.3vw;
 }
 
 .col-md-4 .card-body {
@@ -1248,8 +1281,8 @@ body {
 }
 
 /* .main_logo { */
-    /* width: 45vw; */
-    /* 60% converted to vw */
+/* width: 45vw; */
+/* 60% converted to vw */
 /* } */
 
 .header_logo_div {
@@ -1307,12 +1340,12 @@ body {
     /* 20px converted to vw */
 }
 
-.middle_description .col-md-4 .animated-heading >div >div {
+.middle_description .col-md-4 .animated-heading>div>div {
     left: 1.7vw;
     top: 0.7vw;
 }
 
-.middle_description .col-md-4 .animated-heading >div {
+.middle_description .col-md-4 .animated-heading>div {
     height: 7vw;
 }
 
@@ -1369,9 +1402,11 @@ body {
     padding-bottom: 35vw;
     position: relative;
 }
- section, footer {
+
+section,
+footer {
     margin-top: -0.1vw;
- }
+}
 
 .middle_description>.row {
     position: relative;
@@ -1595,6 +1630,7 @@ body {
 .non_film_section .circle-one .circle-arround-two-1 {
     transform: rotate(39deg) translate(32.4vw, 18vw) rotate(-26deg) scale(0.25);
 }
+
 /* .non_film_section .circle-one {
     margin-left: 20vw;
     margin-top: 13vw;
@@ -1787,6 +1823,7 @@ body {
     position: relative;
     bottom: 4vw;
     right: 15vw;
+    margin-top: 170px;
 }
 
 .about {
@@ -1915,7 +1952,7 @@ body {
 }
 
 .the_journey_content {
-    font-size: 1.3vw;
+    font-size: 1vw;
     text-align: justify;
 }
 
@@ -1956,7 +1993,7 @@ body {
     top: -11vw;
 }
 
-.vision_main_section .slidercircle { 
+.vision_main_section .slidercircle {
     margin-top: 12vw !important;
     left: -9vw;
 }
@@ -1966,7 +2003,7 @@ body {
 }
 
 .vision_main_section .circle-two .circle-arround-two-3,
-.the_journey_main_div .circle-two .circle-arround-two-3{
+.the_journey_main_div .circle-two .circle-arround-two-3 {
     transform: rotate(19deg) translate(37vw, 21vw) rotate(-9deg) scale(0.5);
 }
 
@@ -2015,10 +2052,10 @@ body {
     position: relative;
     z-index: 2;
 }
- 
+
 
 .azeem_vision {
-    font-size: 1.3vw;
+    font-size: 1vw;
 }
 
 .vision_main_div:before {
@@ -2070,16 +2107,16 @@ body {
 }
 
 .achievement_top_desecription {
-    font-size: 1.4vw;
-    line-height: 1.9vw;
+    font-size: 1vw;
 }
 
-.animated-heading-achievements, .animated-para-achievements {
+.animated-heading-achievements,
+.animated-para-achievements {
     overflow: hidden;
 }
 
-.achievements_section .award_main_div:nth-child(7), 
-.achievements_section .award_main_div:nth-child(8), 
+.achievements_section .award_main_div:nth-child(7),
+.achievements_section .award_main_div:nth-child(8),
 .achievements_section .award_main_div:nth-child(9) {
     margin-top: 5vw;
 }
@@ -2108,7 +2145,7 @@ body {
 }
 
 
-div.masonry_gallery.achievement_page_gallery{
+div.masonry_gallery.achievement_page_gallery {
     column-width: 25vw;
     column-gap: 2vw;
     padding: 0vw 0 0vw;
@@ -2116,21 +2153,21 @@ div.masonry_gallery.achievement_page_gallery{
     /* margin: 0 auto; */
     position: relative;
     z-index: 2;
-  }
-  
-  .achievement_page_gallery.masonry_gallery .masonry_gallery_div{
+}
+
+.achievement_page_gallery.masonry_gallery .masonry_gallery_div {
     width: 100%;
     margin-bottom: 0vw;
     overflow: hidden;
     position: relative;
     /* display: none; */
     text-align: center;
-  }
-  
+}
 
 
-.achievements_section .zig-zag-img {    
-    width: 80vw; 
+
+.achievements_section .zig-zag-img {
+    width: 80vw;
     position: absolute;
     z-index: 0;
     left: 10vw;
@@ -2148,7 +2185,7 @@ div.masonry_gallery.achievement_page_gallery{
 
 .award_name {
     text-align: center;
-    color: #fff !important; 
+    color: #fff !important;
     font-size: 2.2vw;
     line-height: 2vw;
 }
@@ -2193,7 +2230,7 @@ div.masonry_gallery.achievement_page_gallery{
 
 #works_page .film_row .card-title {
     font-family: 'tungsten', sans-serif !important;
-    font-size: 2.9vw;
+    font-size: 2.4vw;
 }
 
 .card-body {
@@ -2203,8 +2240,7 @@ div.masonry_gallery.achievement_page_gallery{
 .col-md-4:last-of-type .card-body .card-text,
 .col-md-4:last-of-type .card-title,
 .col-md-4:nth-last-of-type(1) .card-body .card-text,
-.col-md-4:nth-last-of-type(1) .card-title 
-.col-md-4:nth-last-of-type(2) .card-body .card-text,
+.col-md-4:nth-last-of-type(1) .card-title .col-md-4:nth-last-of-type(2) .card-body .card-text,
 .col-md-4:nth-last-of-type(2) .card-title,
 .col-md-4:nth-last-of-type(3) .card-body .card-text,
 .col-md-4:nth-last-of-type(3) .card-title {
@@ -2355,7 +2391,7 @@ footer .top_space {
 }
 
 
-.film_heading .category_title { 
+.film_heading .category_title {
     font-size: 4.1vw;
 }
 
@@ -2364,7 +2400,7 @@ img.film_music_lines {
 }
 
 .works_section .section_description {
-    font-size: 1.3vw;
+    font-size: 1vw;
 }
 
 .works_section .section_description:nth-of-type(2) {
@@ -2412,11 +2448,12 @@ img.film_music_lines {
 }
 
 .works_section .col-md-4 .card-body {
-    height: 7.3vw;
+    height: auto;
     padding: 0.5vw 0 1vw 0;
 }
+
 .works_section .text-overflow {
-        overflow: hidden;   
+    overflow: hidden;
 }
 
 /* .category_title:before,
@@ -2655,6 +2692,7 @@ img.azeem_dayani_contact_us_long_img {
     position: absolute;
     left: 10vw;
     top: 5vw;
+    z-index: 1;
 }
 
 img.contact_headphone_image {
@@ -2736,8 +2774,8 @@ img.contact_headphone_image {
     width: 100%;
     object-fit: contain;
 }
-  
-  button.btn.gallery_yt_video {
+
+button.btn.gallery_yt_video {
     width: 5vw;
     height: 5vw;
     content: "";
@@ -2748,16 +2786,16 @@ img.contact_headphone_image {
     background-repeat: no-repeat;
     opacity: 1;
     position: absolute;
-  }
-  
-  i.fa-regular.fa-circle-play {
-      color: #fff;
-      font-size: 4vw;
-      position: absolute;
-      border-radius: 50%;
-  }
+}
 
-  .gallery.modal {
+i.fa-regular.fa-circle-play {
+    color: #fff;
+    font-size: 4vw;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.gallery.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -2769,7 +2807,7 @@ img.contact_headphone_image {
     outline: 0;
 }
 
-  #videoModal .modal-dialog {
+#videoModal .modal-dialog {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2821,43 +2859,49 @@ button.close span {
 
 
 #gallery_page {
-    background: 
+    background:
         linear-gradient(180deg,
-            #5aa236  0%,    /* Start with this color at the top */
-            #5aa236 39%,    /* Continue the same color until 40% */
-            #ffffff 39%,          /* Start transitioning to the next color at 40% */
-            #ffffff 61%,    /* Continue the next color until 59% */
-            #218ee3  61%,    /* Start transitioning to the final color at 59% */
-            #218ee3 100%    /* End with this color at the bottom */
+            #5aa236 0%,
+            /* Start with this color at the top */
+            #5aa236 39%,
+            /* Continue the same color until 40% */
+            #ffffff 39%,
+            /* Start transitioning to the next color at 40% */
+            #ffffff 61%,
+            /* Continue the next color until 59% */
+            #218ee3 61%,
+            /* Start transitioning to the final color at 59% */
+            #218ee3 100%
+            /* End with this color at the bottom */
         );
 }
 
-div.masonry_gallery{
-    column-width: 25vw;
-    column-gap: 2vw;
-    padding: 2vw 0.5vw 6vw;
-    width: 80%;
+div.masonry_gallery {
+    column-width: 21vw;
+    column-gap: 1vw;
+    padding: 1vw 0.5vw 6vw;
+    width: 79%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
-  }
-  
-  div.masonry_gallery .masonry_gallery_div{
+}
+
+div.masonry_gallery .masonry_gallery_div {
     width: 100%;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
     overflow: hidden;
     position: relative;
-  }
+}
 
-  .masonry_gallery_div.the_gallery_img img {
-        border-radius: 0;
-    }
-  
-  .masonry_gallery_div img {
-      width: 100%;
-  }
+.masonry_gallery_div.the_gallery_img img {
+    border-radius: 25px;
+}
 
-  .masonry_gallery:not(.card .masonry_gallery):before {
+.masonry_gallery_div img {
+    width: 100%;
+}
+
+.masonry_gallery:not(.card .masonry_gallery):before {
     content: "";
     background: url('../images/Work/Object_3.png') no-repeat;
     display: block;
@@ -2938,7 +2982,7 @@ footer {
     text-decoration: none;
     color: #fff;
     font-family: "miedinger" !important;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
 }
 
 .footer_links_div {

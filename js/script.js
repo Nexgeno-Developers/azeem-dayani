@@ -1,6 +1,6 @@
 //smooth scroll
 var containerEl = document.querySelector(".scroll-container");
-var multiplier = 0.5;
+var multiplier = 1.5;
 var lerp = 0.05; // для FF
 var mediaQuery = window.matchMedia("(max-width: 992px)");
 
@@ -157,11 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
     createBars("#bars2", 120, 0.3);
     createBars("#bars3", 200, 0.8);
     createBars("#bars4", 120, 0.3);
-    createBars("#bars5", 120, 0.3);
-    createBars("#bars6", 120, 0.3);
-    createBars("#bars7", 120, 0.3);
-    createBars("#bars8", 120, 0.3);
-    createBars("#bars9", 120, 0.3);
+    createBars("#bars5", 80, 0.3);
+    createBars("#bars6", 57, 0.3);
+    createBars("#bars7", 57, 0.3);
+    createBars("#bars8", 57, 0.3);
+    createBars("#bars9", 57, 0.3);
   }
 
   createMusicBars();
@@ -1404,6 +1404,7 @@ cards.forEach((card) => {
       start: "top bottom", // Animation starts when card enters bottom of the viewport
       end: "top 20%", // Ends when card reaches the center of the viewport
       scrub: 2, // Smooth scrolling animation
+      once: true,
       markers: false, // Enable markers for debugging (remove in production)
     },
   });
@@ -1440,15 +1441,15 @@ function setupContactSectionAnimation() {
   // Step 2: Animate .animated-heading-about with SplitText effect
   tl.fromTo(
     ".scale-img-contact",
-      {
-        scale: 0, // Initial state (invisible, clipped to top)
-      },
-      {
-        scale: 1, // Final state (revealed from top to bottom)
-        duration: 1.5,
-        ease: "power2.inOut",
-      }
-    );
+    {
+      scale: 0, // Initial state (invisible, clipped to top)
+    },
+    {
+      scale: 1, // Final state (revealed from top to bottom)
+      duration: 1.5,
+      ease: "power2.inOut",
+    }
+  );
   // Step 3: Animate the image with clip-path
   tl.fromTo(
     ".reveal-img-toptobottom-contact",
@@ -1468,7 +1469,6 @@ function setupContactSectionAnimation() {
     { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
     { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
   );
-
 }
 
 // Call the function to initialize the animation
