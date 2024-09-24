@@ -218,6 +218,15 @@ html::-webkit-scrollbar {
     width: 38%;
 }
 
+#bars10 {
+    position: relative;
+    /* top: 50%; */
+    right: 0vw;
+    height: 1vw;
+    top: 5vw;
+    width: 100vw;
+}
+
 #bars1 .bar {
     position: absolute;
     bottom: 0px;
@@ -306,6 +315,15 @@ html::-webkit-scrollbar {
     background: #000;
     animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
+}
+#bars10 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 3px;
+    width: 0.35vw;
+    background: #40566880;
+    animation: sound 0ms -800ms linear infinite alternate;
+    border-radius: 50px 50px 0px 0px;
 }
 
 @keyframes sound {

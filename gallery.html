@@ -23,10 +23,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.css"
-    />
+    /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
@@ -52,9 +52,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
     <title>Azeem Dayani Footer</title>
   </head>
-  <body>
+  <body class="scroll-container" data-scroll-container>
     <header class="header">
       <a href="index.html">
         <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
@@ -78,12 +79,10 @@
 
     <main id="gallery_page">
       <section class="works_section film_section">
-        <div class="works_headphone_heading">
-          <!-- <h1 class="section_title">WORKS</h1> -->
-          <img
-            class="headphone_heading"
-            src="images/Gallery/gallery_heading.png"
-          />
+        <div class="contact_heading_div text-center animate-contact-first-section">
+          <h1 class="contact_main_name text-light contact_heading mb-0">gallery</h1>
+          <!-- <h1 class="section_title">HIS WORK</h1> -->
+          <img class="scale-img-contact contact_us_heading_img" src="images/contact-us/Headphone.png"> 
         </div>
         <div class="masonry_gallery">
           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
@@ -305,8 +304,8 @@
       </div>
     </div>
 
-    <footer class="footer bg_green pt-md-4">
-      <div class="bg_green">
+    <footer class="footer bg_blue pt-md-4">
+      <div class="">
         <div class="text-center">
           <div class="col-md-12">
             <a href="index.html">
@@ -342,7 +341,7 @@
           </div>
         </div>
         <div class="col-md-12 footer_social_links_div">
-          <div id="bars3"></div>
+          <div id="bars10"></div>
           <ul
             class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center"
           >
@@ -374,6 +373,7 @@
       </div>
     </footer>
 
+    <script type="text/javascript" src="js/libs.min.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/owl-carousel.js"></script>
@@ -383,9 +383,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
+    
     <script>
       document
         .querySelector(".menu-trigger")
@@ -398,26 +398,6 @@
             document.body.style.overflow = "auto";
           }
         });
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        // Initialize Owl Carousel
-        $("#gallery_carousel").owlCarousel({
-          items: 4, // Show 4 items at once
-          margin: 15, // Add some space between items
-          nav: false, // Hide navigation arrows
-          dots: false, // Hide dots
-          autoplay: true, // Autoplay carousel
-          autoplayTimeout: 3000, // Autoplay delay
-          loop: true, // Infinite loop
-          responsive: {
-            0: { items: 1 },
-            600: { items: 2 },
-            1000: { items: 4 },
-          },
-        });
-      });
     </script>
 
     <script>
