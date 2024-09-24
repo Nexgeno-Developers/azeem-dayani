@@ -249,12 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if SplitText is available
   if (typeof SplitText !== "undefined") {
     // Example usage of SplitText
-    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated-heading").forEach((element) => {
+        // Trim leading and trailing whitespaces
+        element.innerHTML = element.innerHTML.trim();
+
         const split = new SplitText(element, {
           linesClass: "split-line",
           type: "lines, words, chars",
         });
+
+        // Remove any empty lines before the animation starts
+        element.querySelectorAll('.split-line').forEach((line) => {
+          if (!line.textContent.trim()) {
+            line.remove(); // Remove empty split lines
+          }
+        });
+
         // GSAP animation with ScrollTrigger
         gsap.from(split.chars, {
           y: 100,
@@ -269,21 +279,29 @@ document.addEventListener("DOMContentLoaded", () => {
             end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
             scrub: 1, // Smoothly scrubs the animation
             markers: false, // Enable markers for debugging (optional)
-            onComplete: () => {
-              // Clean up to prevent spacing issues after animation (if needed)
-              split.revert();
-            },
+            // onComplete: () => {
+            //   // Clean up to prevent spacing issues after animation (if needed)
+            //   split.revert();
+            // },
           },
         });
       });
-    });
+   
 
     // Example usage of SplitText
-    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated-para").forEach((element) => {
+        // Trim leading and trailing whitespaces
+        element.innerHTML = element.innerHTML.trim();
+
         const split = new SplitText(element, {
           linesClass: "split-line",
           type: "lines, words",
+        });
+          // Remove any empty lines before the animation starts
+        element.querySelectorAll('.split-line').forEach((line) => {
+          if (!line.textContent.trim()) {
+            line.remove(); // Remove empty split lines
+          }
         });
         // GSAP animation with ScrollTrigger
         gsap.from(split.words, {
@@ -300,13 +318,12 @@ document.addEventListener("DOMContentLoaded", () => {
             scrub: 1, // Smoothly scrubs the animation
             markers: false, // Enable markers for debugging (optional)
           },
-          onComplete: () => {
-            // Clean up to prevent spacing issues after animation (if needed)
-            split.revert();
-          },
+          // onComplete: () => {
+          //   // Clean up to prevent spacing issues after animation (if needed)
+          //   split.revert();
+          // },
         });
       });
-    });
   } else {
     console.error("SplitText plugin is not available.");
   }
@@ -1185,50 +1202,76 @@ function setupAboutSectionAnimation() {
   tl.fromTo(
     ".about_main_name",
     { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
-    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+    { x: "0%", opacity: 1, duration: 0.6, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
   );
 
   // Step 3: Animate .animated-heading-about with SplitText effect
-  document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".animated-heading-about").forEach((element) => {
+      // Trim leading and trailing whitespaces
+      element.innerHTML = element.innerHTML.trim();
+  
+      // Create the SplitText instance
       const split = new SplitText(element, {
         linesClass: "split-line",
-        type: "lines, words, chars",
+        type: "lines, words, chars", // Split by lines, words, and characters
       });
+  
+      // Remove any empty lines before the animation starts
+      element.querySelectorAll('.split-line').forEach((line) => {
+        if (!line.textContent.trim()) {
+          line.remove();
+        }
+      });
+  
+      // Animation using GSAP
       tl.from(split.chars, {
         y: 100,
         stagger: 0.05,
         opacity: 0,
         ease: "power3.out",
-        duration: 1,
-        onComplete: () => {
-          // Clean up to prevent spacing issues after animation (if needed)
-          split.revert();
-        },
+        duration: 0.4,
+        // Optional: Reverting to original structure after animation
+        // onComplete: () => {
+        //   // If reverting is needed, do it after animation
+        //   split.revert();
+        // },
       });
     });
-  });
+  
 
   // Step 4: Animate .animated-para-about with SplitText effect
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".animated-para-about").forEach((element) => {
-      const split = new SplitText(element, {
-        linesClass: "split-line",
-        type: "lines, words",
-      });
-      tl.from(split.words, {
-        y: 80,
-        opacity: 0,
-        stagger: 0.03,
-        ease: "power2.out",
-        duration: 0.8,
-        onComplete: () => {
-          // Clean up to prevent spacing issues after animation (if needed)
-          split.revert();
-        },
-      });
+  document.querySelectorAll(".animated-para-about").forEach((element) => {
+    // Trim leading and trailing whitespaces
+    element.innerHTML = element.innerHTML.trim();
+  
+    // Create the SplitText instance
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words",
+    });
+  
+    // Remove any empty lines before the animation starts
+    element.querySelectorAll('.split-line').forEach((line) => {
+      if (!line.textContent.trim()) {
+        line.remove();
+      }
+    });
+  
+    // Animation using GSAP
+    tl.from(split.words, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.out",
+      duration: 0.6,
+      // Optional: You can still revert if necessary later
+      // onComplete: () => {
+      //   // Cleanup if reverting is needed
+      //   split.revert();
+      // },
     });
   });
+  
 }
 
 // Call the function to initialize the animation
