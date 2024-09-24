@@ -321,11 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
-          duration: 4,
+          duration: 1,
           ease: "ease.inOut",
           scrollTrigger: {
             trigger: img.parentElement, // Trigger based on the parent container of the image
-            start: "top center", // Starts when the container reaches the center of the viewport
+            start: "top bottom", // Starts when the container reaches the center of the viewport
             once: true, // Animation runs only once
             markers: false, // Set markers to debug start and end points
           },
@@ -1498,6 +1498,25 @@ function setupContactSectionAnimation() {
 
 // Call the function to initialize the animation
 setupContactSectionAnimation();
+
+
+// gallery page .reveal-img-top-contact
+let tl6 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".gallery_videos",  // The element to trigger the animation
+    start: "top 80%",            // Start animation when the element is 80% from the top of the viewport
+    end: "bottom center",           // End the animation when the element is 20% from the bottom of the viewport
+    scrub: false,                    // Smooth scrubbing, a smoother animation tied to scroll speed
+    markers: false,                // Set to true if you want to see start/end markers for testing
+  }
+});
+
+// Animation for .gallery-video-item elements, staggered
+tl6.fromTo(".gallery-video-item", 
+  { x: "100%", opacity: 0 },   // Initial state: off-screen to the right and hidden
+  { x: "0%", opacity: 1, duration: 1, ease: "power2.out", stagger: -0.3 }  // End state: in place and fully visible
+);
+
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
