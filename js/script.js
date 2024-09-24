@@ -249,12 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if SplitText is available
   if (typeof SplitText !== "undefined") {
     // Example usage of SplitText
-    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated-heading").forEach((element) => {
+        // Trim leading and trailing whitespaces
+        element.innerHTML = element.innerHTML.trim();
+
         const split = new SplitText(element, {
           linesClass: "split-line",
           type: "lines, words, chars",
         });
+
+        // Remove any empty lines before the animation starts
+        element.querySelectorAll('.split-line').forEach((line) => {
+          if (!line.textContent.trim()) {
+            line.remove(); // Remove empty split lines
+          }
+        });
+
         // GSAP animation with ScrollTrigger
         gsap.from(split.chars, {
           y: 100,
@@ -269,21 +279,29 @@ document.addEventListener("DOMContentLoaded", () => {
             end: "bottom center", // When the bottom of the trigger element reaches the top of the viewport
             scrub: 1, // Smoothly scrubs the animation
             markers: false, // Enable markers for debugging (optional)
-            onComplete: () => {
-              // Clean up to prevent spacing issues after animation (if needed)
-              split.revert();
-            },
+            // onComplete: () => {
+            //   // Clean up to prevent spacing issues after animation (if needed)
+            //   split.revert();
+            // },
           },
         });
       });
-    });
+   
 
     // Example usage of SplitText
-    document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated-para").forEach((element) => {
+        // Trim leading and trailing whitespaces
+        element.innerHTML = element.innerHTML.trim();
+
         const split = new SplitText(element, {
           linesClass: "split-line",
           type: "lines, words",
+        });
+          // Remove any empty lines before the animation starts
+        element.querySelectorAll('.split-line').forEach((line) => {
+          if (!line.textContent.trim()) {
+            line.remove(); // Remove empty split lines
+          }
         });
         // GSAP animation with ScrollTrigger
         gsap.from(split.words, {
@@ -300,13 +318,12 @@ document.addEventListener("DOMContentLoaded", () => {
             scrub: 1, // Smoothly scrubs the animation
             markers: false, // Enable markers for debugging (optional)
           },
-          onComplete: () => {
-            // Clean up to prevent spacing issues after animation (if needed)
-            split.revert();
-          },
+          // onComplete: () => {
+          //   // Clean up to prevent spacing issues after animation (if needed)
+          //   split.revert();
+          // },
         });
       });
-    });
   } else {
     console.error("SplitText plugin is not available.");
   }
@@ -321,11 +338,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
-          duration: 4,
+          duration: 1,
           ease: "ease.inOut",
           scrollTrigger: {
             trigger: img.parentElement, // Trigger based on the parent container of the image
-            start: "top center", // Starts when the container reaches the center of the viewport
+            start: "top bottom", // Starts when the container reaches the center of the viewport
             once: true, // Animation runs only once
             markers: false, // Set markers to debug start and end points
           },
@@ -1185,50 +1202,76 @@ function setupAboutSectionAnimation() {
   tl.fromTo(
     ".about_main_name",
     { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
-    { x: "0%", opacity: 1, duration: 1, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+    { x: "0%", opacity: 1, duration: 0.6, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
   );
 
   // Step 3: Animate .animated-heading-about with SplitText effect
-  document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".animated-heading-about").forEach((element) => {
+      // Trim leading and trailing whitespaces
+      element.innerHTML = element.innerHTML.trim();
+  
+      // Create the SplitText instance
       const split = new SplitText(element, {
         linesClass: "split-line",
-        type: "lines, words, chars",
+        type: "lines, words, chars", // Split by lines, words, and characters
       });
+  
+      // Remove any empty lines before the animation starts
+      element.querySelectorAll('.split-line').forEach((line) => {
+        if (!line.textContent.trim()) {
+          line.remove();
+        }
+      });
+  
+      // Animation using GSAP
       tl.from(split.chars, {
         y: 100,
         stagger: 0.05,
         opacity: 0,
         ease: "power3.out",
-        duration: 1,
-        onComplete: () => {
-          // Clean up to prevent spacing issues after animation (if needed)
-          split.revert();
-        },
+        duration: 0.4,
+        // Optional: Reverting to original structure after animation
+        // onComplete: () => {
+        //   // If reverting is needed, do it after animation
+        //   split.revert();
+        // },
       });
     });
-  });
+  
 
   // Step 4: Animate .animated-para-about with SplitText effect
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".animated-para-about").forEach((element) => {
-      const split = new SplitText(element, {
-        linesClass: "split-line",
-        type: "lines, words",
-      });
-      tl.from(split.words, {
-        y: 80,
-        opacity: 0,
-        stagger: 0.03,
-        ease: "power2.out",
-        duration: 0.8,
-        onComplete: () => {
-          // Clean up to prevent spacing issues after animation (if needed)
-          split.revert();
-        },
-      });
+  document.querySelectorAll(".animated-para-about").forEach((element) => {
+    // Trim leading and trailing whitespaces
+    element.innerHTML = element.innerHTML.trim();
+  
+    // Create the SplitText instance
+    const split = new SplitText(element, {
+      linesClass: "split-line",
+      type: "lines, words",
+    });
+  
+    // Remove any empty lines before the animation starts
+    element.querySelectorAll('.split-line').forEach((line) => {
+      if (!line.textContent.trim()) {
+        line.remove();
+      }
+    });
+  
+    // Animation using GSAP
+    tl.from(split.words, {
+      y: 80,
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.out",
+      duration: 0.6,
+      // Optional: You can still revert if necessary later
+      // onComplete: () => {
+      //   // Cleanup if reverting is needed
+      //   split.revert();
+      // },
     });
   });
+  
 }
 
 // Call the function to initialize the animation
@@ -1498,6 +1541,25 @@ function setupContactSectionAnimation() {
 
 // Call the function to initialize the animation
 setupContactSectionAnimation();
+
+
+// gallery page .reveal-img-top-contact
+let tl6 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".gallery_videos",  // The element to trigger the animation
+    start: "top 80%",            // Start animation when the element is 80% from the top of the viewport
+    end: "bottom center",           // End the animation when the element is 20% from the bottom of the viewport
+    scrub: false,                    // Smooth scrubbing, a smoother animation tied to scroll speed
+    markers: false,                // Set to true if you want to see start/end markers for testing
+  }
+});
+
+// Animation for .gallery-video-item elements, staggered
+tl6.fromTo(".gallery-video-item", 
+  { x: "100%", opacity: 0 },   // Initial state: off-screen to the right and hidden
+  { x: "0%", opacity: 1, duration: 1, ease: "power2.out", stagger: -0.3 }  // End state: in place and fully visible
+);
+
 
 ScrollTrigger.addEventListener("refresh", function () {
   return locoScroll.update();
