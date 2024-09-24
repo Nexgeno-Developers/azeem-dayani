@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     createBars("#bars7", 57, 0.3);
     createBars("#bars8", 57, 0.3);
     createBars("#bars9", 57, 0.3);
+    createBars("#bars10", 200, 0.8);
   }
 
   createMusicBars();
