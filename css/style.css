@@ -316,6 +316,7 @@ html::-webkit-scrollbar {
     animation: sound2 0ms -800ms linear infinite alternate;
     transform: translateY(50%);
 }
+
 #bars10 .bar {
     position: absolute;
     bottom: 0px;
@@ -1908,7 +1909,6 @@ footer {
 }
 
 .the_journey_main_div {
-    background: url('../images/about-us/image.png') no-repeat bottom right;
     width: 100%;
     height: auto;
     background-size: 50%;
@@ -3027,6 +3027,23 @@ footer {
 
 .social_media_links .fa {
     font-weight: 100;
+}
+
+.the_journey_div_new .circle-one {
+    margin-left: 26vw;
+    margin-top: 5vw;
+    width: 60vw;
+    height: 60vw;
+}
+
+.the_journey_div_new .circle-two {
+    width: 70vw;
+    height: 65vw;
+    border: 0.1vw solid #ffffff;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    margin-left: 0vw;
 }
 
 /* footer css close */
