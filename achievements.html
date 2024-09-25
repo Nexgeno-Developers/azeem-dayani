@@ -1,9 +1,64 @@
-    <?php include 'header.php';?>
-<style>
-  footer {
-    background: #59a246;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azeem Dayani</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/header_animation.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.all.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://attariclasses.in/assets/frontend/css/fancybox.min.css"
+    />
+  </head>
+
+  <body class="scroll-container" data-scroll-container>
+    <header id="header" class="header">
+      <a href="index.html">
+        <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
+        <h4 class="footer_logo_text">azeem dayani</h4>
+      </a>
+      <input class="menu-trigger" type="checkbox" id="menu_trigger" />
+      <div class="overlay" id="fullscreen_nav">
+        <ul class="menu-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="achievements.html">Achievements & Accolades</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <label class="hamburger-menu" for="menu_trigger"
+        ><span></span><span></span><span></span
+      ></label>
+    </header>
+
+    <style>
+      footer {
+        background: #59a246;
+      }
+    </style>
     <main id="achievements_page">
       <section class="animate-achievements-first-section achievements_section">
         <div class="row">
@@ -271,40 +326,6 @@
                 <div class="col-md-4 mb-4"></div>
                 <!-- Repeat this block for each achievement -->
               </div>
-
-              <div class="row">
-                <div class="col-md-4 mb-2 award_main_div">
-                  <a href="" class="text-decoration-none">
-                    <div class="card achievement_card">
-                      <div class="masonry_gallery achievement_page_gallery">
-                        <div
-                          class="masonry_gallery_div gallery_dt_img the_gallery_img"
-                        >
-                          <a
-                            href="images/Achievements/Award_8.png"
-                            data-fancybox="images"
-                            data-caption="Image8"
-                          >
-                            <img src="images/Achievements/Award_8.png" />
-                          </a>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title award_name">
-                          Filmfare Awards:
-                          <span class="card-title award_reason"
-                            >Shershaah Album of the year 2022</span
-                          >
-                        </h5>
-                        <p class="card-text">
-                          A heartwarming album. The song "Ve Maahi" is the most
-                          streamed song of the year on Jio Saavn.
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
             </div>
 
             <div class="col-md-12 mx-auto row pt-md-5" id="gallery_videos">
@@ -312,7 +333,7 @@
                 <div class="video_div">
                   <img
                     class="youtube_bg_img"
-                    src="https://img.youtube.com/vi/yEv0wvd91jo/hqdefault.jpg"
+                    src="images/Gallery/gallery_image_12.png"
                     alt="Video 1 Thumbnail"
                   />
                   <button
@@ -320,7 +341,7 @@
                     class="btn gallery_yt_video"
                     data-toggle="modal"
                     data-target="#exampleModal"
-                    data-youtube-url="https://www.youtube.com/embed/z2XS_RryJGk"
+                    data-youtube-url="images/Gallery/azeem_awards.mp4"
                   >
                     <!-- <i class="fa-regular fa-circle-play"></i>       -->
                     <!-- <img class="play_btn_img" src="images/Achievements/play_button.png"> -->
@@ -421,4 +442,118 @@
       </div>
     </div>
 
-        <?php include 'footer.php';?>
+    <footer class="footer pt_6">
+      <div class="text-center">
+        <a href="index.php" class="text-decoration-none">
+          <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
+          <h4 class="footer_logo_text">azeem dayani</h4>
+        </a>
+        <div class="col-md-12 footer_links_div">
+          <ul
+            class="list-group list-group-horizontal list-unstyled justify-content-center"
+          >
+            <li class="list-group-item footer_list">
+              <a href="about-us.php" class="footer_link">about us</a>
+            </li>
+            <li class="list-group-item footer_list">
+              <a href="works.php" class="footer_link">works</a>
+            </li>
+            <li class="list-group-item footer_list">
+              <a href="achievements.php" class="footer_link"
+                >Achievements & Accolades</a
+              >
+            </li>
+            <!-- <li class="list-group-item footer_list">
+                        <a href="playlist.php" class="footer_link">playlist</a>
+                    </li> -->
+            <li class="list-group-item footer_list">
+              <a href="gallery.php" class="footer_link">gallery</a>
+            </li>
+            <li class="list-group-item footer_list">
+              <a href="contact-us.php" class="footer_link">contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-12 footer_social_links_div">
+        <div id="bars3"></div>
+        <ul
+          class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center"
+        >
+          <li class="list-item">
+            <a href="" class="social_media_links">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+
+          <li class="list-item">
+            <a href="" class="social_media_links">
+              <i class="fa fa-x-twitter"></i>
+            </a>
+          </li>
+
+          <li class="list-item">
+            <a href="" class="social_media_links">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+
+          <li class="list-item">
+            <a href="" class="social_media_links">
+              <i class="fa fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="js/libs.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"
+      integrity="sha512-IxxYrSNXnt/RJlxNX40+7BQL88FLqvdpVpuV9AuvpNH/NFP0L8xA8WLxWTXx6PYExB5R/ktQisp6tIrnLn8xvw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="js/owl-carousel.js"></script>
+    <script type="text/javascript" src="js/bootstrap5.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://attariclasses.in/assets/frontend/js/fancybox.min.js"></script>
+
+    <script>
+      document
+        .querySelector(".menu-trigger")
+        .addEventListener("change", function () {
+          if (this.checked) {
+            // Disable scrolling
+            document.body.style.overflow = "hidden";
+          } else {
+            // Enable scrolling
+            document.body.style.overflow = "auto";
+          }
+        });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('[data-fancybox="gallery"]').fancybox();
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        $(".gallery_yt_video").click(function () {
+          var url = $(this).attr("data-youtube-url");
+          $("#videoIframe").attr("src", url);
+          $("#videoModal").modal("show");
+        });
+
+        $(".close").click(function () {
+          $("#videoModal").modal("hide");
+        });
+
+        $("#videoModal").on("hide.bs.modal", function () {
+          $("#videoIframe").attr("src", "");
+        });
+      });
+    </script>
+  </body>
+</html>
