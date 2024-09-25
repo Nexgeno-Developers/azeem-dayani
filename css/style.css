@@ -2262,7 +2262,7 @@ div.masonry_gallery.achievement_page_gallery {
 .col-md-4:nth-last-of-type(2) .card-title,
 .col-md-4:nth-last-of-type(3) .card-body .card-text,
 .col-md-4:nth-last-of-type(3) .card-title {
-    color: #fff;
+    color: #000;
     /* Set text color to white */
 }
 
