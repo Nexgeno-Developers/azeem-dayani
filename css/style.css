@@ -327,6 +327,10 @@ html::-webkit-scrollbar {
     border-radius: 50px 50px 0px 0px;
 }
 
+body.fancybox-active, body.modal-open {
+    transform:none !important;
+}
+
 @keyframes sound {
     0% {
         opacity: .35;
@@ -2255,13 +2259,13 @@ div.masonry_gallery.achievement_page_gallery {
     padding: 1vw 0 0;
 }
 
-.col-md-4:last-of-type .card-body .card-text,
-.col-md-4:last-of-type .card-title,
-.col-md-4:nth-last-of-type(1) .card-body .card-text,
-.col-md-4:nth-last-of-type(1) .card-title .col-md-4:nth-last-of-type(2) .card-body .card-text,
-.col-md-4:nth-last-of-type(2) .card-title,
-.col-md-4:nth-last-of-type(3) .card-body .card-text,
-.col-md-4:nth-last-of-type(3) .card-title {
+#works_page .col-md-4:last-of-type .card-body .card-text,
+#works_page .col-md-4:last-of-type .card-title,
+#works_page .col-md-4:nth-last-of-type(1) .card-body .card-text,
+#works_page .col-md-4:nth-last-of-type(1) .card-title .col-md-4:nth-last-of-type(2) .card-body .card-text,
+#works_page .col-md-4:nth-last-of-type(2) .card-title,
+#works_page .col-md-4:nth-last-of-type(3) .card-body .card-text,
+#works_page .col-md-4:nth-last-of-type(3) .card-title {
     color: #000;
     /* Set text color to white */
 }
