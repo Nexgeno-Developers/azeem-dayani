@@ -50,6 +50,24 @@ document.body.style.overflow = "";
 ScrollTrigger.refresh();
 locoScroll.start();
 
+
+// Function to override body's transform property when Fancybox is open
+function checkFancyboxPresence() {
+  var fancyboxExists = document.querySelector('.fancybox-container') !== null;
+  
+  if (fancyboxExists) {
+      // Disable GSAP transform when Fancybox is open
+      document.body.style.transform = 'matrix3d(0, 0, 0) !important';
+  } else {
+      // Re-enable GSAP transform when Fancybox is closed
+      locoScroll.update(); // Reapply LocomotiveScroll transform settings
+  }
+}
+
+// For continuous checking in case Fancybox adds/removes its container asynchronously
+setInterval(checkFancyboxPresence, 500); // Polling every 500ms to ensure accurate state
+
+
 // preloader
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1563,3 +1581,4 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
+
