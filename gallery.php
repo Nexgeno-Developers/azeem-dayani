@@ -1,85 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.css"
-    /> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="css/header_animation.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/font-awesome.all.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/owl.theme.default.min.css"
-    />
-    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /> -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
-    />
-    <title>Azeem Dayani Footer</title>
-  </head>
+   <?php include 'header.php';?>
 
-  <body class="scroll-container" data-scroll-container>
-    <header class="header">
-      <a href="index.html">
-        <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-        <h4 class="footer_logo_text">azeem dayani</h4>
-      </a>
-      <input class="menu-trigger" type="checkbox" id="menu_trigger" />
-      <div class="overlay" id="fullscreen_nav">
-        <ul class="menu-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="works.html">Works</a></li>
-          <li><a href="achievements.html">Achievements & Accolades</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <label class="hamburger-menu" for="menu_trigger"
-        ><span></span><span></span><span></span
-      ></label>
-    </header>
 
     <main id="gallery_page">
       <section class="works_section film_section">
@@ -98,145 +18,203 @@
         <div class="masonry_gallery">
           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/baar-baar-dekho.jpg"
+              href="images/Gallery/gallery_image_1.png"
               data-fancybox="images"
               data-caption="Image1"
               ><img
                 class="reveal-img-top"
-                src="images/home/baar-baar-dekho.jpg"
+                src="images/Gallery/gallery_image_1.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/bad-newz.jpg"
+              href="images/Gallery/gallery_image_2.png"
               data-fancybox="images"
-              data-caption="Image2"
-              ><img class="reveal-img-top" src="images/home/bad-newz.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/badhaai-ho.jpg"
-              data-fancybox="images"
-              data-caption="Image3"
-              ><img class="reveal-img-top" src="images/home/badhaai-ho.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/badrinath-ki-dulhania.jpeg"
-              data-fancybox="images"
-              data-caption="Image4"
+              data-caption="Image1"
               ><img
                 class="reveal-img-top"
-                src="images/home/badrinath-ki-dulhania.jpeg"
+                src="images/Gallery/gallery_image_2.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/bareilly-ki-barfi.jpg"
+              href="images/Gallery/gallery_image_3.png"
               data-fancybox="images"
-              data-caption="Image5"
+              data-caption="Image1"
               ><img
                 class="reveal-img-top"
-                src="images/home/bareilly-ki-barfi.jpg"
+                src="images/Gallery/gallery_image_3.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/filhaal.jpg"
+              href="images/Gallery/gallery_image_4.png"
               data-fancybox="images"
-              data-caption="Image6"
-              ><img class="reveal-img-top" src="images/home/filhaal.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/filhaal2.jpg"
-              data-fancybox="images"
-              data-caption="Image7"
-              ><img class="reveal-img-top" src="images/home/filhaal2.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/good-newwz.jpg"
-              data-fancybox="images"
-              data-caption="Image8"
-              ><img class="reveal-img-top" src="images/home/good-newwz.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/heeriye.jpg"
-              data-fancybox="images"
-              data-caption="Image9"
-              ><img class="reveal-img-top" src="images/home/heeriye.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/jugjugg-jeeyo.jpg"
-              data-fancybox="images"
-              data-caption="Image10"
-              ><img class="reveal-img-top" src="images/home/jugjugg-jeeyo.jpg"
-            /></a>
-          </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/home/kapoor-and-sons.jpg"
-              data-fancybox="images"
-              data-caption="Image11"
+              data-caption="Image1"
               ><img
                 class="reveal-img-top"
-                src="images/home/kapoor-and-sons.jpg"
+                src="images/Gallery/gallery_image_4.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/kesari.jpg"
+              href="images/Gallery/gallery_image_5.png"
               data-fancybox="images"
-              data-caption="Image12"
-              ><img class="reveal-img-top" src="images/home/kesari.jpg"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_5.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/kya-loge-tum.jpg"
+              href="images/Gallery/gallery_image_6.png"
               data-fancybox="images"
-              data-caption="Image13"
-              ><img class="reveal-img-top" src="images/home/kya-loge-tum.jpg"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_6.png"
             /></a>
           </div>
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
             <a
-              href="images/home/laxmii.jpg"
+              href="images/Gallery/gallery_image_7.png"
               data-fancybox="images"
-              data-caption="Image14"
-              ><img class="reveal-img-top" src="images/home/laxmii.jpg"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_7.png"
             /></a>
           </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_8.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_8.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_9.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_9.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_10.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_10.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_11.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_11.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_12.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_12.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_13.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_13.png"
+            /></a>
+          </div>
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_14.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_14.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_15.png"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_15.png"
+            /></a>
+          </div>
+
+           <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+            <a
+              href="images/Gallery/gallery_image_16.jpg"
+              data-fancybox="images"
+              data-caption="Image1"
+              ><img
+                class="reveal-img-top"
+                src="images/Gallery/gallery_image_16.jpg"
+            /></a>
+          </div>
+          
+          
+          
+       
         </div>
 
         <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
           <div class="gallery-video-item item col-md-3">
             <img
-              src="https://img.youtube.com/vi/3Zk8mAPE4_M/hqdefault.jpg"
-              alt="Video 1 Thumbnail"
+              src="images/Gallery/gallery_image_14.png"
+              
             />
             <button
               type="button"
               class="btn gallery_yt_video"
               data-toggle="modal"
               data-target="#exampleModal"
-              data-youtube-url="https://www.youtube.com/embed/3Zk8mAPE4_M"
+              data-youtube-url="images/Gallery/gallery_video1.mp4"
             ></button>
             <!-- <i class="fa-regular fa-circle-play"></i> -->
           </div>
 
           <div class="gallery-video-item item col-md-3">
             <img
-              src="https://img.youtube.com/vi/CNpOjG1rm-U/hqdefault.jpg"
+              src="images/Gallery/gallery_image_15.png"
               alt="Video 1 Thumbnail"
             />
             <button
@@ -244,14 +222,14 @@
               class="btn gallery_yt_video"
               data-toggle="modal"
               data-target="#exampleModal"
-              data-youtube-url="https://www.youtube.com/embed/z2XS_RryJGk"
+              data-youtube-url="images/Gallery/gallery_video2.mp4"
             ></button>
             <!-- <i class="fa-regular fa-circle-play"></i> -->
           </div>
 
           <div class="gallery-video-item item col-md-3">
             <img
-              src="https://img.youtube.com/vi/yEv0wvd91jo/hqdefault.jpg"
+              src="images/Gallery/gallery_image_15.png"
               alt="Video 1 Thumbnail"
             />
             <button
@@ -259,13 +237,13 @@
               class="btn gallery_yt_video"
               data-toggle="modal"
               data-target="#exampleModal"
-              data-youtube-url="https://www.youtube.com/embed/yEv0wvd91jo"
+              data-youtube-url="images/Gallery/gallery_video3.mp4"
             ></button>
             <!-- <i class="fa-regular fa-circle-play"></i> -->
           </div>
           <div class="gallery-video-item item col-md-3">
             <img
-              src="https://img.youtube.com/vi/veUUr5X3Yk8/hqdefault.jpg"
+              src="images/Gallery/gallery_image_13.png"
               alt="Video 1 Thumbnail"
             />
             <button
@@ -273,10 +251,27 @@
               class="btn gallery_yt_video"
               data-toggle="modal"
               data-target="#exampleModal"
-              data-youtube-url="https://www.youtube.com/embed/veUUr5X3Yk8"
+              data-youtube-url="images/Gallery/gallery_video4.mp4"
             ></button>
             <!-- <i class="fa-regular fa-circle-play"></i> -->
           </div>
+
+           <div class="gallery-video-item item col-md-3">
+            <img
+              src="images/Gallery/gallery_image_2.png"
+              alt="Video 1 Thumbnail"
+            />
+            <button
+              type="button"
+              class="btn gallery_yt_video"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              data-youtube-url="images/Gallery/gallery_video5.mp4"
+            ></button>
+            <!-- <i class="fa-regular fa-circle-play"></i> -->
+          </div>
+
+
           <!-- Add more items as needed -->
         </div>
       </section>
@@ -294,7 +289,6 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="videoModalLabel">YouTube Video</h5>
             <button
               type="button"
               class="close"
@@ -323,118 +317,7 @@
       </div>
     </div>
 
-    <footer class="footer bg_blue pt-md-4">
-      <div class="">
-        <div class="text-center">
-          <div class="col-md-12">
-            <a href="index.html">
-              <!-- <img src="images/footer_logo_2.png" alt="azeem dayani footer logo" class="footer_logo"> -->
-              <h4 class="footer_logo_text">azeem dayani</h4>
-            </a>
-          </div>
-          <div class="col-md-12 footer_links_div">
-            <ul
-              class="list-group list-group-horizontal list-unstyled justify-content-center"
-            >
-              <li class="list-group-item footer_list">
-                <a href="about-us.html" class="footer_link">about us</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="works.html" class="footer_link">works</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="achievements.html" class="footer_link"
-                  >Achievements & Accolades</a
-                >
-              </li>
-              <!-- <li class="list-group-item footer_list">
-                            <a href="playlist.html" class="footer_link">playlist</a>
-                        </li> -->
-              <li class="list-group-item footer_list">
-                <a href="gallery.html" class="footer_link">gallery</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="contact-us.html" class="footer_link">contact us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-12 footer_social_links_div">
-          <div id="bars10"></div>
-          <ul
-            class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center"
-          >
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
 
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-x-twitter"></i>
-              </a>
-            </li>
 
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
+ <?php include 'footer.php';?>
 
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-
-    <script type="text/javascript" src="js/libs.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/owl-carousel.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
-      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-
-    <script>
-      document
-        .querySelector(".menu-trigger")
-        .addEventListener("change", function () {
-          if (this.checked) {
-            // Disable scrolling
-            document.body.style.overflow = "hidden";
-          } else {
-            // Enable scrolling
-            document.body.style.overflow = "auto";
-          }
-        });
-    </script>
-
-    <script>
-      $(document).ready(function () {
-        $(".gallery_yt_video").click(function () {
-          var url = $(this).attr("data-youtube-url");
-          $("#videoIframe").attr("src", url);
-          $("#videoModal").modal("show");
-        });
-
-        $(".close").click(function () {
-          $("#videoModal").modal("hide");
-        });
-
-        $("#videoModal").on("hide.bs.modal", function () {
-          $("#videoIframe").attr("src", "");
-        });
-      });
-    </script>
-  </body>
-</html>

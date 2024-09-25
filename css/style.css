@@ -2943,7 +2943,7 @@ div.masonry_gallery .masonry_gallery_div {
 
 #gallery_videos img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 25px;
     height: 60vh;
     object-fit: cover;
 }

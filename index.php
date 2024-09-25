@@ -1,49 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php';?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" crossorigin="anonymous" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="css/header_animation.css" />    
-    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.all.min.css" /> -->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<style>
+    .footer_logo_text
+    {
+        display:none;
+    }
+</style>
 
-    <title>Azeem Dayani Footer</title>
-</head>
-
-<body class="scroll-container" data-scroll-container>
-
-    <header id="header" class="header">
-
-        <input class="menu-trigger" type="checkbox" id="menu_trigger" />
-        <div class="overlay" id="fullscreen_nav">
-            <ul class="menu-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="works.html">Works</a></li>
-                <li><a href="achievements.html">Achievements & Accolades</a></li> 
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
-            </ul>
-        </div>
-        <label class="hamburger-menu" for="menu_trigger"><span></span><span></span><span></span></label>
-
-    </header>
-
-    <div class="preloader">
+  <div class="preloader">
         <div class="preloader-main">
             <svg width="1231.1" height="70.1" viewBox="0 0 1231.1 70.1" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff" stroke-width="0.25mm" fill="#ffffff" style="stroke:#ffffff;stroke-width:0.25mm;fill:#ffffff"><path d="M 75.6 0.1 L 120.7 70.1 L 93.4 70.1 L 86.6 59.6 L 34 59.6 L 27.3 70.1 L 0 70.1 L 45.1 0.1 L 75.6 0.1 Z M 60.3 18.6 L 45.5 41.6 L 75.1 41.6 L 60.3 18.6 Z" id="0" vector-effect="non-scaling-stroke"/><path d="M 217.8 15.9 L 162.6 51.1 L 220 51.1 L 220 70.1 L 119.7 70.1 L 119.7 53.7 L 173.9 19.1 L 122 19.1 L 122 0.1 L 217.8 0.1 L 217.8 15.9 Z" id="1" vector-effect="non-scaling-stroke"/><path d="M 326.5 19.1 L 253 19.1 L 253 26.1 L 320.3 26.1 L 320.3 44.1 L 253 44.1 L 253 51.1 L 326.5 51.1 L 326.5 70.1 L 229 70.1 L 229 0.1 L 326.5 0.1 L 326.5 19.1 Z" id="2" vector-effect="non-scaling-stroke"/><path d="M 433.5 19.1 L 360 19.1 L 360 26.1 L 427.3 26.1 L 427.3 44.1 L 360 44.1 L 360 51.1 L 433.5 51.1 L 433.5 70.1 L 336 70.1 L 336 0.1 L 433.5 0.1 L 433.5 19.1 Z" id="3" vector-effect="non-scaling-stroke"/><path d="M 467 70.1 L 443 70.1 L 443 0.1 L 477.6 0.1 L 507.5 46 L 536.6 0.1 L 571.7 0.1 L 571.7 70.1 L 547.7 70.1 L 547.7 22.9 L 517.8 70.1 L 497.7 70.1 L 467 23 L 467 70.1 Z" id="4" vector-effect="non-scaling-stroke"/><path d="M 630.7 70.1 L 630.7 0.1 L 699.8 0.1 A 64.603 64.603 0 0 1 707.82 0.57 Q 711.935 1.086 715.435 2.167 A 35.177 35.177 0 0 1 717.7 2.95 A 38.364 38.364 0 0 1 724.378 6.258 A 29.698 29.698 0 0 1 729.8 10.6 Q 734.5 15.4 736.65 21.8 Q 738.8 28.2 738.8 35.3 A 41.965 41.965 0 0 1 737.034 47.553 A 39.513 39.513 0 0 1 736.65 48.75 Q 734.5 55.1 729.8 59.85 A 29.834 29.834 0 0 1 722.87 65.006 A 39.057 39.057 0 0 1 717.7 67.35 A 40.764 40.764 0 0 1 710.357 69.278 Q 706.746 69.894 702.613 70.049 A 75.461 75.461 0 0 1 699.8 70.1 L 630.7 70.1 Z M 694.3 18.9 L 654.7 18.9 L 654.7 51.4 L 694.3 51.4 Q 698.826 51.4 702.214 50.689 A 22.485 22.485 0 0 0 704.3 50.15 Q 707.672 49.096 709.835 47.368 A 11.39 11.39 0 0 0 710.6 46.7 Q 712.9 44.5 713.85 41.55 Q 714.8 38.6 714.8 35.2 Q 714.8 31.8 713.85 28.85 Q 712.9 25.9 710.6 23.7 Q 708.605 21.792 705.333 20.561 A 24.041 24.041 0 0 0 704.3 20.2 A 23.757 23.757 0 0 0 700.739 19.361 Q 698.948 19.073 696.881 18.965 A 49.463 49.463 0 0 0 694.3 18.9 Z" id="6" vector-effect="non-scaling-stroke"/><path d="M 814.4 0.1 L 859.5 70.1 L 832.2 70.1 L 825.4 59.6 L 772.8 59.6 L 766.1 70.1 L 738.8 70.1 L 783.9 0.1 L 814.4 0.1 Z M 799.1 18.6 L 784.3 41.6 L 813.9 41.6 L 799.1 18.6 Z" id="7" vector-effect="non-scaling-stroke"/><path d="M 921.5 46.9 L 921.5 70.1 L 897.5 70.1 L 897.5 47.1 L 852.5 0.1 L 883.8 0.1 L 909.5 27.1 L 935.2 0.1 L 966.4 0.1 L 921.5 46.9 Z" id="8" vector-effect="non-scaling-stroke"/><path d="M 1035 0.1 L 1080.1 70.1 L 1052.8 70.1 L 1046 59.6 L 993.4 59.6 L 986.7 70.1 L 959.4 70.1 L 1004.5 0.1 L 1035 0.1 Z M 1019.7 18.6 L 1004.9 41.6 L 1034.5 41.6 L 1019.7 18.6 Z" id="9" vector-effect="non-scaling-stroke"/><path d="M 1193.1 0.1 L 1193.1 70.1 L 1167.1 70.1 L 1108.1 25.2 L 1108.1 70.1 L 1084.1 70.1 L 1084.1 0 L 1112.8 0 L 1169.1 42.9 L 1169.1 0.1 L 1193.1 0.1 Z" id="10" vector-effect="non-scaling-stroke"/><path d="M 1207.1 70.1 L 1207.1 0.1 L 1231.1 0.1 L 1231.1 70.1 L 1207.1 70.1 Z" id="11" vector-effect="non-scaling-stroke"/></g></svg>
             <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="917" height="219">
@@ -72,7 +36,8 @@
         </div>
     </div>
 
-    <main id="home_page">
+
+ <main id="home_page">
         <section class="music_section">
             <div class=" text-center">
                 <div class="header_logo_div">
@@ -381,97 +346,7 @@
                 <img src="images/Homepage/T-shirt_2.png" alt="" class="tshirt_img">
             </div> -->
         </section>
-
-
     </main>
 
-    <footer class="footer pt_6">
-        <div class=" text-center">
-            <a href="index.html" class="text-decoration-none">
-                <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-                 <h4 class="footer_logo_text">azeem dayani</h4>
-            </a>
-            <div class="col-md-12 footer_links_div">
-                <ul class="list-group list-group-horizontal list-unstyled justify-content-center">
-                    <li class="list-group-item footer_list">
-                        <a href="about-us.html" class="footer_link">about us</a>
-                    </li>
-                    <li class="list-group-item footer_list">
-                        <a href="works.html" class="footer_link">works</a>
-                    </li>
-                    <li class="list-group-item footer_list">
-                        <a href="achievements.html" class="footer_link">Achievements & Accolades</a>
-                    </li>
-                    <!-- <li class="list-group-item footer_list">
-                        <a href="playlist.html" class="footer_link">playlist</a>
-                    </li> -->
-                    <li class="list-group-item footer_list">
-                        <a href="gallery.html" class="footer_link">gallery</a>
-                    </li>
-                    <li class="list-group-item footer_list">
-                        <a href="contact-us.html" class="footer_link">contact us</a>                        
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-12 footer_social_links_div">
-            <div id="bars3"></div>
-            <ul
-                class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
-                <li class="list-item">
-                    <a href="" class="social_media_links">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
 
-                <li class="list-item">
-                    <a href="" class="social_media_links">
-                        <i class="fa fa-x-twitter"></i>
-                    </a>
-                </li>
-
-                <li class="list-item">
-                    <a href="" class="social_media_links">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </li>
-
-                <li class="list-item">
-                    <a href="" class="social_media_links">
-                        <i class="fa fa-linkedin-in"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="js/libs.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js" integrity="sha512-IxxYrSNXnt/RJlxNX40+7BQL88FLqvdpVpuV9AuvpNH/NFP0L8xA8WLxWTXx6PYExB5R/ktQisp6tIrnLn8xvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> -->
-    <!-- SplitText Plugin -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script> -->
-    <script type="text/javascript" src="js/owl-carousel.js"></script>
-    <script type="text/javascript" src="js/bootstrap5.min.js"></script>
-    <script type="module" src="js/script.js"></script>
-
-    <script>
-        document.querySelector('.menu-trigger').addEventListener('change', function () {
-            if (this.checked) {
-                // Disable scrolling
-                document.body.style.overflow = 'hidden';
-            } else {
-                // Enable scrolling
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
-
-
-</body>
-
-</html>
+        <?php include 'footer.php';?>

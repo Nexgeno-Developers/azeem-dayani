@@ -1,66 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" crossorigin="anonymous" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" crossorigin="anonymous" /> -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="css/header_animation.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.all.min.css" /> -->
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="css/owl.theme.default.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
-    />
+    <?php include 'header.php';?>
 
-    <title>Azeem Dayani Footer</title>
-  </head>
-  <body class="scroll-container" data-scroll-container>
-    <header class="header">
-      <a href="index.html">
-        <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-        <h4 class="footer_logo_text">azeem dayani</h4>
-      </a>
-      <input class="menu-trigger" type="checkbox" id="menu_trigger" />
-      <div class="overlay" id="fullscreen_nav">
-        <ul class="menu-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="works.html">Works</a></li>
-          <li><a href="achievements.html">Achievements & Accolades</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <label class="hamburger-menu" for="menu_trigger"
-        ><span></span><span></span><span></span
-      ></label>
-    </header>
+    <style>
+  footer {
+    background: #59a246;
+}
+</style>
 
     <main id="works_page">
       <section class="animate-work-first-section works_section film_section">
@@ -94,9 +38,9 @@
         >
           <div class="text-white" id="bars6"></div>
 
-          <h3
-            class="heading-anim col-md-7 text-center category_title non_film text-light"
-          >
+          
+
+           <h3 class="col-md-8 text-center text-white category_title non_film">
             FILM ALBUMS
           </h3>
           <div class="text-white" id="bars7"></div>
@@ -462,101 +406,4 @@
       </section>
     </main>
 
-    <footer class="footer bg_green pt-md-4">
-      <div class="bg_green">
-        <div class="text-center">
-          <div class="col-md-12">
-            <a href="index.html">
-              <!-- <img src="images/footer_logo_2.png" alt="azeem dayani footer logo" class="footer_logo"> -->
-              <h4 class="footer_logo_text">azeem dayani</h4>
-            </a>
-          </div>
-          <div class="col-md-12 footer_links_div">
-            <ul
-              class="list-group list-group-horizontal list-unstyled justify-content-center"
-            >
-              <li class="list-group-item footer_list">
-                <a href="about-us.html" class="footer_link">about us</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="works.html" class="footer_link">works</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="achievements.html" class="footer_link"
-                  >Achievements & Accolades</a
-                >
-              </li>
-              <!-- <li class="list-group-item footer_list">
-                            <a href="playlist.html" class="footer_link">playlist</a>
-                        </li> -->
-              <li class="list-group-item footer_list">
-                <a href="gallery.html" class="footer_link">gallery</a>
-              </li>
-              <li class="list-group-item footer_list">
-                <a href="contact-us.html" class="footer_link">contact us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-12 footer_social_links_div">
-          <div id="bars3"></div>
-          <ul
-            class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center"
-          >
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-x-twitter"></i>
-              </a>
-            </li>
-
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
-
-            <li class="list-item">
-              <a href="" class="social_media_links">
-                <i class="fa fa-linkedin-in"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-
-    <script type="text/javascript" src="js/libs.min.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js" integrity="sha512-IxxYrSNXnt/RJlxNX40+7BQL88FLqvdpVpuV9AuvpNH/NFP0L8xA8WLxWTXx6PYExB5R/ktQisp6tIrnLn8xvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> -->
-    <!-- SplitText Plugin -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script> -->
-    <script type="text/javascript" src="js/owl-carousel.js"></script>
-    <script type="text/javascript" src="js/bootstrap5.min.js"></script>
-    <script type="module" src="js/script.js"></script>
-
-    <script>
-      document
-        .querySelector(".menu-trigger")
-        .addEventListener("change", function () {
-          if (this.checked) {
-            // Disable scrolling
-            document.body.style.overflow = "hidden";
-          } else {
-            // Enable scrolling
-            document.body.style.overflow = "auto";
-          }
-        });
-    </script>
-  </body>
-</html>
+        <?php include 'footer.php';?>

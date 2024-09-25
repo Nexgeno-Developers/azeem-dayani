@@ -9,20 +9,20 @@ if (mediaQuery.matches) {
   lerp = 0.07;
 }
 
-var locoScroll = new LocomotiveScroll({
-  el: containerEl,
-  smooth: true,
-  lerp: lerp,
-  multiplier: multiplier,
-  touchMultiplier: 1.5,
-  firefoxMultiplier: 100,
-  smartphone: {
-    smooth: true,
-  },
-  tablet: {
-    smooth: true,
-  },
-});
+// var locoScroll = new LocomotiveScroll({
+//   el: containerEl,
+//   smooth: true,
+//   lerp: lerp,
+//   multiplier: multiplier,
+//   touchMultiplier: 1.5,
+//   firefoxMultiplier: 100,
+//   smartphone: {
+//     smooth: true,
+//   },
+//   tablet: {
+//     smooth: true,
+//   },
+// });
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
