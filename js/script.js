@@ -1406,9 +1406,9 @@ setupAchievementsSectionAnimation();
 const tl5 = gsap.timeline({
   scrollTrigger: {
     trigger: ".float-up", // Element that triggers the animation
-    start: "top bottom", // Start when the top of the row hits the bottom of the viewport
+    start: "top 140%", // Start when the top of the row hits the bottom of the viewport
     end: "bottom 80%", // End when the center of the row hits the center of the viewport
-    scrub: 2, // Smooth scrubbing, takes 1 second to catch up to the scroll position
+    scrub: 0.6, // Smooth scrubbing, takes 1 second to catch up to the scroll position
     once: true,
     markers: false, // Enable markers for debugging (remove in production)
   },
@@ -1416,9 +1416,9 @@ const tl5 = gsap.timeline({
 gsap.utils.toArray(".award_main_div").forEach((div, index) => {
   tl5.fromTo(
     div,
-    { opacity: 0, y: "100%" }, // Start state
+    { opacity: 0, y: "20%" }, // Start state
     { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, // End state with stagger
-    "<+=0.5" // Staggering effect
+    "<+=0.1" // Staggering effect
   );
 });
 
