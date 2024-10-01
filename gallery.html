@@ -188,17 +188,6 @@
                 src="images/Gallery/gallery_image_15.jpeg"
             /></a>
           </div>
-
-          <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-            <a
-              href="images/Gallery/gallery_image_16.jpg"
-              data-fancybox="images"
-              data-caption="Image1"
-              ><img
-                class="reveal-img-top"
-                src="images/Gallery/gallery_image_16.jpg"
-            /></a>
-          </div>
         </div>
 
         <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
@@ -409,11 +398,7 @@
           }
         });
     </script>
-    <script>
-      $(document).ready(function () {
-        $('[data-fancybox="gallery"]').fancybox();
-      });
-    </script>
+
     <script>
       $(document).ready(function () {
         $(".gallery_yt_video").click(function () {
@@ -429,6 +414,13 @@
         $("#videoModal").on("hide.bs.modal", function () {
           $("#videoIframe").attr("src", "");
         });
+      });
+    </script>
+
+    <script>
+      $('[data-fancybox="gallery"]').fancybox({
+        buttons: ["slideShow", "fullScreen", "thumbs", "close"],
+        zoom: false, // Disable zoom option
       });
     </script>
   </body>

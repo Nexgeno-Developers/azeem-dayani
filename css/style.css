@@ -3052,4 +3052,9 @@ footer {
     margin-left: 0vw;
 }
 
+button.fancybox-button.fancybox-button--zoom {
+    display: none !important;
+}
+
+
 /* footer css close */
