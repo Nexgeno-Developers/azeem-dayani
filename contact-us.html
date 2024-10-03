@@ -96,10 +96,12 @@
                   </div>
                   <div class="mb-4">
                     <input
-                      type="number"
+                      type="text"
                       class="form-control"
                       placeholder="Contact Us"
                       required
+                      maxlength="12"
+                      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
                     />
                   </div>
                   <div class="mb-4">
