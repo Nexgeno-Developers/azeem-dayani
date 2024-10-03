@@ -694,94 +694,203 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //musical notes icon animate
   // Array of image paths for musical note icons
-  const musicNoteIcons = [
-    "images/Homepage/Music_1.png",
-    "images/Homepage/Music_2.png",
-    "images/Homepage/Music_3.png",
-    "images/Homepage/Music_4.png",
-    "images/Homepage/Music_5.png",
-    "images/Homepage/Music_6.png",
-    "images/Homepage/Music_7.png",
-  ];
+const musicNoteIcons = [
+  "images/Homepage/Music_1.png",
+  "images/Homepage/Music_2.png",
+  "images/Homepage/Music_3.png",
+  "images/Homepage/Music_4.png",
+  "images/Homepage/Music_5.png",
+  "images/Homepage/Music_6.png",
+  "images/Homepage/Music_7.png",
+];
 
-  // Function to dynamically create icons in each container
-  function createIcons(container) {
-    for (let i = 0; i < 20; i++) {
-      const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
-      const icon = document.createElement("img");
-      icon.src = musicNoteIcons[iconIndex];
-      icon.classList.add("music-icon"); // Add class for styling/animation
-      icon.style.position = "absolute"; // Ensure icons can move freely
-      icon.style.opacity = 0; // Start hidden
-      icon.style.width = "1.6vw"; // Set width
+// Function to create a single icon element
+function createIcon(container) {
+  const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
+  const icon = document.createElement("img");
+  icon.src = musicNoteIcons[iconIndex];
+  icon.classList.add("music-icon"); // Add class for styling/animation
+  icon.style.position = "absolute"; // Ensure icons can move freely
+  icon.style.opacity = 0; // Start hidden
+  icon.style.width = "1.6vw"; // Set width
 
-      // Start icons at a random horizontal position, at the bottom
-      icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
-      icon.style.bottom = `50px`; // Start from slightly below the container
+  // Start icons at a random horizontal position, at the bottom
+  icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
+  icon.style.bottom = `50px`; // Start from slightly below the container
 
-      container.appendChild(icon);
-    }
+  return icon;
+}
+
+// Function to create multiple icons and append them to the container
+function createIcons(container, numberOfIcons = 20) {
+  for (let i = 0; i < numberOfIcons; i++) {
+    const icon = createIcon(container);
+    container.appendChild(icon);
   }
+}
 
-  // Function to generate random vertical movement within the container
-  function getRandomVerticalPosition(containerHeight) {
-    return Math.random() * containerHeight; // Generate a random Y position within the container
-  }
+// Function to get vertical movement height based on the data attribute
+function getVerticalHeightBasedOnData(container) {
+  const height = container.getAttribute("data-icon-height"); // Read height from data attribute
+  return height ? `-${height}` : `-50vh`; // Default to -50vh if no data-height is provided
+}
 
-  // Function to generate random horizontal movement (optional zigzag)
-  function getRandomHorizontalMovement() {
-    return (Math.random() - 2) * 50; // Optional small zigzag motion (-25px to +25px)
-  }
+// Function to generate random horizontal movement (optional zigzag)
+function getRandomHorizontalMovement() {
+  return (Math.random() - 2) * 50; // Optional small zigzag motion (-25px to +25px)
+}
 
-  // Function to animate icons in a container
-  function animateIcons(container) {
-    const icons = container.querySelectorAll(".music-icon");
+// Function to animate a single icon
+function animateIcon(icon, container) {
+  const randomDuration = Math.random() * 2 + 4; // Random duration between 2s and 4s
+  const randomY = getVerticalHeightBasedOnData(container); // Get vertical height based on the container's data-height attribute
+  const randomX = getRandomHorizontalMovement(); // Small zigzag movement
+  const randomDelay = Math.random() * 2; // Random delay between animations
 
-    icons.forEach((icon) => {
-      const randomDuration = Math.random() * 2 + 4; // Random duration between 2s and 4s
-      const randomY = getRandomVerticalPosition(container.offsetHeight); // Get random vertical position
-      const randomX = getRandomHorizontalMovement(); // Small zigzag movement
-      const randomDelay = Math.random() * 2; // Random delay between animations
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top center",
+      end: "bottom top",
+      markers: false,
+    },
+  });
 
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top center",
-          end: "bottom top",
-          markers: false,
-        },
-      });
+  // Animate the icon to move up randomly within the section
+  timeline.to(icon, {
+    y: randomY, // Set y movement based on data-height attribute
+    x: randomX, // Small zigzag movement for variation
+    opacity: 1, // Fade in to full opacity
+    scale: 1, // Grow to full size
+    duration: randomDuration, // Randomized animation duration
+    delay: randomDelay, // Delay before the animation starts
+    ease: "power1.inOut", // Smooth easing effect
+    repeat: -1, // Infinite loop
+    repeatDelay: Math.random() * 2, // Random delay between repetitions
+    stagger: {
+      each: 1, // 300ms delay between each icon animation start
+    },
+  });
 
-      // Animate the icon to move up randomly within the section
-      timeline.to(icon, {
-        y: `-50vh`, //y: `-${randomY}px`, // Move upward to a random point inside the container
-        x: randomX, // Small zigzag movement for variation
-        opacity: 1, // Fade in to full opacity
-        scale: 1, // Grow to full size
-        duration: randomDuration, // Randomized animation duration
-        delay: randomDelay, // Delay before the animation starts
-        ease: "power1.inOut", // Smooth easing effect
-        repeat: -1, // Infinite loop
-        repeatDelay: Math.random() * 2, // Random delay between repetitions
-        stagger: {
-          each: 1, // 300ms delay between each icon animation start
-        },
-      });
-      timeline.to(icon, {
-        opacity: 0,
-        duration: 0.1,
-      }, `+=0`);
-    });
-  }
+  // Fade out the icon at the end of the animation
+  timeline.to(icon, {
+    opacity: 0,
+    duration: 0.1,
+  }, `+=0`);
+}
 
+// Function to animate all icons in the container
+function animateIcons(container) {
+  const icons = container.querySelectorAll(".music-icon");
+  icons.forEach(icon => {
+    animateIcon(icon, container);
+  });
+}
+
+// Main function to create and animate icons in all containers
+function initializeIconAnimation() {
   // Get all containers with the class .icon-container
   const containers = document.querySelectorAll(".icon-container");
 
   // Create and animate icons in each container
-  containers.forEach((container) => {
-    createIcons(container);
-    animateIcons(container);
+  containers.forEach(container => {
+    createIcons(container); // Create icons for the container
+    animateIcons(container); // Animate icons in the container
   });
+}
+
+// Call the main function to start the process
+initializeIconAnimation();
+
+  // Array of image paths for musical note icons
+  // const musicNoteIcons = [
+  //   "images/Homepage/Music_1.png",
+  //   "images/Homepage/Music_2.png",
+  //   "images/Homepage/Music_3.png",
+  //   "images/Homepage/Music_4.png",
+  //   "images/Homepage/Music_5.png",
+  //   "images/Homepage/Music_6.png",
+  //   "images/Homepage/Music_7.png",
+  // ];
+
+  // // Function to dynamically create icons in each container
+  // function createIcons(container) {
+  //   for (let i = 0; i < 20; i++) {
+  //     const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
+  //     const icon = document.createElement("img");
+  //     icon.src = musicNoteIcons[iconIndex];
+  //     icon.classList.add("music-icon"); // Add class for styling/animation
+  //     icon.style.position = "absolute"; // Ensure icons can move freely
+  //     icon.style.opacity = 0; // Start hidden
+  //     icon.style.width = "1.6vw"; // Set width
+
+  //     // Start icons at a random horizontal position, at the bottom
+  //     icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
+  //     icon.style.bottom = `50px`; // Start from slightly below the container
+
+  //     container.appendChild(icon);
+  //   }
+  // }
+
+  // // Function to generate random vertical movement within the container
+  // function getRandomVerticalPosition(containerHeight) {
+  //   return Math.random() * containerHeight; // Generate a random Y position within the container
+  // }
+
+  // // Function to generate random horizontal movement (optional zigzag)
+  // function getRandomHorizontalMovement() {
+  //   return (Math.random() - 2) * 50; // Optional small zigzag motion (-25px to +25px)
+  // }
+
+  // // Function to animate icons in a container
+  // function animateIcons(container) {
+  //   const icons = container.querySelectorAll(".music-icon");
+
+  //   icons.forEach((icon) => {
+  //     const randomDuration = Math.random() * 2 + 4; // Random duration between 2s and 4s
+  //     const randomY = getRandomVerticalPosition(container.offsetHeight); // Get random vertical position
+  //     const randomX = getRandomHorizontalMovement(); // Small zigzag movement
+  //     const randomDelay = Math.random() * 2; // Random delay between animations
+
+  //     const timeline = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: container,
+  //         start: "top center",
+  //         end: "bottom top",
+  //         markers: false,
+  //       },
+  //     });
+
+  //     // Animate the icon to move up randomly within the section
+  //     timeline.to(icon, {
+  //       y: `-50vh`, //y: `-${randomY}px`, // Move upward to a random point inside the container
+  //       x: randomX, // Small zigzag movement for variation
+  //       opacity: 1, // Fade in to full opacity
+  //       scale: 1, // Grow to full size
+  //       duration: randomDuration, // Randomized animation duration
+  //       delay: randomDelay, // Delay before the animation starts
+  //       ease: "power1.inOut", // Smooth easing effect
+  //       repeat: -1, // Infinite loop
+  //       repeatDelay: Math.random() * 2, // Random delay between repetitions
+  //       stagger: {
+  //         each: 1, // 300ms delay between each icon animation start
+  //       },
+  //     });
+  //     timeline.to(icon, {
+  //       opacity: 0,
+  //       duration: 0.1,
+  //     }, `+=0`);
+  //   });
+  // }
+
+  // // Get all containers with the class .icon-container
+  // const containers = document.querySelectorAll(".icon-container");
+
+  // // Create and animate icons in each container
+  // containers.forEach((container) => {
+  //   createIcons(container);
+  //   animateIcons(container);
+  // });
 
   // Array of image paths for musical note icons
   // const musicNoteIcons = [
