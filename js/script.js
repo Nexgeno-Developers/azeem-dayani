@@ -754,26 +754,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Animate the icon to move up randomly within the section
       timeline.to(icon, {
-        y: `-${randomY}px`, // Move upward to a random point inside the container
+        y: `-50vh`, //y: `-${randomY}px`, // Move upward to a random point inside the container
         x: randomX, // Small zigzag movement for variation
         opacity: 1, // Fade in to full opacity
         scale: 1, // Grow to full size
         duration: randomDuration, // Randomized animation duration
         delay: randomDelay, // Delay before the animation starts
         ease: "power1.inOut", // Smooth easing effect
-        onComplete: () => {
-          // After reaching full size, fade out
-          gsap.to(icon, {
-            opacity: 0, // Fade out
-            duration: 0.5, // Smooth fade-out duration
-          });
-        },
         repeat: -1, // Infinite loop
         repeatDelay: Math.random() * 2, // Random delay between repetitions
         stagger: {
           each: 1, // 300ms delay between each icon animation start
         },
       });
+      timeline.to(icon, {
+        opacity: 0,
+        duration: 0.1,
+      }, `+=0`);
     });
   }
 
